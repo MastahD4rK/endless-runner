@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Platformer.Core;
 using Platformer.Model;
@@ -24,6 +24,8 @@ namespace Platformer.Gameplay
                 model.virtualCamera.LookAt = null;
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
+
+                if (GameSpeedManager.Instance != null) GameSpeedManager.Instance.StopWorld();
 
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);

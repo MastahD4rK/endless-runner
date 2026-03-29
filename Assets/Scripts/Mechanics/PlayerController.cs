@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Gameplay;
@@ -65,7 +65,9 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = m_MoveAction.ReadValue<Vector2>().x;
+                // Endless Runner: El jugador está fijo en X.
+                move.x = 0;
+                
                 if (jumpState == JumpState.Grounded && m_JumpAction.WasPressedThisFrame())
                     jumpState = JumpState.PrepareToJump;
                 else if (m_JumpAction.WasReleasedThisFrame())
@@ -128,13 +130,12 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (move.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (move.x < -0.01f)
-                spriteRenderer.flipX = true;
+            // Endless runner: always facing right
+            spriteRenderer.flipX = false;
 
             animator.SetBool("grounded", IsGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+            // Force running animation because the player stays static but the world moves
+            animator.SetFloat("velocityX", 1f);
 
             targetVelocity = move * maxSpeed;
         }

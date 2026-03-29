@@ -13,18 +13,12 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            var player = model.player;
-            player.collider2d.enabled = true;
-            player.controlEnabled = false;
-            if (player.audioSource && player.respawnAudio)
-                player.audioSource.PlayOneShot(player.respawnAudio);
-            player.health.Increment();
-            player.Teleport(model.spawnPoint.transform.position);
-            player.jumpState = PlayerController.JumpState.Grounded;
-            player.animator.SetBool("dead", false);
-            model.virtualCamera.Follow = player.transform;
-            model.virtualCamera.LookAt = player.transform;
-            Simulation.Schedule<EnablePlayerInput>(2f);
+            // En un Endless Runner, es más limpio recargar la escena entera para limpiar plataformas.
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            
+            // Opcional: reiniciar velocidad por si el manager no se destruye entre escenas
+            if (GameSpeedManager.Instance != null) 
+                GameSpeedManager.Instance.ResetSpeed();
         }
     }
 }

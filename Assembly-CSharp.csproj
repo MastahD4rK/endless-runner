@@ -54,6 +54,7 @@
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\Jiggler.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\EmitParticlesOnLand.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredDeathZone.cs" />
     <Compile Include="Assets\Scripts\Gameplay\HealthIsZero.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerSpeedPad.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AnimationController.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Assets\Scripts\UI\MetaGameController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\WorldMover.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenInstance.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
