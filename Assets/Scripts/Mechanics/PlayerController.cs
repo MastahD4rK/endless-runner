@@ -51,8 +51,9 @@ namespace Platformer.Mechanics
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            animator = GetComponent<Animator>();
+            // Buscamos en los hijos por si el usuario metió un prefab (como la Brujita)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            animator = GetComponentInChildren<Animator>();
 
             m_MoveAction = InputSystem.actions.FindAction("Player/Move");
             m_JumpAction = InputSystem.actions.FindAction("Player/Jump");
@@ -131,11 +132,15 @@ namespace Platformer.Mechanics
             }
 
             // Endless runner: always facing right
-            spriteRenderer.flipX = false;
+            if (spriteRenderer != null)
+                spriteRenderer.flipX = false;
 
-            animator.SetBool("grounded", IsGrounded);
-            // Force running animation because the player stays static but the world moves
-            animator.SetFloat("velocityX", 1f);
+            if (animator != null)
+            {
+                animator.SetBool("grounded", IsGrounded);
+                // Force running animation because the player stays static but the world moves
+                animator.SetFloat("velocityX", 1f);
+            }
 
             targetVelocity = move * maxSpeed;
         }
