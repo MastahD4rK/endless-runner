@@ -22,15 +22,20 @@ namespace Platformer.Gameplay
                 player.health.Die();
                 model.virtualCamera.Follow = null;
                 model.virtualCamera.LookAt = null;
-                // player.collider.enabled = false;
                 player.controlEnabled = false;
 
                 if (GameSpeedManager.Instance != null) GameSpeedManager.Instance.StopWorld();
 
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);
-                player.animator.SetTrigger("hurt");
-                player.animator.SetBool("dead", true);
+
+                // Null-safe: el Animator Override de la brujita podría no tener estos parámetros
+                if (player.animator != null)
+                {
+                    player.animator.SetTrigger("hurt");
+                    player.animator.SetBool("dead", true);
+                }
+
                 Simulation.Schedule<PlayerSpawn>(2);
             }
         }

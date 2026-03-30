@@ -5,7 +5,8 @@ namespace Platformer.Gameplay
 {
     /// <summary>
     /// Genera un suelo constante que simula un mundo infinito.
-    /// Reutiliza bloques y los elimina cuando salen de la pantalla.
+    /// Usa Object Pooling para reutilizar bloques en vez de Instantiate/Destroy,
+    /// evitando micro-stutters por Garbage Collection.
     /// </summary>
     public class LevelGenerator : MonoBehaviour
     {
@@ -13,21 +14,54 @@ namespace Platformer.Gameplay
         public GameObject[] platformPrefabs;
         
         [Header("Configuración de Spawning")]
-        public float blockWidth = 10f; // Ancho exacto de cada bloque/prefab
+        public float blockWidth = 10f;
         public int initialBlocks = 6;
-        public float despawnX = -15f; // Posición X donde se destruye un bloque (borde izquierdo visible)
+        public float despawnX = -15f;
         
         public Vector3 startPosition = new Vector3(-5f, -2f, 0f);
 
+        [Header("Object Pool")]
+        [Tooltip("Cuántos bloques extras pre-crear por cada prefab tipo")]
+        public int poolSizePerPrefab = 3;
+
+        // Cola de bloques activos en pantalla (en orden de izquierda a derecha)
         private Queue<GameObject> activePlatforms = new Queue<GameObject>();
-        private GameObject lastPlatform;
+        
+        // Pool de objetos inactivos reutilizables, organizados por prefab index
+        private Dictionary<int, Queue<GameObject>> objectPools = new Dictionary<int, Queue<GameObject>>();
+        
+        // Mapeo de cada bloque activo a su índice de prefab (para saber a qué pool devolverlo)
+        private Dictionary<GameObject, int> blockPrefabIndex = new Dictionary<GameObject, int>();
+        
+        // Posición X donde debe nacer el siguiente bloque
+        private float nextSpawnX;
 
         void Start()
         {
+            if (platformPrefabs == null || platformPrefabs.Length == 0)
+            {
+                Debug.LogError("[LevelGenerator] No hay prefabs asignados en Platform Prefabs.");
+                return;
+            }
+
+            // Inicializar los pools
+            for (int i = 0; i < platformPrefabs.Length; i++)
+            {
+                objectPools[i] = new Queue<GameObject>();
+                for (int j = 0; j < poolSizePerPrefab; j++)
+                {
+                    GameObject pooled = Instantiate(platformPrefabs[i], Vector3.zero, Quaternion.identity, this.transform);
+                    EnsureWorldMover(pooled);
+                    pooled.SetActive(false);
+                    objectPools[i].Enqueue(pooled);
+                }
+            }
+
+            // Generar los bloques iniciales en pantalla
+            nextSpawnX = startPosition.x;
             for (int i = 0; i < initialBlocks; i++)
             {
-                // El primer par de bloques debería ser seguro (index 0)
-                SpawnBlock(i < 2); 
+                SpawnBlock(i < 2); // Los dos primeros son zona segura
             }
         }
 
@@ -35,44 +69,85 @@ namespace Platformer.Gameplay
         {
             if (activePlatforms.Count == 0) return;
 
-            // Si el bloque más antiguo salió de la vista, destruirlo e instanciar uno nuevo
+            // Si el bloque más antiguo salió de la vista, reciclarlo
             GameObject firstPlatform = activePlatforms.Peek();
+            
+            // Bug fix: Verificar que el objeto no haya sido destruido externamente
+            if (firstPlatform == null)
+            {
+                activePlatforms.Dequeue();
+                return;
+            }
+            
             if (firstPlatform.transform.position.x < despawnX)
             {
                 activePlatforms.Dequeue();
-                Destroy(firstPlatform);
+                RecycleBlock(firstPlatform);
                 SpawnBlock(false);
             }
         }
 
         void SpawnBlock(bool isSafeZone)
         {
-            if (platformPrefabs == null || platformPrefabs.Length == 0) return;
+            // Elegir un prefab aleatorio. Si es SafeZone, usar siempre el índice 0
+            int prefabIndex = isSafeZone ? 0 : Random.Range(0, platformPrefabs.Length);
 
-            // Elegir un prefab aleatorio. Si es SafeZone, se asume que el indice 0 es suelo normal sin trampas.
-            int randomIndex = isSafeZone ? 0 : Random.Range(0, platformPrefabs.Length);
-            GameObject prefabToSpawn = platformPrefabs[randomIndex];
+            GameObject block = GetFromPool(prefabIndex);
 
-            Vector3 spawnPos;
-            if (lastPlatform == null)
+            Vector3 spawnPos = new Vector3(nextSpawnX, startPosition.y, startPosition.z);
+            block.transform.position = spawnPos;
+            block.SetActive(true);
+
+            activePlatforms.Enqueue(block);
+            nextSpawnX += blockWidth;
+        }
+
+        /// <summary>
+        /// Obtiene un bloque del pool. Si el pool está vacío, crea uno nuevo.
+        /// </summary>
+        GameObject GetFromPool(int prefabIndex)
+        {
+            if (objectPools[prefabIndex].Count > 0)
             {
-                spawnPos = startPosition;
+                GameObject pooled = objectPools[prefabIndex].Dequeue();
+                blockPrefabIndex[pooled] = prefabIndex;
+                return pooled;
+            }
+
+            // Pool vacío: crear uno nuevo (fallback)
+            GameObject newBlock = Instantiate(platformPrefabs[prefabIndex], Vector3.zero, Quaternion.identity, this.transform);
+            EnsureWorldMover(newBlock);
+            blockPrefabIndex[newBlock] = prefabIndex;
+            return newBlock;
+        }
+
+        /// <summary>
+        /// Devuelve un bloque al pool para reutilizarlo después.
+        /// </summary>
+        void RecycleBlock(GameObject block)
+        {
+            block.SetActive(false);
+
+            if (blockPrefabIndex.TryGetValue(block, out int prefabIndex))
+            {
+                objectPools[prefabIndex].Enqueue(block);
             }
             else
             {
-                spawnPos = lastPlatform.transform.position + Vector3.right * blockWidth;
+                // Si por alguna razón no tenemos registro, destruirlo como fallback
+                Destroy(block);
             }
+        }
 
-            GameObject newBlock = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity, this.transform);
-            
-            // Obligatorio: cada bloque del entorno debe moverse
-            if (newBlock.GetComponent<WorldMover>() == null)
+        /// <summary>
+        /// Garantiza que el bloque tenga un WorldMover adjunto.
+        /// </summary>
+        void EnsureWorldMover(GameObject block)
+        {
+            if (block.GetComponent<WorldMover>() == null)
             {
-                newBlock.AddComponent<WorldMover>();
+                block.AddComponent<WorldMover>();
             }
-
-            activePlatforms.Enqueue(newBlock);
-            lastPlatform = newBlock;
         }
     }
 }
