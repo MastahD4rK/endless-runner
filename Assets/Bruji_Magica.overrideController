@@ -7,5 +7,15 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bruji_Magica
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: b09e60546065cf9448b36ebb7f759a91, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 56811a918221743d69fe84599f43c740, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 43683e55fc88c4e4585dd2017868490d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1d7e02f8cf5ba47a78bc1e19cc378478, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: df813b4e9a2cc13479b136568242ce42, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 712f4510fc9b249348d4d8e97b12dc45, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 733669d2740ab8844bfabbf8a2ac6742, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e0e8baec160e44e1bb74ca8e08777453, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: de6f2c2423c9452439ff47e2c4edf3ab, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: acd3fdc6781e749908cec8f29cbac75f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2425d4e573562684a87ff13b41742e49, type: 2}
