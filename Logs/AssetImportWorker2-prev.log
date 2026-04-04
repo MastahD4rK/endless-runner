@@ -1,0 +1,1820 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.11f1 (3000ef702840) revision 3145967'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 7381 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-03-30T12:52:33.2178948Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-03-30T12:52:33Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+63395
+-licensingIpc
+LicenseClient-crist
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
+C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [6552]  Target information:
+
+Player connection [6552]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2963462414 [EditorId] 2963462414 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6552]  * "[IP] 10.244.114.80 [Port] 0 [Flags] 2 [Guid] 2963462414 [EditorId] 2963462414 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6552] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6552] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 6.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.11f1 (3000ef702840)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2050 (ID=0x25ad)
+    Vendor:   NVIDIA
+    VRAM:     3964 MB
+    Driver:   32.0.15.8183
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.0'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
+[Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-03-30T12:52:36.3715836Z"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.0+23225a6
+  Session Id:              ac70e1ff9e134419bdef31aad4647787
+  Correlation Id:          2753272ef22ae05cda15fc2e7f465d33
+  External correlation Id: 6057395753163832414
+  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.00s, validation: 0.00s, handshake: 0.24s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-03-30T12:52:36.6174982Z"
+[Licensing::Module] Licensing Background thread has ended after 3.40s
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.610676 seconds.
+- Loaded All Assemblies, in 15.944 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.676 seconds
+Domain Reload Profiling: 16617ms
+	BeginReloadAssembly (11214ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (955ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (690ms)
+	LoadAllAssembliesAndSetupDomain (3066ms)
+		LoadAssemblies (11222ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (3051ms)
+			TypeCache.Refresh (3047ms)
+				TypeCache.ScanAssembly (2447ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (677ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (586ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (87ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (113ms)
+			ProcessInitializeOnLoadAttributes (221ms)
+			ProcessInitializeOnLoadMethodAttributes (157ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 4674170343135-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in 24.419 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 2.33 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.268 seconds
+Domain Reload Profiling: 27678ms
+	BeginReloadAssembly (448ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (69ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (23808ms)
+		LoadAssemblies (22852ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1258ms)
+			TypeCache.Refresh (1063ms)
+				TypeCache.ScanAssembly (1020ms)
+			BuildScriptInfoCaches (163ms)
+			ResolveRequiredComponents (22ms)
+	FinalizeReload (3269ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1415ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (315ms)
+			ProcessInitializeOnLoadAttributes (844ms)
+			ProcessInitializeOnLoadMethodAttributes (225ms)
+			AfterProcessingInitializeOnLoad (19ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 5.96 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7693 unused Assets / (5.5 MB). Loaded Objects now: 8525.
+Memory consumption went from 160.7 MB to 155.2 MB.
+Total: 27.692300 ms (FindLiveObjects: 2.797400 ms CreateObjectMapping: 2.523500 ms MarkObjects: 14.522300 ms  DeleteObjects: 7.847200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3114.533569 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_1.unity
+  artifactKey: Guid(c0ea9e9c8db3c83498ab272d7af6d391) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_1.unity using Guid(c0ea9e9c8db3c83498ab272d7af6d391) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '478606365c82ff572d7c5b749ca9ae6f') in 0.1356079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Player.cs
+  artifactKey: Guid(0fbb11aeffed7294fa0edd9a9e6bec2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Player.cs using Guid(0fbb11aeffed7294fa0edd9a9e6bec2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '757fd3c7adc7ac66359dfe150faf8cd0') in 0.0966086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/Scripts
+  artifactKey: Guid(07584d06b9251a7408c1d19db39c6e6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/Scripts using Guid(07584d06b9251a7408c1d19db39c6e6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b1cd988b19262f97f7ea851aab58a6dd') in 0.030562 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_3.png
+  artifactKey: Guid(bddec1270e7d2794d82471b5e936a0b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_3.png using Guid(bddec1270e7d2794d82471b5e936a0b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c752c33131a1fb5036f6f143bc2fa23b') in 0.1860525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/PSD.psd
+  artifactKey: Guid(49b5b85b328954046a783476ad1e425c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/PSD.psd using Guid(49b5b85b328954046a783476ad1e425c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '41b8708c513beb291044d1156859f8ac') in 0.0493048 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_2.png
+  artifactKey: Guid(7a8ad0aa4592aa0488e35a4ec26c36b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_2.png using Guid(7a8ad0aa4592aa0488e35a4ec26c36b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7fe3031be87c34d0f83033e0417bb15d') in 0.0572396 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Wizard - 2D Character/Animations/LookUp.anim
+  artifactKey: Guid(9d382f53c189c8f49a4ce27b100a79b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Wizard - 2D Character/Animations/LookUp.anim using Guid(9d382f53c189c8f49a4ce27b100a79b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e3f082833cf7ceaabcb3a2ac3dcfdff2') in 0.0438002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_4.unity
+  artifactKey: Guid(6c9f819556606404e95b503304f1154c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_4.unity using Guid(6c9f819556606404e95b503304f1154c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c8cb9a718a020275eb4a00ab3017ce24') in 0.0457422 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Wizard - 2D Character/Demo/WizDemo1.cs
+  artifactKey: Guid(e25edea5f4d77c74d828874c56cf37e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Wizard - 2D Character/Demo/WizDemo1.cs using Guid(e25edea5f4d77c74d828874c56cf37e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '01b6e0adf125c5540ceef057257d4ea4') in 0.0292578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/GameObjects/Ground.png
+  artifactKey: Guid(38c1b40b801d23c42985e2937ba848c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/GameObjects/Ground.png using Guid(38c1b40b801d23c42985e2937ba848c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f44ec2801d3f0097f9604a45d2277a99') in 0.0541507 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_1.prefab
+  artifactKey: Guid(7e2099e537aa60b498112e7841327add) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_1.prefab using Guid(7e2099e537aa60b498112e7841327add) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '50299b690fe69731d8a3604a3ab9d512') in 0.2919275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Scripts/Mechanics/Obstacle.cs
+  artifactKey: Guid(47cc90a447898fe4180fbbcc9d092a1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Mechanics/Obstacle.cs using Guid(47cc90a447898fe4180fbbcc9d092a1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '591bda677b2c6e469e5a73bb74f3e3e2') in 0.0488392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_2/PSD.psd
+  artifactKey: Guid(fd6ba5abcdcd2284b95d38f76200debc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_2/PSD.psd using Guid(fd6ba5abcdcd2284b95d38f76200debc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '063c9c499d504002e9c866196447ce33') in 0.101966 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4
+  artifactKey: Guid(3521b99b257bdf743b13a82bf87f6288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4 using Guid(3521b99b257bdf743b13a82bf87f6288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f974e77c3345b4a2f744a656343d2966') in 0.0356511 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Materials/NoFriction.physicsMaterial2D
+  artifactKey: Guid(5e1b8534a74524c4fb5034d422251a96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Materials/NoFriction.physicsMaterial2D using Guid(5e1b8534a74524c4fb5034d422251a96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '29f2f838d3c6d6ae592dd013ee42db47') in 0.1095533 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Fly Mode
+  artifactKey: Guid(5c45eae54fce3d74986843544a6d4340) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Fly Mode using Guid(5c45eae54fce3d74986843544a6d4340) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '907f45c3f8ff3ed1497d01e3b061df6d') in 0.0302666 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Documents/COUPON.pdf
+  artifactKey: Guid(18c966885344abb41b67a4f5d01bc1b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Documents/COUPON.pdf using Guid(18c966885344abb41b67a4f5d01bc1b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5944bfb6e3ab2758b80d50ba3352f072') in 0.0281879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/Layer_2.png
+  artifactKey: Guid(b60cd4f204623bb4f945020fda54aa1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/Layer_2.png using Guid(b60cd4f204623bb4f945020fda54aa1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2252661720309ab75c505e51838aff10') in 0.0407028 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Wizard - 2D Character/Sprites/Skeletal.psb
+  artifactKey: Guid(dde2588f5e0bc7b4ab407c1ae99bd5c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Wizard - 2D Character/Sprites/Skeletal.psb using Guid(dde2588f5e0bc7b4ab407c1ae99bd5c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c639da9fb7a9917ab87c14b230bd660') in 0.5923509 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 120
+
+========================================================================
+Received Import Request.
+  Time since last request: 119.582978 seconds.
+  path: Assets/Character/Player/raptor/gif/2x
+  artifactKey: Guid(9f0760986b8d51943ba53b6ddc749c23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/2x using Guid(9f0760986b8d51943ba53b6ddc749c23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '561244fdbed31f791da32f2cbeb097e5') in 0.0360211 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/gif/5x/raptor-pounce-latched.gif
+  artifactKey: Guid(c64c91e6857946040831e7714a7f80ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/5x/raptor-pounce-latched.gif using Guid(c64c91e6857946040831e7714a7f80ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de9b7f03d3cd452723e058aba70583a7') in 0.0785808 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning15.png
+  artifactKey: Guid(442fcdaea1071814386a65a8f20e6e7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning15.png using Guid(442fcdaea1071814386a65a8f20e6e7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9eab7f04398f128d884e46108c807b88') in 0.0563852 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-idle
+  artifactKey: Guid(2511a81410568e148a73d40b1e76c61b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-idle using Guid(2511a81410568e148a73d40b1e76c61b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd10e75c42f6987ce46c5cdd01330c160') in 0.0241556 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-jump/raptor-jump.png
+  artifactKey: Guid(9662fb11e2f56094ab0a30bf2ba82d35) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-jump/raptor-jump.png using Guid(9662fb11e2f56094ab0a30bf2ba82d35) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e6f510f0e613c591a644bc29362afb5e') in 0.0414041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Character/Player/raptor/gif/1x/raptor-scanning.gif
+  artifactKey: Guid(32c10b75c7729f747abfed2e797da57b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/1x/raptor-scanning.gif using Guid(32c10b75c7729f747abfed2e797da57b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9d0a2e3b4696c9a5e690c31fee253513') in 0.0916099 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-walk.png
+  artifactKey: Guid(4d94a17cd70ba2247b9df10f5bbf9573) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-walk.png using Guid(4d94a17cd70ba2247b9df10f5bbf9573) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'abfa19d3ab6468946c2f03406ac11af8') in 0.0849186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/5x/raptor-ready-pounce.png
+  artifactKey: Guid(1d90da4e98fd4f84bad8bb3b7b1a8a2c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/5x/raptor-ready-pounce.png using Guid(1d90da4e98fd4f84bad8bb3b7b1a8a2c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd66e2070f912c315b5b3ba4e7600598d') in 0.0574616 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-roar
+  artifactKey: Guid(3ee6642f92946294282f2ead03b260bf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-roar using Guid(3ee6642f92946294282f2ead03b260bf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'daf9fedca7b1669e02453b8373b64c47') in 0.0362156 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning10.png
+  artifactKey: Guid(fcf1a4177a183064083d97eff17d1d33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning10.png using Guid(fcf1a4177a183064083d97eff17d1d33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8d3849a9f38971f0e543099c91c70612') in 0.0752071 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite1.png
+  artifactKey: Guid(5224d1bdf4952954ab88f0fd7393dfe5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite1.png using Guid(5224d1bdf4952954ab88f0fd7393dfe5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1ad6adb1c8c210b8e6bd74df6b9754a3') in 0.0410901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite4.png
+  artifactKey: Guid(2607e959008982340a08911c24595064) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite4.png using Guid(2607e959008982340a08911c24595064) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b8efa34ec498b3c15d00c791bed466d8') in 0.0410578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning7.png
+  artifactKey: Guid(7ad13a20106c85e4eae1a8fcc9f0f85d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning7.png using Guid(7ad13a20106c85e4eae1a8fcc9f0f85d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0797f4e36be0101c000c70d0b522d86f') in 0.0512399 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-idle/raptor-idle1.png
+  artifactKey: Guid(7b00b20a9b89a70488f5b0336f1ff27b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-idle/raptor-idle1.png using Guid(7b00b20a9b89a70488f5b0336f1ff27b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd09c54221f87138bba72b15a5c475683') in 0.0552832 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk6.png
+  artifactKey: Guid(179225670634a344ba62ae78c80d1c72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk6.png using Guid(179225670634a344ba62ae78c80d1c72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '634e818291753f7243565274530c2060') in 0.0556959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning3.png
+  artifactKey: Guid(2598edae7ca08364ea42462943e33ae7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning3.png using Guid(2598edae7ca08364ea42462943e33ae7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0284ff53ec0053c3475b2f2de0815489') in 0.0862261 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Character/Player/raptor/gif/3x/raptor-roar.gif
+  artifactKey: Guid(c1c579c060f776a43baf470fe0119535) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/3x/raptor-roar.gif using Guid(c1c579c060f776a43baf470fe0119535) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b2c044dbccced96c7a2ef1f2e6b5e5a3') in 0.0816661 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite5.png
+  artifactKey: Guid(f88e01719c04fb247a246cbce4878809) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite5.png using Guid(f88e01719c04fb247a246cbce4878809) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57ffb33f1ff7a1ba32cc1773b2ccfd01') in 0.0366609 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/gif/1x/raptor-on-hit.gif
+  artifactKey: Guid(23406855390eaa84db7e3a2fb9a0d04e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/1x/raptor-on-hit.gif using Guid(23406855390eaa84db7e3a2fb9a0d04e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6cf7a0f605f9559e59f2f51e622dc577') in 0.0403211 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite7.png
+  artifactKey: Guid(ff500806576f07643b26cf15cffbeb03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite7.png using Guid(ff500806576f07643b26cf15cffbeb03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd569d3b43489a9015c41629cf96a546e') in 0.0470434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning7.png
+  artifactKey: Guid(b07ae4d433935d44f9f3e063a7689653) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning7.png using Guid(b07ae4d433935d44f9f3e063a7689653) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8230cd88aebf1ade405c9d4c4fdd62a5') in 0.044318 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-run/raptor-run5.png
+  artifactKey: Guid(98b8cf4a0d4f34543a77346b24957bde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-run/raptor-run5.png using Guid(98b8cf4a0d4f34543a77346b24957bde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '39eeed523f9342baf89566b2d4191f3b') in 0.0661357 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning16.png
+  artifactKey: Guid(79b7130aaa1366543bf649a194179201) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning16.png using Guid(79b7130aaa1366543bf649a194179201) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f42592f51984c26f42b59634a9a99907') in 0.0554488 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack1.png
+  artifactKey: Guid(1521e9883c5caae49b328c291e51a5a4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack1.png using Guid(1521e9883c5caae49b328c291e51a5a4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33f52fe8dab906a609d06985390320ee') in 0.061395 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x
+  artifactKey: Guid(28620a1a7f41d9047a2baaf6e43addc2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x using Guid(28620a1a7f41d9047a2baaf6e43addc2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '686929c47b96b7f41992a8b34d3ffc84') in 0.0287583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Character/Player/raptor/gif/4x/raptor-scanning.gif
+  artifactKey: Guid(3b846a69c450f394fa40ddfb71bf7603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/4x/raptor-scanning.gif using Guid(3b846a69c450f394fa40ddfb71bf7603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '24cdff00692ed574afc3d4e3bcae5f05') in 0.0486487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning5.png
+  artifactKey: Guid(ffd4171fef814ab4dbe4e5576de19c00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning5.png using Guid(ffd4171fef814ab4dbe4e5576de19c00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd2302950bcc2c6a49418600dcb9cc31a') in 0.0378584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/5x/raptor-idle.png
+  artifactKey: Guid(bbd6e71335379994a8df6047728e4539) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/5x/raptor-idle.png using Guid(bbd6e71335379994a8df6047728e4539) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f2aac63908161f393fdbd0ef62612864') in 0.0366971 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning14.png
+  artifactKey: Guid(93f97fd37afdcfa4fbc4d6623faf8c6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning14.png using Guid(93f97fd37afdcfa4fbc4d6623faf8c6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '18981d542a6680abdd9ab6bff11d9f05') in 0.0341468 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning18.png
+  artifactKey: Guid(1f30508405fc70244b745106ac354837) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning18.png using Guid(1f30508405fc70244b745106ac354837) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cd17519d828f4a2e5ac5d0f4bb0e5459') in 0.0313149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite5.png
+  artifactKey: Guid(af21895fe2df9214a90b1555331c9e22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite5.png using Guid(af21895fe2df9214a90b1555331c9e22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '80ea87bc7051545113514eec1d1062ae') in 0.0421001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack8.png
+  artifactKey: Guid(a35dae1044817b545a9a3d73b16b1a5b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack8.png using Guid(a35dae1044817b545a9a3d73b16b1a5b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '73faf175b96b7ac5d356a6dcb5e2026d') in 0.0412651 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/4x/raptor-idle.png
+  artifactKey: Guid(1c79309157400774c8bde56979b2e629) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/4x/raptor-idle.png using Guid(1c79309157400774c8bde56979b2e629) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d51c7f2e5922013c513fa5b639ea2c0') in 0.0433769 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/gif/5x/raptor-on-hit.gif
+  artifactKey: Guid(2e6ce1059f06737458757ff3a14fe2c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/5x/raptor-on-hit.gif using Guid(2e6ce1059f06737458757ff3a14fe2c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e4e57f44e41945f780ed80d04cc07c5') in 0.0494735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Character/Player/raptor/gif/4x/raptor-idle.gif
+  artifactKey: Guid(2147e76d68aa39241a081d5874f5ea83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/4x/raptor-idle.gif using Guid(2147e76d68aa39241a081d5874f5ea83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f12e21a9a99d67b0797942864b4d565c') in 0.0479984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-pounced-attack/raptor-pounced-attack8.png
+  artifactKey: Guid(e0d7341a3bc354647adb81897b3169eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-pounced-attack/raptor-pounced-attack8.png using Guid(e0d7341a3bc354647adb81897b3169eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd9c9485ef4c55517fecac72e17aa779b') in 0.0548503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning3.png
+  artifactKey: Guid(54270e6df8981704489949fa256107c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning3.png using Guid(54270e6df8981704489949fa256107c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e0a406140662680d89e76998b7b11f2') in 0.0511905 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-bite/raptor-bite2.png
+  artifactKey: Guid(963e42a373c364e4db1d38a1f56ecee9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-bite/raptor-bite2.png using Guid(963e42a373c364e4db1d38a1f56ecee9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5908423ef758f7e91d21b82487577e3c') in 0.0643298 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-ready-pounce
+  artifactKey: Guid(31db1607928cef646bf4577dd10742d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-ready-pounce using Guid(31db1607928cef646bf4577dd10742d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '07aa357f0fd43582ba1bc12e886a3fc6') in 0.0244845 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/5x/raptor-pounce-end.png
+  artifactKey: Guid(e6ddcadb0e8422b4ca97bf4ecba72676) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/5x/raptor-pounce-end.png using Guid(e6ddcadb0e8422b4ca97bf4ecba72676) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '591642e301118c5a6b5536bdda532ea5') in 0.0484871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Character/Player/raptor/gif/5x/raptor-scanning.gif
+  artifactKey: Guid(157de7c291828af449551cc0cc0caf70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/5x/raptor-scanning.gif using Guid(157de7c291828af449551cc0cc0caf70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '55c3f17476c777bfbadd945da84c2bd5') in 0.0332205 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounce-end/raptor-pounce-end.png
+  artifactKey: Guid(35e7af046ad271f4fb76b3dc168ffdc5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounce-end/raptor-pounce-end.png using Guid(35e7af046ad271f4fb76b3dc168ffdc5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '609837d85a00c6a478a21b582034df9e') in 0.0375041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning
+  artifactKey: Guid(0a7fdef3b4e74e44498046ba7d55221e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning using Guid(0a7fdef3b4e74e44498046ba7d55221e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7166f76b50c4dab56745f68a7be797cc') in 0.0303796 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-dead/raptor-dead1.png
+  artifactKey: Guid(e7bf2522f2ff44841af02de332f70091) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-dead/raptor-dead1.png using Guid(e7bf2522f2ff44841af02de332f70091) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fe14e42572fa6d18ccf15ec42daa5731') in 0.0384516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-walk
+  artifactKey: Guid(08a5c345578d25346a000c9610f479d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-walk using Guid(08a5c345578d25346a000c9610f479d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '508c472706b585b1e0da9a17d880024d') in 0.0233971 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Character/Player/raptor/gif/2x/raptor-falling.gif
+  artifactKey: Guid(f08a10f3bc3635f439553ed028ee3b68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/2x/raptor-falling.gif using Guid(f08a10f3bc3635f439553ed028ee3b68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '355d04683574ff887f0a27e758e0435d') in 0.0362025 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-dead/raptor-dead1.png
+  artifactKey: Guid(c3da78b0e9013f44b922b3c7168ed365) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-dead/raptor-dead1.png using Guid(c3da78b0e9013f44b922b3c7168ed365) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2de64632228e31653bc2d7d3cb418988') in 0.0389794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning4.png
+  artifactKey: Guid(8e5f9d1e0930dbd40922e579f963c889) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning4.png using Guid(8e5f9d1e0930dbd40922e579f963c889) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aaee5e6deb6a72acc457a7d34eeffa2c') in 0.0644636 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning8.png
+  artifactKey: Guid(3a30c8bd5e0c4fb4dad536df6f8bd527) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning8.png using Guid(3a30c8bd5e0c4fb4dad536df6f8bd527) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f6701147c54c78ff1a80a1d13471d7f') in 0.0548914 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite6.png
+  artifactKey: Guid(fd626232b33db074f89a1d265ad4cfaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite6.png using Guid(fd626232b33db074f89a1d265ad4cfaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5b1a6ff5132665252cd6450361029acf') in 0.0615133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite10.png
+  artifactKey: Guid(9b49a8fd66ab0894ca9752c8f57e5208) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite10.png using Guid(9b49a8fd66ab0894ca9752c8f57e5208) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b592ddcfb19b4fe0ba568b7d8d72eba') in 0.0802746 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/Character/Player/raptor/gif/2x/raptor-run.gif
+  artifactKey: Guid(a840b4a115b15ad4b8e629ab1f943105) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/2x/raptor-run.gif using Guid(a840b4a115b15ad4b8e629ab1f943105) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0a0f37ac3737b01e2fd0b059397d2a9e') in 0.0527944 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-falling
+  artifactKey: Guid(c56cf5fdbc90e2a46922019f0221709e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-falling using Guid(c56cf5fdbc90e2a46922019f0221709e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '676b8a36b62e0c5166b7a18879c2e46c') in 0.0253342 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-dead/raptor-dead6.png
+  artifactKey: Guid(15c14d1fbde769d489e457f89cf62b69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-dead/raptor-dead6.png using Guid(15c14d1fbde769d489e457f89cf62b69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '936cf31907583ea1b1076b3c0a268e54') in 0.05673 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack5.png
+  artifactKey: Guid(7103e2d8496b91e49b5969eef91d6d7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack5.png using Guid(7103e2d8496b91e49b5969eef91d6d7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '26430f9d5e305efaa5ce76adc3daa3ef') in 0.0508451 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-pounce-latched/raptor-pounce-latched.png
+  artifactKey: Guid(16297c604042359439baffd3b8f104d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-pounce-latched/raptor-pounce-latched.png using Guid(16297c604042359439baffd3b8f104d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9499aaf7df26fdca8ef685e639bd06b9') in 0.0403767 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/2x/raptor-idle.png
+  artifactKey: Guid(8844765ed37684f45b6d8cb012898987) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/2x/raptor-idle.png using Guid(8844765ed37684f45b6d8cb012898987) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd6559cf21b211a48831d32a2722989b') in 0.0399657 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounce-end
+  artifactKey: Guid(d9dbf781d8093ca4191c5ed6f93b7235) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounce-end using Guid(d9dbf781d8093ca4191c5ed6f93b7235) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '465c689b3294916bd5d723cd7291c7dc') in 0.0252597 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-dead/raptor-dead5.png
+  artifactKey: Guid(764208aa91b04ca44bd25cfe608c3049) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-dead/raptor-dead5.png using Guid(764208aa91b04ca44bd25cfe608c3049) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '03cde32643b8a2554507d7566ea36ac0') in 0.0304734 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-pounced-attack/raptor-pounced-attack8.png
+  artifactKey: Guid(515433f7dda3fab408cc56454e10c97a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-pounced-attack/raptor-pounced-attack8.png using Guid(515433f7dda3fab408cc56454e10c97a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1fcc21d62f42df682d03ec57580d93c8') in 0.0360247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning14.png
+  artifactKey: Guid(be1fee7d7aee84f449893896a55495b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning14.png using Guid(be1fee7d7aee84f449893896a55495b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4399f3ffaf9b0e5601c2a8de9cfd0f0b') in 0.0415745 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Character/Player/raptor/aseprite_files/raptor-run.aseprite
+  artifactKey: Guid(3507f98e7980ed840a1d96ab1e545d0e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/aseprite_files/raptor-run.aseprite using Guid(3507f98e7980ed840a1d96ab1e545d0e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ec3680279941165505ba903040382e37') in 0.4836707 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/5x
+  artifactKey: Guid(e216b977a9ba0634fad9c43e3c03ddb6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/5x using Guid(e216b977a9ba0634fad9c43e3c03ddb6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7b14cdee7ed615cd27d9ee465cff5cdc') in 0.031007 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000371 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-dead/raptor-dead2.png
+  artifactKey: Guid(ecefd8466abd35f4c83b58dea406e8b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-dead/raptor-dead2.png using Guid(ecefd8466abd35f4c83b58dea406e8b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e9c89b77e2f9853b1f019c52c67426d7') in 0.0405562 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite9.png
+  artifactKey: Guid(b4522677f860b3849b0142f0e2ce8453) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite9.png using Guid(b4522677f860b3849b0142f0e2ce8453) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '963207f3e3388a0b3941e0ef2511dbd3') in 0.1059729 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-falling
+  artifactKey: Guid(b7f9f83dc7ce3814f8de12e738156d81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-falling using Guid(b7f9f83dc7ce3814f8de12e738156d81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a0b4470e31314faafd0b1f6637a42e2d') in 0.0407733 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/gif/4x/raptor-on-hit.gif
+  artifactKey: Guid(6af9a50cb77d7db48925ccf0d3c28b0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/4x/raptor-on-hit.gif using Guid(6af9a50cb77d7db48925ccf0d3c28b0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7a33e1477ce8cc73c5cbc8a921dabb4a') in 0.0530801 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-run.png
+  artifactKey: Guid(35f137f3463559c458e38227502cca41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-run.png using Guid(35f137f3463559c458e38227502cca41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7aa610f0c165b89af2f00fccb605e237') in 0.063972 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-pounced-attack/raptor-pounced-attack4.png
+  artifactKey: Guid(450fa52039586114cbd1392a52ac4415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-pounced-attack/raptor-pounced-attack4.png using Guid(450fa52039586114cbd1392a52ac4415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3e212db21c3e4e2db607e930b2f6fdd0') in 0.0450086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/5x/raptor-pounce.png
+  artifactKey: Guid(c3f5e3d06eb0c684a8353b5c7297f87f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/5x/raptor-pounce.png using Guid(c3f5e3d06eb0c684a8353b5c7297f87f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '34af327ab830c35cb63bdc8db5b74e14') in 0.0475064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-pounced-attack/raptor-pounced-attack3.png
+  artifactKey: Guid(2a75ef9f5b101e040a54328af35ea992) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-pounced-attack/raptor-pounced-attack3.png using Guid(2a75ef9f5b101e040a54328af35ea992) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c551c3aa1574018f3a225296e5d1e1c8') in 0.0588199 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite2.png
+  artifactKey: Guid(50a23db66cfcacb4490c63d425d265fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite2.png using Guid(50a23db66cfcacb4490c63d425d265fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0591b1f4a91ac95f26f802bb9d959970') in 0.0507192 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-jump
+  artifactKey: Guid(1267ddbb5a1cef043a697498ac580008) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-jump using Guid(1267ddbb5a1cef043a697498ac580008) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '90f0606d31a90014b45be1cea4e9edfd') in 0.0238191 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-roar
+  artifactKey: Guid(d76bf9d3802cdb84ab85e755dee3995e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-roar using Guid(d76bf9d3802cdb84ab85e755dee3995e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1d63157d9e379bdadec4ff504ae48f12') in 0.0179681 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-roar/raptor-roar6.png
+  artifactKey: Guid(a53de36e738cf05428bea436159166ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-roar/raptor-roar6.png using Guid(a53de36e738cf05428bea436159166ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '35a872eebcfb1a57e4406dcd666fcc7d') in 0.0310844 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-roar/raptor-roar4.png
+  artifactKey: Guid(9d7cdd531e94ae645b5717ba41bd12d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-roar/raptor-roar4.png using Guid(9d7cdd531e94ae645b5717ba41bd12d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '054a5c2d8b3ce4b67f67ffef8a45cf62') in 0.0520843 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/2x/raptor-on-hit.png
+  artifactKey: Guid(43c57d647ea7aa64a8ad8f36f7de459f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/2x/raptor-on-hit.png using Guid(43c57d647ea7aa64a8ad8f36f7de459f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cdbcc05dc23c25b848ac1dcc51ad73ac') in 0.0371875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack1.png
+  artifactKey: Guid(acdc79911af89e5468ff586337cbd09e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack1.png using Guid(acdc79911af89e5468ff586337cbd09e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b2951adc408df77fa84de117cce1baee') in 0.0617331 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning17.png
+  artifactKey: Guid(28e806b6a430d774e985d141ccdfe7aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning17.png using Guid(28e806b6a430d774e985d141ccdfe7aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cc72249e6f8caf44ba78f4a6627e9aa9') in 0.047478 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-falling/raptor-falling.png
+  artifactKey: Guid(d796cacf0c989cd4e9521a2d32f9a93c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-falling/raptor-falling.png using Guid(d796cacf0c989cd4e9521a2d32f9a93c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e638e8db4433fe5804a315e2ed50a656') in 0.0340007 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce-end.png
+  artifactKey: Guid(a72c88f78343e45468b2e4bbc29b77cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce-end.png using Guid(a72c88f78343e45468b2e4bbc29b77cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f8f5ad220b62361836cf35307e6fe075') in 0.0581075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000664 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-dead.png
+  artifactKey: Guid(3303e334e2a1a8b44a456b60cc25b492) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-dead.png using Guid(3303e334e2a1a8b44a456b60cc25b492) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5db31f79d315c1db71881ff1ed9ca99d') in 0.0799785 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning
+  artifactKey: Guid(cab74e9c44beea34c944ca4ebd5faa34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning using Guid(cab74e9c44beea34c944ca4ebd5faa34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1a9e53fc5876bc317796d46f450c7e81') in 0.0386801 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-walk/raptor-walk3.png
+  artifactKey: Guid(ca29a36e4bf2f3f43891b74af5207d1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-walk/raptor-walk3.png using Guid(ca29a36e4bf2f3f43891b74af5207d1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '478906427acb5954f7e550bc118ac039') in 0.0490051 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-run/raptor-run1.png
+  artifactKey: Guid(0de9b2b9f44351b4896d5ad3bdcc36fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-run/raptor-run1.png using Guid(0de9b2b9f44351b4896d5ad3bdcc36fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cf8698654f0af3483ffd293165f09896') in 0.0519036 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning11.png
+  artifactKey: Guid(d5e400b34b520e24b871a490df2609e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning11.png using Guid(d5e400b34b520e24b871a490df2609e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b18037e53bc820bb303fa3b5ad546834') in 0.0546898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-walk/raptor-walk2.png
+  artifactKey: Guid(91597beeae224af4580171e4a0968baa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-walk/raptor-walk2.png using Guid(91597beeae224af4580171e4a0968baa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1df989f183c64d31cccef75b6bd46628') in 0.0424706 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-on-hit/raptor-on-hit.png
+  artifactKey: Guid(902d0e463c41ee7449e50f2199e2f46b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-on-hit/raptor-on-hit.png using Guid(902d0e463c41ee7449e50f2199e2f46b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0899b7dea0b6afec0fcc4f95056279cc') in 0.0397302 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite1.png
+  artifactKey: Guid(c84218cf8622d054dbd9d09d4a0ee5ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-bite/raptor-bite1.png using Guid(c84218cf8622d054dbd9d09d4a0ee5ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a7eaac7cc8ce3d54ea7ba5e4f3b66035') in 0.0511948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Character/Player/raptor/aseprite_files/raptor-on-hit.aseprite
+  artifactKey: Guid(a9647df80ed534044a514d2cdda0f5a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/aseprite_files/raptor-on-hit.aseprite using Guid(a9647df80ed534044a514d2cdda0f5a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '44b70ec7de52c7ff3a0af8cd0fcaf834') in 0.0761244 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Character/Player/raptor/gif/5x/raptor-pounced-attack.gif
+  artifactKey: Guid(9c21e773439bba14c81e721da9a00a23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/5x/raptor-pounced-attack.gif using Guid(9c21e773439bba14c81e721da9a00a23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '84d4052c29ae50af92256079ea3bf5cc') in 0.0335022 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning9.png
+  artifactKey: Guid(4b6ec9d5210af0240a0d63052f4807a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning9.png using Guid(4b6ec9d5210af0240a0d63052f4807a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cb43eafa8cd02ac7bc30a5f7f65e9509') in 0.0329006 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack7.png
+  artifactKey: Guid(b8297e5b18c5f9c4d86f270b3a79b42f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack7.png using Guid(b8297e5b18c5f9c4d86f270b3a79b42f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fb8209645475608912cfd5e4f2e9640b') in 0.0336283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning3.png
+  artifactKey: Guid(ade4e253ed8fe454c834a4a80ee4318f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning3.png using Guid(ade4e253ed8fe454c834a4a80ee4318f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7b24069e2591ab7112847cf91d6eba1e') in 0.0372187 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000125 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-bite
+  artifactKey: Guid(57850673516d3d644ba8b3c34e19ff31) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-bite using Guid(57850673516d3d644ba8b3c34e19ff31) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a05d7160fab11fdae81ffaaf177126ac') in 0.0219536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounce
+  artifactKey: Guid(2d5ffaac5e5b54f438f5b8cc4d7f1e55) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounce using Guid(2d5ffaac5e5b54f438f5b8cc4d7f1e55) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b5870b177b9bc170b7e90ce3107a22c') in 0.0232292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounce-latched
+  artifactKey: Guid(ee22ee9a3761e6d40b08e79f64a27442) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounce-latched using Guid(ee22ee9a3761e6d40b08e79f64a27442) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '66f5c04d3ae700e07a8f3ba961b663a6') in 0.0248025 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/4x/raptor-falling.png
+  artifactKey: Guid(7330e048aee389342805462265f48d04) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/4x/raptor-falling.png using Guid(7330e048aee389342805462265f48d04) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '59e47505894fc91b87f6a50529a239fa') in 0.0362333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-pounced-attack
+  artifactKey: Guid(e05caf5dc1203224ba988122887c9d90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-pounced-attack using Guid(e05caf5dc1203224ba988122887c9d90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9b827dd29db8c2515dd17ea4054bacf1') in 0.0291149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning14.png
+  artifactKey: Guid(f69c0fe6e2f7c364398618abfbc348ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning14.png using Guid(f69c0fe6e2f7c364398618abfbc348ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd2e8e0c44ab7253c628bad6edd461ef8') in 0.0399989 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning12.png
+  artifactKey: Guid(d2b4d2d5e21c50b40aaaf08dcd8a9910) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning12.png using Guid(d2b4d2d5e21c50b40aaaf08dcd8a9910) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eac478b533443215ba9b952408dbd00b') in 0.048812 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Character/Player/raptor/preview_images/preview-raptor-jump.gif
+  artifactKey: Guid(e46befde22f0c8140b1bdc28f3bd7a3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images/preview-raptor-jump.gif using Guid(e46befde22f0c8140b1bdc28f3bd7a3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3103f19391b005112ce33269c5ecfef8') in 0.0507941 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-walk/raptor-walk4.png
+  artifactKey: Guid(e12b699e4165a7548b0276212add1c0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-walk/raptor-walk4.png using Guid(e12b699e4165a7548b0276212add1c0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a9be986319d4b104140bea9004a98409') in 0.064267 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-pounced-attack/raptor-pounced-attack3.png
+  artifactKey: Guid(a1b9acb69f6025648951abea500c9941) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-pounced-attack/raptor-pounced-attack3.png using Guid(a1b9acb69f6025648951abea500c9941) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f763f5f19e02b26e9ebfa48f404d6df') in 0.0623539 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/gif/4x/raptor-walk.gif
+  artifactKey: Guid(3f37152bdc652374e8a474c9fdcffec8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/4x/raptor-walk.gif using Guid(3f37152bdc652374e8a474c9fdcffec8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb8806b2fdf692c18fff0ffa717020a9') in 0.0478737 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-run/raptor-run4.png
+  artifactKey: Guid(04678279eb9bc40448b35e28ad00d95c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-run/raptor-run4.png using Guid(04678279eb9bc40448b35e28ad00d95c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f6ea8882872b7acb07074bdd19d08279') in 0.0425629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack5.png
+  artifactKey: Guid(2f385ff4aafce21459fb0c32f9b16ddb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-pounced-attack/raptor-pounced-attack5.png using Guid(2f385ff4aafce21459fb0c32f9b16ddb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '93e6c1dc7e5559339768f35484761d26') in 0.038845 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning18.png
+  artifactKey: Guid(68e416e9b7285574293d212eaacbda96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning18.png using Guid(68e416e9b7285574293d212eaacbda96) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '473b153bfef5c76ec092609a6803bf37') in 0.1064552 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-roar/raptor-roar5.png
+  artifactKey: Guid(19e35adbe9652524d8d0d0ec73707ab6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-roar/raptor-roar5.png using Guid(19e35adbe9652524d8d0d0ec73707ab6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f0cbc77944c24662fd0e165d69a6a074') in 0.0788338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x/raptor-pounce.png
+  artifactKey: Guid(b083194b2f25f67429b3d953c196026e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x/raptor-pounce.png using Guid(b083194b2f25f67429b3d953c196026e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ffa08393b03734351b0e3e7ca8329d1e') in 0.051168 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite2.png
+  artifactKey: Guid(0339c7a1a292fa441a61743de27a057c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite2.png using Guid(0339c7a1a292fa441a61743de27a057c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57ccdd19e881ea13e16734171e913177') in 0.0504958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-walk
+  artifactKey: Guid(2424b2f5ea75ea4438d0214cf64e66d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-walk using Guid(2424b2f5ea75ea4438d0214cf64e66d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'db7b5697af25f8de7dc2a2369a279819') in 0.0413684 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-walk/raptor-walk2.png
+  artifactKey: Guid(b879ed0208ce1534ca2ac04eb2410873) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-walk/raptor-walk2.png using Guid(b879ed0208ce1534ca2ac04eb2410873) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '72ae03de40f11086dc6b12b48209efe2') in 0.0468354 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Character/Player/raptor/gif/3x/raptor-on-hit.gif
+  artifactKey: Guid(5edc955be1b53044ca910044b207cb9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/3x/raptor-on-hit.gif using Guid(5edc955be1b53044ca910044b207cb9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7b38af2324f30594089004581d119c0e') in 0.0361999 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/gif/2x/raptor-on-hit.gif
+  artifactKey: Guid(ef9a1c930037a6a478a7862123136d16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/2x/raptor-on-hit.gif using Guid(ef9a1c930037a6a478a7862123136d16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2686c434e2bbf7b4c1f39b1f39adcbf7') in 0.0412576 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/gif/3x/raptor-jump.gif
+  artifactKey: Guid(541c171517022c649b89c74601012624) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/3x/raptor-jump.gif using Guid(541c171517022c649b89c74601012624) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '07dcdd9d0631a2cfa68932829cb3685d') in 0.0403806 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning18.png
+  artifactKey: Guid(dcf11bfabd286e940b5b15ef5f7b62ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning18.png using Guid(dcf11bfabd286e940b5b15ef5f7b62ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '25afb9124778c8dd771ef23cb8b8cbfb') in 0.035516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-falling
+  artifactKey: Guid(57e499c4a22837f4f8cfef7a6d5986da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-falling using Guid(57e499c4a22837f4f8cfef7a6d5986da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '92142991113a3a37994d30d5c7fd066d') in 0.0215669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite8.png
+  artifactKey: Guid(ade740cb83ee03d46b672d8497e7fdda) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite8.png using Guid(ade740cb83ee03d46b672d8497e7fdda) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5d439ede7b372551719b58dc8fe2552c') in 0.0376126 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite3.png
+  artifactKey: Guid(99dc762c7731bd54a9cd00a7558ea3cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite3.png using Guid(99dc762c7731bd54a9cd00a7558ea3cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd24a9dd631daaf4311cdf39ebb1e7973') in 0.0540785 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning2.png
+  artifactKey: Guid(5417b36996f718a46b9b982b63725df2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning2.png using Guid(5417b36996f718a46b9b982b63725df2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78ea1b4441f984e79b5bb36a1ef23774') in 0.0370075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x/raptor-dead.png
+  artifactKey: Guid(e16f096a1570af7469342e850ea1df65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x/raptor-dead.png using Guid(e16f096a1570af7469342e850ea1df65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '18d40ab4edea5179cfd6757642b826f4') in 0.0404906 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Character/Player/raptor/gif/3x/raptor-pounced-attack.gif
+  artifactKey: Guid(9599c60da1009ea4bb47b622cb41fb38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/3x/raptor-pounced-attack.gif using Guid(9599c60da1009ea4bb47b622cb41fb38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '85a8be58e6976eef25abc217cb7930ec') in 0.0328561 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-ready-pounce/raptor-ready-pounce1.png
+  artifactKey: Guid(0e49b7cfacac77340957aa6ffecf9277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-ready-pounce/raptor-ready-pounce1.png using Guid(0e49b7cfacac77340957aa6ffecf9277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '75337e29b690e59bb8c0584f3fb742cf') in 0.056402 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-idle
+  artifactKey: Guid(6eb99f8dc718d394b9e88a7ae6626c22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-idle using Guid(6eb99f8dc718d394b9e88a7ae6626c22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'caa270be9be631419a1a201b5a934aa6') in 0.0246547 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-idle/raptor-idle2.png
+  artifactKey: Guid(2f730dd2e2f147a418b37e133a6044e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-idle/raptor-idle2.png using Guid(2f730dd2e2f147a418b37e133a6044e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4de1f0d6808dbbb7e42d60ada0632bc2') in 0.0349464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite9.png
+  artifactKey: Guid(9591a97b837e4c24dac540a692380a6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-bite/raptor-bite9.png using Guid(9591a97b837e4c24dac540a692380a6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c87c2c13bc444c39e95cf3cd571a1468') in 0.0410848 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-ready-pounce.png
+  artifactKey: Guid(ced903321db46c446a9da53cd007a5de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-ready-pounce.png using Guid(ced903321db46c446a9da53cd007a5de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5e9b9bea2a943b80f14bdfbdfe5612b6') in 0.0439281 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-on-hit/raptor-on-hit.png
+  artifactKey: Guid(253a11bdfeb30fe499243cdc8a640ebf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-on-hit/raptor-on-hit.png using Guid(253a11bdfeb30fe499243cdc8a640ebf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '396b36b3f599b4bb284f799a6eb31101') in 0.0287957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-falling/raptor-falling.png
+  artifactKey: Guid(28d84ce9a4f075e49b969e766e2e83b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-falling/raptor-falling.png using Guid(28d84ce9a4f075e49b969e766e2e83b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ce348689c424424d0b42c144270735ab') in 0.0297175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Character/Player/raptor/preview_images
+  artifactKey: Guid(e8dcd420b8f2c1549bf40bf9982ae10c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images using Guid(e8dcd420b8f2c1549bf40bf9982ae10c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78665144079c249a1f14efd97ff167f9') in 0.0211334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/Character/Player/raptor/preview_images/preview-raptor-on-hit.gif
+  artifactKey: Guid(8ab294fb0c5f4e444825cd16366420cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images/preview-raptor-on-hit.gif using Guid(8ab294fb0c5f4e444825cd16366420cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4fe20cd61335fd052c57ffb55c6ab16d') in 0.0310082 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Character/Player/raptor/gif/1x/raptor-bite.gif
+  artifactKey: Guid(ed980c9e14519f44099428ca5f26dc2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/1x/raptor-bite.gif using Guid(ed980c9e14519f44099428ca5f26dc2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '58a1ad11a00f71513989c934281779d4') in 0.0296534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-run/raptor-run6.png
+  artifactKey: Guid(467d316e62fc8a142a0dea98e0c0de88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-run/raptor-run6.png using Guid(467d316e62fc8a142a0dea98e0c0de88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f705fb5ca8d946fd06fae5089253bb2') in 0.0370434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-pounce-latched
+  artifactKey: Guid(b6f0dbda3ded1044786cf73362fa1a87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-pounce-latched using Guid(b6f0dbda3ded1044786cf73362fa1a87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a136c08039b4fa311d58273e060f500b') in 0.028305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite7.png
+  artifactKey: Guid(1a218cecd655687459f2232419921012) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-bite/raptor-bite7.png using Guid(1a218cecd655687459f2232419921012) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74172471e2487a76163efd32f5dd6cd1') in 0.0357044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-dead/raptor-dead5.png
+  artifactKey: Guid(4604a354ecf582546905759a243fdb42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-dead/raptor-dead5.png using Guid(4604a354ecf582546905759a243fdb42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '03288d7928566b9daa915ffb4db63c23') in 0.0351675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-ready-pounce/raptor-ready-pounce2.png
+  artifactKey: Guid(801ce657613a1f14a812675d19a2e239) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-ready-pounce/raptor-ready-pounce2.png using Guid(801ce657613a1f14a812675d19a2e239) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0afe3dd38abe50b1b078d9661b94fc9c') in 0.0355724 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning6.png
+  artifactKey: Guid(b3c1a11825f192243ab89ff2391624d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-scanning/raptor-scanning6.png using Guid(b3c1a11825f192243ab89ff2391624d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd0fd035ec9606ea4722094f6492a14b3') in 0.0449286 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning8.png
+  artifactKey: Guid(93505301b3615004fa07f8b6fccaf5b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-scanning/raptor-scanning8.png using Guid(93505301b3615004fa07f8b6fccaf5b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6a72905446dea1d288fe8a4d6b324b94') in 0.0363492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-jump.png
+  artifactKey: Guid(cad12a45c8a6b42468ae25d842c20d20) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-jump.png using Guid(cad12a45c8a6b42468ae25d842c20d20) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1126716519117408562cfdbcf8cef454') in 0.0310915 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/4x/raptor-pounce-end.png
+  artifactKey: Guid(d0f174706019a944da0a527896648271) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/4x/raptor-pounce-end.png using Guid(d0f174706019a944da0a527896648271) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2c07c9a468187f80dd93a5d369eca715') in 0.0324065 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack7.png
+  artifactKey: Guid(97d3336abd5ec3843889843a1d997b3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-pounced-attack/raptor-pounced-attack7.png using Guid(97d3336abd5ec3843889843a1d997b3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd25b638991fa3d668c2405d9b37dcd28') in 0.0368604 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning18.png
+  artifactKey: Guid(540b241c6a994be4d8888f8f99dd0635) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning18.png using Guid(540b241c6a994be4d8888f8f99dd0635) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '240462122781db590bbe1073cbc3d3a3') in 0.0328311 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning14.png
+  artifactKey: Guid(bfd51ab1c08767248bd6939cb2a6685f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning14.png using Guid(bfd51ab1c08767248bd6939cb2a6685f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'df00d119d38ce7ecfceaab071d06cffc') in 0.0330283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning4.png
+  artifactKey: Guid(09713c7e672572a428f96a35e89745aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-scanning/raptor-scanning4.png using Guid(09713c7e672572a428f96a35e89745aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4c6dd2e2d77cd245910918796fef2fbb') in 0.0389637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-run/raptor-run4.png
+  artifactKey: Guid(f63bc3e309a8c6b43b989f5d7694cf8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-run/raptor-run4.png using Guid(f63bc3e309a8c6b43b989f5d7694cf8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f52b35596f9f4cd17cc33935b1fffc12') in 0.0459111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Character/Player/raptor/gif/1x/raptor-pounced-attack.gif
+  artifactKey: Guid(893291de94166294488916132fca2b57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/1x/raptor-pounced-attack.gif using Guid(893291de94166294488916132fca2b57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0238e215776408ed808c6156bac8c43b') in 0.0556644 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Character/Player/raptor/preview_images/preview-raptor-pounce-attack.aseprite
+  artifactKey: Guid(43e1137005bbc9940ae39bb1e6b854d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images/preview-raptor-pounce-attack.aseprite using Guid(43e1137005bbc9940ae39bb1e6b854d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '16effef1db9b11d94b844e8f0567e202') in 0.0881888 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning11.png
+  artifactKey: Guid(9bd9f44a64f8c8a4c9f53a465268ecaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-scanning/raptor-scanning11.png using Guid(9bd9f44a64f8c8a4c9f53a465268ecaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5d5aa6f1d6a1247f4c61a352337af7b3') in 0.0333524 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/4x/raptor-on-hit.png
+  artifactKey: Guid(e90dbe1b694621a40ab667f24393ef23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/4x/raptor-on-hit.png using Guid(e90dbe1b694621a40ab667f24393ef23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c24ac1a160427c27e98ebf3b7e9eb19f') in 0.0353279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Character/Player/raptor/preview_images/preview-raptor-dead.gif
+  artifactKey: Guid(04692a653d4851842998f24dc52109d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images/preview-raptor-dead.gif using Guid(04692a653d4851842998f24dc52109d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3208020da0ccf954b91521be1bff0a6e') in 0.0343624 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Character/Player/raptor
+  artifactKey: Guid(90cdfa16da7a59047a89f72881d9d618) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor using Guid(90cdfa16da7a59047a89f72881d9d618) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7cd633347a34c65709d17475e36f46c6') in 0.0272871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-falling/raptor-falling.png
+  artifactKey: Guid(cbd1ca3fed2011e4f9ec7482407b9ecc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-falling/raptor-falling.png using Guid(cbd1ca3fed2011e4f9ec7482407b9ecc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '357fb698c9f6f2f2fa6981b42b21ce57') in 0.0553508 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Character/Player/raptor/preview_images/preview-raptor-bite.gif
+  artifactKey: Guid(f7cc64514ea27d946b7a44a231cd9787) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/preview_images/preview-raptor-bite.gif using Guid(f7cc64514ea27d946b7a44a231cd9787) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '60fe41a66abf14b6bb3420fd9d9463a3') in 0.0368149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk5.png
+  artifactKey: Guid(ffc86017b3eda994c96089175261b92b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk5.png using Guid(ffc86017b3eda994c96089175261b92b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3e3505f8c4efe0a1662addf1b77ec3a9') in 0.0384906 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/4x/raptor-pounce-latched.png
+  artifactKey: Guid(3c701cd45e1f415419c2b4c9295558a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/4x/raptor-pounce-latched.png using Guid(3c701cd45e1f415419c2b4c9295558a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1cbaa1fab62f7dda7ce38930ca639da5') in 0.0414537 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Character/Player/raptor/gif/5x/raptor-ready-pounce.gif
+  artifactKey: Guid(af0738962a019d84b8383997255ef76d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/5x/raptor-ready-pounce.gif using Guid(af0738962a019d84b8383997255ef76d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e60c53f75801b7dac77f3aecf94dad66') in 0.037594 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk2.png
+  artifactKey: Guid(f662278808f28c24cb08deb2330021bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-walk/raptor-walk2.png using Guid(f662278808f28c24cb08deb2330021bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4722f0ef35617e4adf560e32671f5bfe') in 0.0322169 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/2x/raptor-run.png
+  artifactKey: Guid(ec3a9052747aa5649a57d41be47b5bc9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/2x/raptor-run.png using Guid(ec3a9052747aa5649a57d41be47b5bc9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd71e33eea7a3a83bf48f6d86797851a6') in 0.0466973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Character/Player/raptor/gif/3x/raptor-pounce-end.gif
+  artifactKey: Guid(0301a1df8642cfe48a816db8a8b70721) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/3x/raptor-pounce-end.gif using Guid(0301a1df8642cfe48a816db8a8b70721) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a80ee1a6ec0d4228e431a3a44781fa23') in 0.0325848 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-roar/raptor-roar4.png
+  artifactKey: Guid(9d10e89f381f53e48a301a41b251df41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-roar/raptor-roar4.png using Guid(9d10e89f381f53e48a301a41b251df41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5640e454cdc028e9b6df9c4366abecb9') in 0.0663574 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-run/raptor-run6.png
+  artifactKey: Guid(e6ada676394588b42b5b47c2245435b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-run/raptor-run6.png using Guid(e6ada676394588b42b5b47c2245435b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f636ea865e6b0b2acdec52805f8ec6a') in 0.0342979 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x/raptor-pounced-attack.png
+  artifactKey: Guid(6c7b8f4ce3ed4a843974a998d7c49d18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x/raptor-pounced-attack.png using Guid(6c7b8f4ce3ed4a843974a998d7c49d18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e647347aac0a06163f66f329e85a5333') in 0.0504013 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce.png
+  artifactKey: Guid(a888449295bb5174c9fc74814462fd38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce.png using Guid(a888449295bb5174c9fc74814462fd38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e501bf6f64162dbfef393aee7c8ddc11') in 0.0349268 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/aseprite_files/raptor-dead.aseprite
+  artifactKey: Guid(42e119c7e28c0864ca9de6201c40f6f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/aseprite_files/raptor-dead.aseprite using Guid(42e119c7e28c0864ca9de6201c40f6f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '234ca3891276a250d1e2c81046c2c6a8') in 0.0859225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-idle
+  artifactKey: Guid(0590d0b938032804cb62d64c8e798e47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-idle using Guid(0590d0b938032804cb62d64c8e798e47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b201c250398123681cd252dcf93bbe1') in 0.0233023 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Character/Player/raptor/png/4x/raptor-roar/raptor-roar2.png
+  artifactKey: Guid(e81ab41ee1e703a448caec7c0a007d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/4x/raptor-roar/raptor-roar2.png using Guid(e81ab41ee1e703a448caec7c0a007d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6d5503f22a4adbaede315fec65ac4920') in 0.0397188 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning11.png
+  artifactKey: Guid(8f84e67324b04a94b9111a5615dc39cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/2x/raptor-scanning/raptor-scanning11.png using Guid(8f84e67324b04a94b9111a5615dc39cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '28f43344a1b80072ebd12d3673d1d928') in 0.0455151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce-latched.png
+  artifactKey: Guid(767b448b25739054387da5cacc730a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/3x/raptor-pounce-latched.png using Guid(767b448b25739054387da5cacc730a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd13530fd27932eae5b63b8fba64eeac') in 0.0329274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Character/Player/raptor/aseprite_files/raptor-idle.aseprite
+  artifactKey: Guid(6ee41f2fbf076914c90ed37f47642857) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/aseprite_files/raptor-idle.aseprite using Guid(6ee41f2fbf076914c90ed37f47642857) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c16cd19ec68c2f3a61a04ad67629a180') in 0.0638419 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Character/Player/raptor/gif/2x/raptor-dead.gif
+  artifactKey: Guid(f6c1538ffee66f64fab8a8b6c9be51d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/gif/2x/raptor-dead.gif using Guid(f6c1538ffee66f64fab8a8b6c9be51d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '706960fc77cf1798860b1861a74cadb8') in 0.0339391 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite10.png
+  artifactKey: Guid(abfc4b96c38c89445ab6e171d51effd2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite10.png using Guid(abfc4b96c38c89445ab6e171d51effd2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3a30390a3dc0c12005ad4a3f64cb7370') in 0.0335505 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite1.png
+  artifactKey: Guid(8f7e1daa5e5a13b44b1023343f2892f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/1x/raptor-bite/raptor-bite1.png using Guid(8f7e1daa5e5a13b44b1023343f2892f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8937f0710c079038ff99790c15808f11') in 0.0328799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/raptor/png/5x/raptor-pounce-latched/raptor-pounce-latched.png
+  artifactKey: Guid(8de507f712a6c58488f019da7534aa02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/5x/raptor-pounce-latched/raptor-pounce-latched.png using Guid(8de507f712a6c58488f019da7534aa02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '610bb8ae13d410b55c360edd9402136b') in 0.0329282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Character/Player/raptor/png/3x/raptor-roar/raptor-roar2.png
+  artifactKey: Guid(44df6a067ab2bc64c818239cb6a73919) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/png/3x/raptor-roar/raptor-roar2.png using Guid(44df6a067ab2bc64c818239cb6a73919) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fa9b4bbdd744be94eaef67cd0ce6ab29') in 0.0337916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x/raptor-scanning.png
+  artifactKey: Guid(c22cfd9f0348c7544aa373211a2b0be1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x/raptor-scanning.png using Guid(c22cfd9f0348c7544aa373211a2b0be1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e07afab40ba1c6d583e8570a2cd93e17') in 0.0770091 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Character/Player/raptor/spritesheets/1x/raptor-roar.png
+  artifactKey: Guid(19348cd9575883e408a06800c57232ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/raptor/spritesheets/1x/raptor-roar.png using Guid(19348cd9575883e408a06800c57232ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c131f900db1dd587fc658fbe9b843364') in 0.0477031 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

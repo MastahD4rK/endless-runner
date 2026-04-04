@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.11f1 (3000ef702840) revision 3145967'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 7381 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-03-30T12:52:35.8121758Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-04-04T01:36:41.9023924Z"
 Process architecture: x64
-Date: 2026-03-30T12:52:35Z
+Date: 2026-04-04T01:36:41Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-63395
+58022
 -licensingIpc
 LicenseClient-crist
 -job-worker-count
@@ -67,14 +67,14 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [23876]  Target information:
+Player connection [19068]  Target information:
 
-Player connection [23876]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 236401891 [EditorId] 236401891 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19068]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 784489981 [EditorId] 784489981 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [23876]  * "[IP] 10.244.114.80 [Port] 0 [Flags] 2 [Guid] 236401891 [EditorId] 236401891 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19068]  * "[IP] 192.168.1.126 [Port] 0 [Flags] 2 [Guid] 784489981 [EditorId] 784489981 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [23876] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [23876] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19068] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19068] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -86,7 +86,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 6.79 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 22.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.11f1 (3000ef702840)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -102,28 +102,13 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
 Begin MonoManager ReloadAssembly
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.0'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
-[Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-03-30T12:52:38.7256813Z"
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.0+23225a6
-  Session Id:              3bcdac4b196b4c369f85710524136b3b
-  Correlation Id:          2753272ef22ae05cda15fc2e7f465d33
-  External correlation Id: 2000518095152502577
-  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.00s, validation: 0.00s, handshake: 0.14s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-03-30T12:52:38.8686995Z"
-[Licensing::Module] Licensing Background thread has ended after 3.06s
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.610511 seconds.
-- Loaded All Assemblies, in 13.338 seconds
+Registered in 0.010977 seconds.
+- Loaded All Assemblies, in  2.141 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -132,35 +117,35 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.674 seconds
-Domain Reload Profiling: 14010ms
-	BeginReloadAssembly (8607ms)
+- Finished resetting the current domain, in  1.144 seconds
+Domain Reload Profiling: 3280ms
+	BeginReloadAssembly (624ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (957ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (690ms)
-	LoadAllAssembliesAndSetupDomain (3067ms)
-		LoadAssemblies (8614ms)
+		CreateAndSetChildDomain (5ms)
+	RebuildCommonClasses (162ms)
+	RebuildNativeTypeToScriptingClass (47ms)
+	initialDomainReloadingComplete (273ms)
+	LoadAllAssembliesAndSetupDomain (1028ms)
+		LoadAssemblies (610ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (3051ms)
-			TypeCache.Refresh (3047ms)
-				TypeCache.ScanAssembly (2447ms)
+		AnalyzeDomain (1018ms)
+			TypeCache.Refresh (1012ms)
+				TypeCache.ScanAssembly (889ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (676ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1145ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (586ms)
+		SetupLoadedEditorAssemblies (1012ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (85ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (122ms)
-			ProcessInitializeOnLoadAttributes (219ms)
-			ProcessInitializeOnLoadMethodAttributes (154ms)
+			InitializePlatformSupportModulesInManaged (173ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (221ms)
+			ProcessInitializeOnLoadAttributes (426ms)
+			ProcessInitializeOnLoadMethodAttributes (184ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -170,19 +155,36 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.0'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
+[Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-04-04T01:36:49.1027996Z"
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.0+23225a6
+  Session Id:              91c915cd8aa942e9a2f6ebe3370ea618
+  Correlation Id:          7732441173f109ff54a2fe3cfe3da398
+  External correlation Id: 9147934819236627382
+  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.03s, validation: 0.01s, handshake: 0.27s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-04-04T01:36:49.3873401Z"
+[Licensing::Module] Licensing Background thread has ended after 7.49s
+[Licensing::Module] Licensing is initialized (took 0.12s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: 4674170343135-UnityPersXXXX
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in 24.384 seconds
+- Loaded All Assemblies, in  2.784 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 5.21 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 9.48 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
@@ -197,206 +199,54 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.274 seconds
-Domain Reload Profiling: 27648ms
-	BeginReloadAssembly (407ms)
+- Finished resetting the current domain, in  1.958 seconds
+Domain Reload Profiling: 4729ms
+	BeginReloadAssembly (528ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (11ms)
+		DisableScriptedObjects (23ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (77ms)
-	RebuildCommonClasses (68ms)
+		CreateAndSetChildDomain (62ms)
+	RebuildCommonClasses (85ms)
 	RebuildNativeTypeToScriptingClass (23ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (23812ms)
-		LoadAssemblies (22789ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (2048ms)
+		LoadAssemblies (1305ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1264ms)
-			TypeCache.Refresh (1068ms)
-				TypeCache.ScanAssembly (1027ms)
-			BuildScriptInfoCaches (164ms)
-			ResolveRequiredComponents (22ms)
-	FinalizeReload (3275ms)
+		AnalyzeDomain (954ms)
+			TypeCache.Refresh (561ms)
+				TypeCache.ScanAssembly (517ms)
+			BuildScriptInfoCaches (359ms)
+			ResolveRequiredComponents (24ms)
+	FinalizeReload (1958ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1419ms)
+		SetupLoadedEditorAssemblies (1344ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (307ms)
-			ProcessInitializeOnLoadAttributes (850ms)
-			ProcessInitializeOnLoadMethodAttributes (234ms)
-			AfterProcessingInitializeOnLoad (16ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (325ms)
+			ProcessInitializeOnLoadAttributes (827ms)
+			ProcessInitializeOnLoadMethodAttributes (167ms)
+			AfterProcessingInitializeOnLoad (13ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (23ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 5.97 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (15ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.92 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7693 unused Assets / (4.9 MB). Loaded Objects now: 8525.
-Memory consumption went from 160.7 MB to 155.8 MB.
-Total: 28.778000 ms (FindLiveObjects: 2.527200 ms CreateObjectMapping: 1.805900 ms MarkObjects: 16.937100 ms  DeleteObjects: 7.505800 ms)
+Unloading 7693 unused Assets / (6.0 MB). Loaded Objects now: 8525.
+Memory consumption went from 161.3 MB to 155.3 MB.
+Total: 24.166000 ms (FindLiveObjects: 1.730500 ms CreateObjectMapping: 1.843600 ms MarkObjects: 11.674800 ms  DeleteObjects: 8.913200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3114.533891 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/Layer_1.png
-  artifactKey: Guid(debf793544841934997103a3d5cf4c19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/Layer_1.png using Guid(debf793544841934997103a3d5cf4c19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ad311e48a4d0b4d70c247a9164b936d8') in 0.3110798 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_6.png
-  artifactKey: Guid(7a26f6f4d5cf3464d823d5d735b3cd52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_6.png using Guid(7a26f6f4d5cf3464d823d5d735b3cd52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5c65f131546328eff489ec0ed2179723') in 0.0630742 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX
-  artifactKey: Guid(ba7b036511cd49646bc24fdf445b4447) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX using Guid(ba7b036511cd49646bc24fdf445b4447) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6d709aff22c7ca18a6a0995a2fcd139b') in 0.0302281 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_3.unity
-  artifactKey: Guid(37611d0bab2ca654098494923cce9756) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Fly Mode/Background_3.unity using Guid(37611d0bab2ca654098494923cce9756) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4795ae63503ef9894669a656d19c3eb0') in 0.0445836 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_5.png
-  artifactKey: Guid(98ddd3b9dedb03143979b72d116298e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_1/Layer_5.png using Guid(98ddd3b9dedb03143979b72d116298e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '07fb30ab0c7a7da36ce4416123f36e07') in 0.0503278 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Free Assets Craftpix!.url
-  artifactKey: Guid(e1fd5ae56b2a3d8468c53cf57bae9d9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Free Assets Craftpix!.url using Guid(e1fd5ae56b2a3d8468c53cf57bae9d9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e4b2cd4df69bce58c5efa3bffc84f09') in 0.0223145 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Wizard - 2D Character/Animations/Hurt.anim
-  artifactKey: Guid(2425d4e573562684a87ff13b41742e49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Wizard - 2D Character/Animations/Hurt.anim using Guid(2425d4e573562684a87ff13b41742e49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6cad4817078bae9760ccdf8f40150218') in 0.0632979 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Character/Player
-  artifactKey: Guid(f79d66badcfcf644ab1813c385c822f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character/Player using Guid(f79d66badcfcf644ab1813c385c822f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7eb421233d3132ff4ea851724596bac1') in 0.0034854 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000086 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/Layer_3.png
-  artifactKey: Guid(56e294c4de91fb942b1d01701790ab29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/Layer_3.png using Guid(56e294c4de91fb942b1d01701790ab29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6eb71eb48efe4d8d89baae27f682e13d') in 0.041765 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Editor
-  artifactKey: Guid(330bed5ead61cb04f96581bbf8462cac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scripts/Editor using Guid(330bed5ead61cb04f96581bbf8462cac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f0875f68f1b864d449471bd233231e5a') in 0.024113 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/PSD.psd
-  artifactKey: Guid(5c9a947906e897245ae89760f96a21c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_4/PSD.psd using Guid(5c9a947906e897245ae89760f96a21c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '229976fd798454ea3bf9de234a986088') in 0.0489737 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_3.prefab
-  artifactKey: Guid(062df5c6d1569d64f8e228e57987727c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_3.prefab using Guid(062df5c6d1569d64f8e228e57987727c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1d641332c7bb3f3c929d2a1deb6913bd') in 0.1626526 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000087 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_2/Layer_4.png
-  artifactKey: Guid(8a8636bf93e980f4c8513902d1941a48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_2/Layer_4.png using Guid(8a8636bf93e980f4c8513902d1941a48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c1cf6f056f5d646db9c1f6cea2ef465e') in 0.0761262 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/GameObjects/Player.prefab
-  artifactKey: Guid(1c5d629fbf59ad949a44a68a4ef3ed05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Prefabs/GameObjects/Player.prefab using Guid(1c5d629fbf59ad949a44a68a4ef3ed05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d3b773f6c879a76543d333eaf296061') in 0.4025568 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/Layer_3.png
-  artifactKey: Guid(6148c51f6054beb43b2302cf81d913f8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/PNG/Background_3/Layer_3.png using Guid(6148c51f6054beb43b2302cf81d913f8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '010c2f76730b9846ab48ef2b9403d864') in 0.0564389 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000099 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/Prefabs/GameObjects
-  artifactKey: Guid(a1e87a0f80d03a546a6b4a8d4847fec3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/Prefabs/GameObjects using Guid(a1e87a0f80d03a546a6b4a8d4847fec3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '00937d1643abc00434f6b61f0971768b') in 0.0277924 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/PNG
-  artifactKey: Guid(9a00fabae5698e546aa3f33de5303f0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/__MACOSX/Sky 1-bit Backgrounds Pixel Art/PNG using Guid(9a00fabae5698e546aa3f33de5303f0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5da31c7422a9a2c06dd3b69fda5649ed') in 0.0305768 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Bruji_Magica.overrideController
-  artifactKey: Guid(f416a729093c27546aa0f9bfd687978a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Bruji_Magica.overrideController using Guid(f416a729093c27546aa0f9bfd687978a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5913db38308d5393a5899c015ca95447') in 0.3214101 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 44
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Grounded/Background_3.unity
-  artifactKey: Guid(12371f10bff2bea4db2c741107002118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Scenes/Grounded/Background_3.unity using Guid(12371f10bff2bea4db2c741107002118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0fab0034ebe0e31bed644d2ab8aeabc7') in 0.0363854 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Documents/Support the Partner!.url
-  artifactKey: Guid(fe49da7421155b84faaa820abda06161) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity/Sky 1-bit Backgrounds Pixel Art/Documents/Support the Partner!.url using Guid(fe49da7421155b84faaa820abda06161) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bd8b037fcd919eb057aef46679661761') in 0.0222466 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 353683.303677 seconds.
+  path: Assets/Character/Player/raptor/aseprite_files/raptor-dead.aseprite
+  artifactKey: Guid(42e119c7e28c0864ca9de6201c40f6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/Player/raptor/aseprite_files/raptor-dead.aseprite using Guid(42e119c7e28c0864ca9de6201c40f6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ccba1fa5a719fbfff8a8b1d26187777') in 5.9967105 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
