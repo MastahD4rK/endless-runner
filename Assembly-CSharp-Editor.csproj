@@ -60,9 +60,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Editor\ParallaxEffectFlyModeEditor.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Editor\ParallaxEffectEditor.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\Editor\ParallaxEffectFlyModeEditor.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\Editor\ParallaxEffectEditor.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\Editor\MainCameraEditor.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Editor\MainCameraEditor.cs" />
     <Compile Include="Assets\Editor\PatrolPathEditor.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\Editor\ParallaxEffectEditor.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\Editor\MainCameraEditor.cs" />
   </ItemGroup>
   <ItemGroup>

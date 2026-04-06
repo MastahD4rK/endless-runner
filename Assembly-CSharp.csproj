@@ -60,10 +60,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\Ground.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawn.cs" />
     <Compile Include="Assets\Wizard - 2D Character\Demo\SimplePlayerController.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.InstanceRegister.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\Jiggler.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Scripts\Gameplay\GameSpeedManager.cs" />
@@ -77,15 +79,20 @@
     <Compile Include="Assets\Scripts\Model\PlatformerModel.cs" />
     <Compile Include="Assets\Scripts\View\ParallaxLayer.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\ParallaxEffect.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\MainCamera.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
     <Compile Include="Assets\Scripts\Mechanics\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerDeath.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Fly Mode\MainCameraFlyMode.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\Fly Mode\ParallaxEffectFlyMode.cs" />
     <Compile Include="Assets\Scripts\Mechanics\KinematicObject.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Player.cs" />
     <Compile Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Scripts\Player.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerJumpPad.cs" />
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
@@ -100,6 +107,7 @@
     <Compile Include="Assets\Scripts\Mechanics\PatrolPath.cs" />
     <Compile Include="Assets\Scripts\Gameplay\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\MetaGameController.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Ground.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
     <Compile Include="Assets\Scripts\Gameplay\WorldMover.cs" />
@@ -107,6 +115,8 @@
     <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenInstance.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Scripts\ParallaxEffect.cs" />
+    <Compile Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Scripts\Fly Mode\ParallaxEffectFlyMode.cs" />
     <Compile Include="Assets\Wizard - 2D Character\Demo\WizDemo1.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
@@ -126,8 +136,10 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\ThirdPartyNotice.txt" />
     <None Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\Sky 1-bit Backgrounds Pixel Art\Documents\License.txt" />
+    <None Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\Moon Backgrounds Pixel Art\Documents\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\Nature Backgrounds Pixel Art\Documents\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -137,12 +149,14 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Mod Assets\Mod Resources\Shaders\SpritesHue.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Enviroment\craftpix-net-437584-free-moon-pixel-game-backgrounds-unity\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\craftpix-net-149948-free-1-bit-sky-and-clouds-pixel-backgrounds-unity\README.txt" />
+    <None Include="Assets\Enviroment\craftpix-net-404331-free-nature-backgrounds-pixel-art-unity\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

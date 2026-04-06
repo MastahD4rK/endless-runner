@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.11f1 (3000ef702840) revision 3145967'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 7381 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-04-04T01:36:01.4534031Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-04-04T01:36:01Z
+Date: 2026-04-06T13:32:33Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-04-06T13:32:33.7869707Z"
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-58022
+56959
 -licensingIpc
 LicenseClient-crist
 -job-worker-count
@@ -67,14 +67,14 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [26364]  Target information:
+Player connection [24204]  Target information:
 
-Player connection [26364]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3033820639 [EditorId] 3033820639 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [24204]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3072182626 [EditorId] 3072182626 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [26364]  * "[IP] 192.168.1.126 [Port] 0 [Flags] 2 [Guid] 3033820639 [EditorId] 3033820639 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [24204]  * "[IP] 10.244.114.80 [Port] 0 [Flags] 2 [Guid] 3072182626 [EditorId] 3072182626 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [26364] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [26364] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [24204] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24204] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -86,7 +86,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 27.35 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 299.48 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.11f1 (3000ef702840)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -102,13 +102,28 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.0'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
+[Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
 Begin MonoManager ReloadAssembly
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-04-06T13:32:38.4553659Z"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.0+23225a6
+  Session Id:              71fad2cdd63648789c42caa0f6316c77
+  Correlation Id:          06b8d26072f2b512451ce0fd9b3da9de
+  External correlation Id: 3499748884986741606
+  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.07s, validation: 0.00s, handshake: 0.35s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-04-06T13:32:38.8056694Z"
+[Licensing::Module] Licensing Background thread has ended after 5.06s
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008106 seconds.
-- Loaded All Assemblies, in  1.636 seconds
+Registered in 0.011987 seconds.
+- Loaded All Assemblies, in  4.957 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -117,55 +132,40 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.321 seconds
-Domain Reload Profiling: 2953ms
-	BeginReloadAssembly (707ms)
+- Finished resetting the current domain, in  0.668 seconds
+Domain Reload Profiling: 5622ms
+	BeginReloadAssembly (1000ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (122ms)
-	RebuildNativeTypeToScriptingClass (31ms)
-	initialDomainReloadingComplete (154ms)
-	LoadAllAssembliesAndSetupDomain (615ms)
-		LoadAssemblies (699ms)
+	RebuildCommonClasses (802ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (131ms)
+	LoadAllAssembliesAndSetupDomain (3002ms)
+		LoadAssemblies (986ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (607ms)
-			TypeCache.Refresh (595ms)
-				TypeCache.ScanAssembly (520ms)
-			BuildScriptInfoCaches (4ms)
+		AnalyzeDomain (2996ms)
+			TypeCache.Refresh (2990ms)
+				TypeCache.ScanAssembly (2301ms)
+			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (1323ms)
+	FinalizeReload (669ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1147ms)
+		SetupLoadedEditorAssemblies (548ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (199ms)
+			InitializePlatformSupportModulesInManaged (91ms)
 			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (205ms)
-			ProcessInitializeOnLoadAttributes (484ms)
-			ProcessInitializeOnLoadMethodAttributes (251ms)
+			BeforeProcessingInitializeOnLoad (135ms)
+			ProcessInitializeOnLoadAttributes (190ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
 			AfterProcessingInitializeOnLoad (0ms)
-			EditorAssembliesLoaded (1ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.0'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
-[Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-04-04T01:36:06.841147Z"
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.0+23225a6
-  Session Id:              0c6d1d83a5fa4779893b6cadab1d5113
-  Correlation Id:          7732441173f109ff54a2fe3cfe3da398
-  External correlation Id: 496948607372516346
-  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.00s, validation: 0.01s, handshake: 0.24s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-04-04T01:36:07.0855214Z"
-[Licensing::Module] Licensing Background thread has ended after 5.63s
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -178,11 +178,11 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  2.855 seconds
+- Loaded All Assemblies, in  3.700 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 3.66 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.30 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
@@ -197,153 +197,372 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.720 seconds
-Domain Reload Profiling: 5563ms
-	BeginReloadAssembly (461ms)
+- Finished resetting the current domain, in  2.633 seconds
+Domain Reload Profiling: 6328ms
+	BeginReloadAssembly (296ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (64ms)
-	RebuildCommonClasses (90ms)
-	RebuildNativeTypeToScriptingClass (30ms)
-	initialDomainReloadingComplete (88ms)
-	LoadAllAssembliesAndSetupDomain (2173ms)
-		LoadAssemblies (1067ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (67ms)
+	LoadAllAssembliesAndSetupDomain (3258ms)
+		LoadAssemblies (2755ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1378ms)
-			TypeCache.Refresh (917ms)
-				TypeCache.ScanAssembly (875ms)
-			BuildScriptInfoCaches (407ms)
-			ResolveRequiredComponents (39ms)
-	FinalizeReload (2721ms)
+		AnalyzeDomain (658ms)
+			TypeCache.Refresh (436ms)
+				TypeCache.ScanAssembly (395ms)
+			BuildScriptInfoCaches (188ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (2634ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1818ms)
+		SetupLoadedEditorAssemblies (993ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (14ms)
-			BeforeProcessingInitializeOnLoad (699ms)
-			ProcessInitializeOnLoadAttributes (922ms)
-			ProcessInitializeOnLoadMethodAttributes (163ms)
-			AfterProcessingInitializeOnLoad (13ms)
-			EditorAssembliesLoaded (1ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (212ms)
+			ProcessInitializeOnLoadAttributes (639ms)
+			ProcessInitializeOnLoadMethodAttributes (128ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 9.03 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 7.79 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7693 unused Assets / (5.2 MB). Loaded Objects now: 8525.
-Memory consumption went from 161.3 MB to 156.1 MB.
-Total: 46.711300 ms (FindLiveObjects: 5.558500 ms CreateObjectMapping: 3.764200 ms MarkObjects: 20.483900 ms  DeleteObjects: 16.901200 ms)
-
-========================================================================
-Received Prepare
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.814 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 13.39 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.388 seconds
-Domain Reload Profiling: 5202ms
-	BeginReloadAssembly (831ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (37ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (229ms)
-	RebuildCommonClasses (102ms)
-	RebuildNativeTypeToScriptingClass (27ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (1775ms)
-		LoadAssemblies (1408ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (782ms)
-			TypeCache.Refresh (34ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (709ms)
-			ResolveRequiredComponents (28ms)
-	FinalizeReload (2390ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1895ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (632ms)
-			ProcessInitializeOnLoadAttributes (992ms)
-			ProcessInitializeOnLoadMethodAttributes (236ms)
-			AfterProcessingInitializeOnLoad (18ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (2ms)
-		AwakeInstancesAfterBackupRestoration (66ms)
-Refreshing native plugins compatible for Editor in 3.63 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7691 unused Assets / (5.2 MB). Loaded Objects now: 8529.
-Memory consumption went from 161.7 MB to 156.5 MB.
-Total: 26.280800 ms (FindLiveObjects: 1.546700 ms CreateObjectMapping: 2.361800 ms MarkObjects: 15.362200 ms  DeleteObjects: 7.007500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 353012.770049 seconds.
-  path: Assets/Raptor.overrideController
-  artifactKey: Guid(fae6c9ec856e2de4aa2af1b2d7ff7f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Raptor.overrideController using Guid(fae6c9ec856e2de4aa2af1b2d7ff7f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '16d0181b81aee0ba435d830453ca1127') in 0.2440833 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+Unloading 7708 unused Assets / (4.2 MB). Loaded Objects now: 8541.
+Memory consumption went from 164.1 MB to 159.9 MB.
+Total: 37.408600 ms (FindLiveObjects: 4.406700 ms CreateObjectMapping: 3.437200 ms MarkObjects: 22.607100 ms  DeleteObjects: 6.954900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.914389 seconds.
-  path: Assets/Character/Player/Animations/Animation_raptor_dead.anim
-  artifactKey: Guid(a8bb0f6a7d351d442980c7d36a566a41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Character/Player/Animations/Animation_raptor_dead.anim using Guid(a8bb0f6a7d351d442980c7d36a566a41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6dea56f1768a07ef65c5ffea2064c7f4') in 0.309386 seconds
+  Time since last request: 1261.879298 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_6
+  artifactKey: Guid(104e02692daf4a143aa200f295a78ce3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_6 using Guid(104e02692daf4a143aa200f295a78ce3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4e246c07c368c0803b81da3c89b16a30') in 0.1490075 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Character/Player/Animations/Animation_raptor_run.anim
-  artifactKey: Guid(0879c1d83df619143b857c298075e38b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Character/Player/Animations/Animation_raptor_run.anim using Guid(0879c1d83df619143b857c298075e38b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '89c0d43a790984d4f98bdf4d2448b742') in 0.0509839 seconds
+  Time since last request: 0.000035 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Fly Mode/Background_3.unity
+  artifactKey: Guid(f3df2f05c17f05c4fbed36a9462b2a54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Fly Mode/Background_3.unity using Guid(f3df2f05c17f05c4fbed36a9462b2a54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7eb39abdd2c1aff6eb976751e432e069') in 0.0485509 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/Character/Player/Animations/raptor-dead_0.controller
-  artifactKey: Guid(0b27f5b74eef9154dafcba2d7a572bdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Character/Player/Animations/raptor-dead_0.controller using Guid(0b27f5b74eef9154dafcba2d7a572bdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '77a966a55644194cd993738719cc8108') in 0.1899671 seconds
+  Time since last request: 0.000044 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5/Layer_4.png
+  artifactKey: Guid(07225b615cda9ed46bb4a7ef0195c648) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5/Layer_4.png using Guid(07225b615cda9ed46bb4a7ef0195c648) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a1e4a3b9e3425dd7fe7aa878c7653d31') in 0.2513387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_7/Layer_1.png
+  artifactKey: Guid(d62a67f22bc045b40993a7cb04d22004) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_7/Layer_1.png using Guid(d62a67f22bc045b40993a7cb04d22004) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cbc0627e247184a0f0e10bccb246f8d1') in 0.049591 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/Layer_1.png
+  artifactKey: Guid(f1a94d0aa4ae9e740bf3fe1f30a95889) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/Layer_1.png using Guid(f1a94d0aa4ae9e740bf3fe1f30a95889) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '70062e6e7b550db9f061b4d876b6d21b') in 0.0435771 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Player.cs
+  artifactKey: Guid(a9824560e2f8fa14fb8a506fdb19a8cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Player.cs using Guid(a9824560e2f8fa14fb8a506fdb19a8cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ee124268567db812e225971611e7199a') in 0.0238262 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_1.prefab
+  artifactKey: Guid(1555dedb56cbee942befd7e39548abba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_1.prefab using Guid(1555dedb56cbee942befd7e39548abba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '465eb91ea81988acefa3e571b649a90c') in 0.1076817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5/Layer_3.png
+  artifactKey: Guid(36a1902bf0adebe4faf46c54b077b5be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5/Layer_3.png using Guid(36a1902bf0adebe4faf46c54b077b5be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c845f057b155356e045ac5e2b25392b0') in 0.0349889 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/GameObjects
+  artifactKey: Guid(e2b4ac6031ff0264aa6b27710e3ca44e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/GameObjects using Guid(e2b4ac6031ff0264aa6b27710e3ca44e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0b76cbdd1c3f3562b53fa6ff3d9e850e') in 0.021667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Documents/Support the Partner!.url
+  artifactKey: Guid(e84b2fed68d9dbe41b6bc6a28f56234f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Documents/Support the Partner!.url using Guid(e84b2fed68d9dbe41b6bc6a28f56234f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fee203a202151153850f1aca02b242b7') in 0.0194675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scripts/Editor/MainCameraEditor.cs
+  artifactKey: Guid(693f4a61cb012ec4e86cea4d78ea9452) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scripts/Editor/MainCameraEditor.cs using Guid(693f4a61cb012ec4e86cea4d78ea9452) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b8de3f3eb7aa3a3ceb0de709ac648d6') in 0.0219027 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/README.txt
+  artifactKey: Guid(bca2a0a6d36f0074b8de113c13a4d9d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/README.txt using Guid(bca2a0a6d36f0074b8de113c13a4d9d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '35143e227508f0584a779c876a9632a3') in 0.0247993 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG
+  artifactKey: Guid(0f3f3081233f27e49ad15d2e608949a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG using Guid(0f3f3081233f27e49ad15d2e608949a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '930eb19259dab26ece79ae1387971e47') in 0.0214177 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/Background_3
+  artifactKey: Guid(9420a81f3d682be4ca0940d6ee670603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/Background_3 using Guid(9420a81f3d682be4ca0940d6ee670603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b89acd37463d46338ed17b149ff42dd1') in 0.023145 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Grounded/Background_2.unity
+  artifactKey: Guid(7f125cf32b6ca02469243379c57f1620) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Grounded/Background_2.unity using Guid(7f125cf32b6ca02469243379c57f1620) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0a314c6401687e896f625230b5475b41') in 0.0241539 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_4.prefab
+  artifactKey: Guid(aaec34098feaf9441b701b78d1604c79) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Grounded/Background_4.prefab using Guid(aaec34098feaf9441b701b78d1604c79) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9b9577eef6158d6f04cac4e0b3c5045e') in 0.0356072 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scenes/Background_5.unity
+  artifactKey: Guid(7ee80474c9539264cab86d98a0a0fbaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scenes/Background_5.unity using Guid(7ee80474c9539264cab86d98a0a0fbaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9bf5912e14d63d24d45246198fe37c42') in 0.020876 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Editor/ParallaxEffectEditor.cs
+  artifactKey: Guid(3dde2beb61103d54bb902f5ca758a63b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Editor/ParallaxEffectEditor.cs using Guid(3dde2beb61103d54bb902f5ca758a63b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0e4ef667bd0358b728ad6ac14b03ec85') in 0.0209116 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/GameObjects
+  artifactKey: Guid(91d598b60fc7c2944a22dd19b401e789) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/GameObjects using Guid(91d598b60fc7c2944a22dd19b401e789) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97427271defb6f8e5af71c1e31ead352') in 0.0225134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_5.prefab
+  artifactKey: Guid(fddda12dea2326f4ba9470624f1eb023) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_5.prefab using Guid(fddda12dea2326f4ba9470624f1eb023) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ead53179d42637c01c9d093161b22d4') in 0.0490061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 34
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Fly Mode/Background_4.prefab
+  artifactKey: Guid(211c9b7d8f17120448d195ce04993354) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Fly Mode/Background_4.prefab using Guid(211c9b7d8f17120448d195ce04993354) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '178cd082a78640eeea8bb76cd7c1aed6') in 0.0287302 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Documents/License.txt
+  artifactKey: Guid(774dd94cad3d30c46b846a2e77a42fe3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Documents/License.txt using Guid(774dd94cad3d30c46b846a2e77a42fe3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8d477226c2f9ac9fe8623c797919528e') in 0.0225728 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_3.prefab
+  artifactKey: Guid(ec808ee9b39f47d4eac5985e9c2503ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_3.prefab using Guid(ec808ee9b39f47d4eac5985e9c2503ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6b98fb8e3baea00297aa80d0f5c9cd0f') in 0.0407871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_8.prefab
+  artifactKey: Guid(41782196d03c1fd41a42de70fdd19027) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_8.prefab using Guid(41782196d03c1fd41a42de70fdd19027) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '21aba2357c3ccd08ffceb08173e06cc8') in 0.0277154 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Documents/COUPON.pdf
+  artifactKey: Guid(0b17d93dd4d9ae143a622bcca112b5d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Documents/COUPON.pdf using Guid(0b17d93dd4d9ae143a622bcca112b5d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '387c131fd2888238f59392d940555b53') in 0.0232808 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5
+  artifactKey: Guid(97968cc3dc2896f4fa2d6be7020e4df8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_5 using Guid(97968cc3dc2896f4fa2d6be7020e4df8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '41a522803e3f19983a2ff7a7540051a1') in 0.0227413 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_1/Layer_3.png
+  artifactKey: Guid(27d2e452b9cbfc248ab16d84e1b0d9b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_1/Layer_3.png using Guid(27d2e452b9cbfc248ab16d84e1b0d9b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8fab0f1618e7ecdad5a28d0df4d5406f') in 0.0393325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/Layer_3.png
+  artifactKey: Guid(89c0eafa6ea1b744d94455033f89f258) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/Layer_3.png using Guid(89c0eafa6ea1b744d94455033f89f258) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '98764c3922efd8cccac0afdb39d07ae6') in 0.0473424 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/__MACOSX/Moon Backgrounds Pixel Art/PNG/Background_4
+  artifactKey: Guid(f91eb30f1d4b8b146937c4c8ea22ea94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/__MACOSX/Moon Backgrounds Pixel Art/PNG/Background_4 using Guid(f91eb30f1d4b8b146937c4c8ea22ea94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '55ea3f2fe20e6e7e940651db61f72543') in 0.0210858 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scenes/Background_6.unity
+  artifactKey: Guid(154045ca87fb71b49929acc1c9714b93) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Scenes/Background_6.unity using Guid(154045ca87fb71b49929acc1c9714b93) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f4b84776589391799f35d55b92ef7746') in 0.0191514 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Fly Mode/ParallaxEffectFlyMode.cs
+  artifactKey: Guid(15954c2cb05320f43ae17786f5703629) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scripts/Fly Mode/ParallaxEffectFlyMode.cs using Guid(15954c2cb05320f43ae17786f5703629) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0ed827a58107c8050f8c669b012d10b3') in 0.0210837 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Grounded/Background_3.unity
+  artifactKey: Guid(857f8849322525c43b7d4cb33e99bf36) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Scenes/Grounded/Background_3.unity using Guid(857f8849322525c43b7d4cb33e99bf36) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c972a3a633d314772d43b2449ecac47a') in 0.0689718 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_6/Layer_1.png
+  artifactKey: Guid(61dd6fc9ed15bb54790a181fbdca48b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_6/Layer_1.png using Guid(61dd6fc9ed15bb54790a181fbdca48b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '56664d586567b0a3631429a4cc806da6') in 0.0271401 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_3/Layer_1.png
+  artifactKey: Guid(9660048dfc7c12e4abe6bb18a2b59410) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_3/Layer_1.png using Guid(9660048dfc7c12e4abe6bb18a2b59410) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '70af358fc42e8e31a1aa7f814665c4aa') in 0.0337784 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/GameObjects/Ground.prefab
+  artifactKey: Guid(72e26d64479e73549823e94eebc0cc08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/GameObjects/Ground.prefab using Guid(72e26d64479e73549823e94eebc0cc08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4dbcc3aa2280b2874ab5c8a642924d16') in 0.0885924 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Character/Player/Animations/raptor-run_0 2.controller
+  artifactKey: Guid(e8bbb94d01c491540bde030fd949258c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Character/Player/Animations/raptor-run_0 2.controller using Guid(e8bbb94d01c491540bde030fd949258c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '304b4404c8a1a3edec96deb1681eb6f9') in 0.0323294 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000044 seconds.
-  path: Assets/Raptor.overrideController
-  artifactKey: Guid(fae6c9ec856e2de4aa2af1b2d7ff7f9d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Raptor.overrideController using Guid(fae6c9ec856e2de4aa2af1b2d7ff7f9d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0875c9550632cdba70264054c6ce3a27') in 0.0947761 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/Background_3/Layer_3.png
+  artifactKey: Guid(0131df06e5c3ff8479b7489d400cd4c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/PNG/Background_3/Layer_3.png using Guid(0131df06e5c3ff8479b7489d400cd4c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1b8906eca5499dc2981955a100cd94f4') in 0.0312643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/PSD.psd
+  artifactKey: Guid(c882f3cd2f9fd1e41b0b0a55d76c0444) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/PNG/Background_4/PSD.psd using Guid(c882f3cd2f9fd1e41b0b0a55d76c0444) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '319270361861ce3651f8cf5fec9e2224') in 0.0284298 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Fly Mode/Background_1.prefab
+  artifactKey: Guid(9532247fe2072774492258e172f181ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Enviroment/craftpix-net-437584-free-moon-pixel-game-backgrounds-unity/Moon Backgrounds Pixel Art/Prefabs/Backgrounds/Fly Mode/Background_1.prefab using Guid(9532247fe2072774492258e172f181ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97f8030999e731d3a6df0f6151ac5e16') in 0.0280661 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.503035 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab
+  artifactKey: Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab using Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c21db1cf1b77e5eb531e0e1ff6e952b') in 0.7731401 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_8.prefab
+  artifactKey: Guid(41782196d03c1fd41a42de70fdd19027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_8.prefab using Guid(41782196d03c1fd41a42de70fdd19027) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60bf746b590e5fe982759a841b8b5c14') in 0.035723 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
