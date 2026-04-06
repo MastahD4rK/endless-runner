@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -739,7 +739,8 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Character/Player/Animations
+    - Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature
+      Backgrounds Pixel Art/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -749,28 +750,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Character/Player/Animations
+  - Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature
+    Backgrounds Pixel Art/Prefabs
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\crist\OneDrive\Documentos\GitHub\endless-runner
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 50}
+    scrollPos: {x: 0, y: 290}
     m_SelectedIDs:
-    - m_Data: 56308
+    - m_Data: 57908
     m_LastClickedID:
-      m_Data: 56308
+      m_Data: 57908
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 55926
-    - m_Data: 55928
-    - m_Data: 55930
-    - m_Data: 55932
-    - m_Data: 55934
-    - m_Data: 55936
-    - m_Data: 55938
-    - m_Data: 55940
+    - m_Data: 54700
+    - m_Data: 54702
+    - m_Data: 54704
+    - m_Data: 54706
+    - m_Data: 54708
+    - m_Data: 54710
+    - m_Data: 54712
+    - m_Data: 54714
+    - m_Data: 54716
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -803,14 +806,15 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 55926
-    - m_Data: 55928
-    - m_Data: 55930
-    - m_Data: 55932
-    - m_Data: 55934
-    - m_Data: 55936
-    - m_Data: 55938
-    - m_Data: 55940
+    - m_Data: 54700
+    - m_Data: 54702
+    - m_Data: 54704
+    - m_Data: 54706
+    - m_Data: 54708
+    - m_Data: 54710
+    - m_Data: 54712
+    - m_Data: 54714
+    - m_Data: 54716
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -837,9 +841,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs:
-    - m_Data: 53590
-    m_LastClickedInstanceID: 53590
+    m_SelectedInstanceIDs: []
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 58916
@@ -975,7 +978,12 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -6790
+      - m_Data: -1336
       - m_Data: -1318
+      - m_Data: 53280
+      - m_Data: 53720
+      - m_Data: 54258
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1597,9 +1605,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.18111223, y: 0.21331392, z: -11.916564}
+    m_Target: {x: -5.6822805, y: 0.9912631, z: -11.992301}
     speed: 2
-    m_Value: {x: -0.18111223, y: 0.21331392, z: -11.916564}
+    m_Value: {x: -5.6822805, y: 0.9912631, z: -11.992301}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1649,9 +1657,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.1068487
+    m_Target: 11.681348
     speed: 2
-    m_Value: 4.1068487
+    m_Value: 11.681348
   m_Ortho:
     m_Target: 1
     speed: 2
