@@ -20,16 +20,22 @@ namespace Sky1bitBackgroundsPixelArt
         {
             mainCamera = Camera.main.transform;
             cameraSize = Camera.main.orthographicSize;
-            player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            // Removed player dependency
             spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x / 3;
 
-            transform.position = new Vector2(mainCamera.position.x, player.position.y - 1f);
+            transform.position = new Vector2(mainCamera.position.x, transform.position.y);
             initialPos = transform.position;
         }
 
         private void LateUpdate()
         {
-            translationOffset += independantSpeed * Time.deltaTime * parallaxIntensityX;
+            float speedX = independantSpeed;
+            if (Platformer.Gameplay.GameSpeedManager.Instance != null && Platformer.Gameplay.GameSpeedManager.Instance.isPlaying)
+            {
+                speedX = -Platformer.Gameplay.GameSpeedManager.Instance.CurrentSpeed;
+            }
+
+            translationOffset += speedX * Time.deltaTime * parallaxIntensityX;
 
             float parallaxOffsetX = (mainCamera.position.x * (1 - (parallaxIntensityX / 2))) + translationOffset;
             float parallaxOffsetY = ((mainCamera.position.y / cameraSize) / 0.7f) * (1 - parallaxIntensityY);

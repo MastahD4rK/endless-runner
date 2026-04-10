@@ -4,8 +4,8 @@ OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-04-06T14:40:05Z
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-04-06T14:40:05.4311871Z"
+Date: 2026-04-10T01:24:33Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist" at "2026-04-10T01:24:33.5081399Z"
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-59804
+64208
 -licensingIpc
 LicenseClient-crist
 -job-worker-count
@@ -67,14 +67,14 @@ C:/Users/crist/OneDrive/Documentos/GitHub/endless-runner
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [21632]  Target information:
+Player connection [14792]  Target information:
 
-Player connection [21632]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 868746127 [EditorId] 868746127 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [14792]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3708951526 [EditorId] 3708951526 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21632]  * "[IP] 10.244.114.80 [Port] 0 [Flags] 2 [Guid] 868746127 [EditorId] 868746127 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [14792]  * "[IP] 192.168.1.126 [Port] 0 [Flags] 2 [Guid] 3708951526 [EditorId] 3708951526 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-QKGJJ9E6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21632] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [21632] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14792] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [14792] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -86,7 +86,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 24.84 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 25.37 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.11f1 (3000ef702840)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -102,65 +102,65 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56920
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.015005 seconds.
-- Loaded All Assemblies, in  5.090 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
+Registered in 0.025563 seconds.
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.0'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-crist"
 [Licensing::IpcConnector] LicenseClient-crist channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-04-06T14:40:14.9199423Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11" at "2026-04-10T01:24:38.098293Z"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.0+23225a6
+  Session Id:              3b0adef7b50e48e99f49eb0df420a107
+  Correlation Id:          357d7cf52ff64558713f3e5f92c8cd3a
+  External correlation Id: 9159473548898470914
+  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.02s, validation: 0.03s, handshake: 0.35s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-04-10T01:24:38.4824533Z"
+[Licensing::Module] Licensing Background thread has ended after 5.14s
+- Loaded All Assemblies, in  3.946 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.0+23225a6
-  Session Id:              64d0bc15d44245b9a7fea308d0cc54dc
-  Correlation Id:          e02a7bd1ac79c9b7daa9743d35bbcd0d
-  External correlation Id: 3619418884223527499
-  Machine Id:              ASD46pzRgqmdE12JQAPYJBfoMCg=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-crist-6000.3.11" (connect: 0.04s, validation: 0.02s, handshake: 0.41s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-crist-6000.3.11-notifications" at "2026-04-06T14:40:15.3663503Z"
-[Licensing::Module] Licensing Background thread has ended after 9.94s
-- Finished resetting the current domain, in  1.658 seconds
-Domain Reload Profiling: 6735ms
-	BeginReloadAssembly (3537ms)
+- Finished resetting the current domain, in  0.890 seconds
+Domain Reload Profiling: 4827ms
+	BeginReloadAssembly (1358ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (4ms)
-	RebuildCommonClasses (330ms)
-	RebuildNativeTypeToScriptingClass (134ms)
-	initialDomainReloadingComplete (303ms)
-	LoadAllAssembliesAndSetupDomain (772ms)
-		LoadAssemblies (3494ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (222ms)
+	RebuildNativeTypeToScriptingClass (59ms)
+	initialDomainReloadingComplete (301ms)
+	LoadAllAssembliesAndSetupDomain (1997ms)
+		LoadAssemblies (1343ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (759ms)
-			TypeCache.Refresh (753ms)
-				TypeCache.ScanAssembly (703ms)
+		AnalyzeDomain (1983ms)
+			TypeCache.Refresh (1979ms)
+				TypeCache.ScanAssembly (1940ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (1659ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (890ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1435ms)
+		SetupLoadedEditorAssemblies (780ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (235ms)
-			SetLoadedEditorAssemblies (16ms)
-			BeforeProcessingInitializeOnLoad (323ms)
-			ProcessInitializeOnLoadAttributes (605ms)
-			ProcessInitializeOnLoadMethodAttributes (255ms)
+			InitializePlatformSupportModulesInManaged (118ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (169ms)
+			ProcessInitializeOnLoadAttributes (295ms)
+			ProcessInitializeOnLoadMethodAttributes (192ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -178,11 +178,11 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  3.705 seconds
+- Loaded All Assemblies, in  2.852 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 5.06 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.46 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
@@ -197,104 +197,158 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.622 seconds
-Domain Reload Profiling: 6296ms
-	BeginReloadAssembly (589ms)
+- Finished resetting the current domain, in  2.266 seconds
+Domain Reload Profiling: 5108ms
+	BeginReloadAssembly (505ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (28ms)
+		DisableScriptedObjects (20ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (83ms)
-	RebuildCommonClasses (131ms)
-	RebuildNativeTypeToScriptingClass (35ms)
-	initialDomainReloadingComplete (173ms)
-	LoadAllAssembliesAndSetupDomain (2745ms)
-		LoadAssemblies (1501ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (81ms)
+	RebuildNativeTypeToScriptingClass (28ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (2140ms)
+		LoadAssemblies (1500ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1588ms)
-			TypeCache.Refresh (1251ms)
-				TypeCache.ScanAssembly (1194ms)
-			BuildScriptInfoCaches (290ms)
-			ResolveRequiredComponents (34ms)
-	FinalizeReload (2623ms)
+		AnalyzeDomain (932ms)
+			TypeCache.Refresh (642ms)
+				TypeCache.ScanAssembly (595ms)
+			BuildScriptInfoCaches (235ms)
+			ResolveRequiredComponents (40ms)
+	FinalizeReload (2267ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1925ms)
+		SetupLoadedEditorAssemblies (1739ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (12ms)
-			BeforeProcessingInitializeOnLoad (581ms)
-			ProcessInitializeOnLoadAttributes (1081ms)
-			ProcessInitializeOnLoadMethodAttributes (220ms)
-			AfterProcessingInitializeOnLoad (22ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (387ms)
+			ProcessInitializeOnLoadAttributes (1161ms)
+			ProcessInitializeOnLoadMethodAttributes (164ms)
+			AfterProcessingInitializeOnLoad (13ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (18ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 13.25 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 5.49 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7708 unused Assets / (4.4 MB). Loaded Objects now: 8541.
-Memory consumption went from 162.3 MB to 157.9 MB.
-Total: 37.540000 ms (FindLiveObjects: 3.315100 ms CreateObjectMapping: 3.448800 ms MarkObjects: 22.063300 ms  DeleteObjects: 8.709700 ms)
+Unloading 7708 unused Assets / (5.2 MB). Loaded Objects now: 8541.
+Memory consumption went from 162.5 MB to 157.3 MB.
+Total: 25.844400 ms (FindLiveObjects: 2.505900 ms CreateObjectMapping: 2.196800 ms MarkObjects: 12.995900 ms  DeleteObjects: 8.143000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5307.509154 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/HexagonPointTop.png
-  artifactKey: Guid(5aa8b770bc43046bc8d993d0d5b7f4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/HexagonPointTop.png using Guid(5aa8b770bc43046bc8d993d0d5b7f4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15f8d9b82e16243f2b8736c7f4a0fd24') in 0.8250265 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 263608.758745 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_1.prefab
+  artifactKey: Guid(1555dedb56cbee942befd7e39548abba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_1.prefab using Guid(1555dedb56cbee942befd7e39548abba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0788f2d8ca7d4a234985c7af2326926') in 1.0696367 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000076 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/HexagonFlatTop.png
-  artifactKey: Guid(b670ab75dde984907b8570040daa08c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/HexagonFlatTop.png using Guid(b670ab75dde984907b8570040daa08c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '768d24026a3752a6b4997d4a78176fe7') in 0.1149874 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000066 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab
+  artifactKey: Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab using Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef57e7bfd6e783de2b82bbe19fc1b944') in 0.1601203 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Prepare
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  7.571 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 4.67 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.020 seconds
+Domain Reload Profiling: 9608ms
+	BeginReloadAssembly (2752ms)
+		ExecutionOrderSort (12ms)
+		DisableScriptedObjects (528ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (6ms)
+		CreateAndSetChildDomain (795ms)
+	RebuildCommonClasses (242ms)
+	RebuildNativeTypeToScriptingClass (38ms)
+	initialDomainReloadingComplete (148ms)
+	LoadAllAssembliesAndSetupDomain (4407ms)
+		LoadAssemblies (3959ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1245ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (1066ms)
+			ResolveRequiredComponents (29ms)
+	FinalizeReload (2022ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1619ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (350ms)
+			ProcessInitializeOnLoadAttributes (1000ms)
+			ProcessInitializeOnLoadMethodAttributes (228ms)
+			AfterProcessingInitializeOnLoad (23ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (61ms)
+Refreshing native plugins compatible for Editor in 3.28 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7706 unused Assets / (4.3 MB). Loaded Objects now: 8576.
+Memory consumption went from 165.2 MB to 160.9 MB.
+Total: 28.985700 ms (FindLiveObjects: 2.528900 ms CreateObjectMapping: 2.737500 ms MarkObjects: 17.269500 ms  DeleteObjects: 6.446800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1228.308557 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_5.prefab
+  artifactKey: Guid(fddda12dea2326f4ba9470624f1eb023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_5.prefab using Guid(fddda12dea2326f4ba9470624f1eb023) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef2a083a4d8724e9076ade59ebfc064e') in 1.2084437 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 34
 
 ========================================================================
 Received Import Request.
-  Time since last request: 46.441022 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Decal.mat
-  artifactKey: Guid(31d0dcc6f2dd4e4408d18036a2c93862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Decal.mat using Guid(31d0dcc6f2dd4e4408d18036a2c93862) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7d2159bb191c5c0b12f7091fd65c6ae') in 1.23043 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 0.000561 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_7.prefab
+  artifactKey: Guid(13832439b7290eb48a3aee4d6ed63b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_7.prefab using Guid(13832439b7290eb48a3aee4d6ed63b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86c2fbb5ca9f406f0389984780c4434f') in 0.0525095 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000078 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpatialMappingOcclusion.mat
-  artifactKey: Guid(b51db210fe78df745a372851b3db949e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpatialMappingOcclusion.mat using Guid(b51db210fe78df745a372851b3db949e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ac5824e649c8d235712f53bd2a16d2f9') in 0.0217666 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.000056 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab
+  artifactKey: Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_4.prefab using Guid(fd7f97974beb7d84685543847e9aea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cbfaf36cdabd64e2cb184a3f50920b48') in 0.041134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Unlit-Default.mat
-  artifactKey: Guid(71942363c5608a64bb62421349d39c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Unlit-Default.mat using Guid(71942363c5608a64bb62421349d39c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2834b8aaec7b4dfaf6ff10d266b339c3') in 0.0277857 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.000055 seconds.
+  path: Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_6.prefab
+  artifactKey: Guid(589756df22a17fb4689c0d339c7d3bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enviroment/craftpix-net-404331-free-nature-backgrounds-pixel-art-unity/Nature Backgrounds Pixel Art/Prefabs/Background_6.prefab using Guid(589756df22a17fb4689c0d339c7d3bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'baa54675e065fd2e6414c277673346ec') in 0.0343856 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat
-  artifactKey: Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat using Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ac146adab67f46017e8e1b3ae8f420e') in 0.0276419 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SimpleLit.mat
-  artifactKey: Guid(6a1143ee683302f4aa628c052723efc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SimpleLit.mat using Guid(6a1143ee683302f4aa628c052723efc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a3774229e974cdd96da837ed7e66191b') in 3.2588582 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
