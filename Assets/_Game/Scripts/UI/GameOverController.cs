@@ -69,10 +69,12 @@ namespace Platformer.UI
                 return;
             }
 
-            // Mostrar puntaje si hay un ScoreManager (futuro)
+            // Mostrar puntaje del contador en vivo
             if (finalScoreText != null)
             {
-                int score = GameManager.Instance != null ? GameManager.Instance.TotalScore : 0;
+                int score = ScoreCounter.Instance != null
+                    ? ScoreCounter.Instance.GetCurrentScore()
+                    : (GameManager.Instance != null ? GameManager.Instance.TotalScore : 0);
                 finalScoreText.text = $"PUNTAJE: {score}";
             }
 
