@@ -1,24 +1,39 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using Platformer.UI;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when the player is spawned after dying.
+    /// Fired when the player has died and it's time to mostrar Game Over.
+    /// En lugar de recargar la escena directamente, muestra el panel de Game Over
+    /// para que el jugador pueda elegir reintentar o volver al menú.
     /// </summary>
     public class PlayerSpawn : Simulation.Event<PlayerSpawn>
     {
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
         public override void Execute()
         {
-            // En un Endless Runner, es más limpio recargar la escena entera para limpiar plataformas.
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-            
-            // Opcional: reiniciar velocidad por si el manager no se destruye entre escenas
-            if (GameSpeedManager.Instance != null) 
+            // 1. Intentar mostrar la pantalla de Game Over (flujo normal)
+            if (GameOverController.Instance != null)
+            {
+                GameOverController.Instance.ShowGameOver();
+                return;
+            }
+
+            // 2. Fallback si no hay GameOverController pero sí GameManager
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ReloadCurrentLevel();
+                return;
+            }
+
+            // 3. Fallback final: recargar la escena directamente (modo testing en Editor)
+            if (GameSpeedManager.Instance != null)
                 GameSpeedManager.Instance.ResetSpeed();
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
