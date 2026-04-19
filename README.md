@@ -67,21 +67,23 @@ Scripts/
 
 | Sistema | Script(s) | Descripción |
 |---------|-----------|-------------|
-| Velocidad del mundo | `GameSpeedManager.cs` | Singleton. Acelera progresivamente. |
-| Mover objetos | `WorldMover.cs` | Desplaza plataformas/obstáculos con FixedUpdate. |
-| Generación de suelo | `LevelGenerator.cs` | Object Pooling de bloques de plataforma. |
-| Obstáculos | `ObstacleSpawner.cs` | Object Pooling + dificultad progresiva. |
-| Parallax | `ParallaxLayer.cs` | Fondos con efecto de profundidad. |
-| Muerte / Respawn | `PlayerDeath.cs` + `PlayerSpawn.cs` | Para el mundo y recarga la escena. |
+| **Core del Juego** | `GameManager.cs` | Singleton persistente. Gestiona escenas, niveles y puntaje de sesión. |
+| **Velocidad del mundo** | `GameSpeedManager.cs` | Acelera progresivamente y afecta puntaje/movimiento. |
+| **Mover objetos** | `WorldMover.cs` | Desplaza plataformas/obstáculos con FixedUpdate hacia el jugador. |
+| **Generación de niveles** | `LevelGenerator.cs` | Object Pooling de bloques/plataformas generadas a la derecha. |
+| **Obstáculos** | `ObstacleSpawner.cs` | Object Pooling + dificultad progresiva de elementos letales. |
+| **Transiciones de interfaz** | `SceneTransitionController.cs` | Permite cross-fade visual y carga asíncrona de niveles/menú. |
+| **HUD & Score** | `ScoreCounter.cs` | Sube puntos dinámicamente con la distancia en tiempo real, tipo Dino. |
+| **Game Over** | `GameOverController.cs` | Pantalla con resultado final, tiempo y reinicio/salida. |
 
 ---
 
-## 🚧 Funcionalidad Pendiente
+## 🚧 Estado y Funcionalidad Pendiente
 
-- [ ] `ScoreManager` — distancia recorrida + monedas recolectadas
-- [ ] `HUDController` — mostrar puntaje en tiempo real
-- [ ] Pantalla de **Game Over** con puntaje final y botón de reinicio
-- [ ] Conectar tokens al sistema de puntaje
+- [x] **Arquitectura Multi-Escena**: GameManager para persistir de menú principal a gameplay.
+- [x] **HUD y Tracking de Puntos**: Contador dinámico visible (`ScoreCounter`) atado al tiempo y velocidad de avance.
+- [x] **Game Over**: Pantalla robusta que frena el mundo, detiene puntaje y permite volver al menú o reintentar.
+- [ ] **Tokens (Moneditas)**: Conectar los pickups/tokens (`PlayerTokenCollision.cs`) al `GameManager.Instance.AddScore()` para sumar bonus a los puntos actuales al ser recogidos.
 
 ---
 
