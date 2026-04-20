@@ -72,6 +72,8 @@ Scripts/
 | **Mover objetos** | `WorldMover.cs` | Desplaza plataformas/obstáculos con FixedUpdate hacia el jugador. |
 | **Generación de niveles** | `LevelGenerator.cs` | Object Pooling de bloques/plataformas generadas a la derecha. |
 | **Obstáculos** | `ObstacleSpawner.cs` | Object Pooling + dificultad progresiva de elementos letales. |
+| **Monedas (Coins)** | `CoinSpawner.cs` / `ScoreCoin.cs` | Generación dinámica de monedas coleccionables con bonus de puntos al HUD. |
+| **Enemigos (Slimes)** | `EnemySpawner.cs` / `SlimeController.cs`| Spawner de slimes con físicas personalizadas como obstáculos móviles. |
 | **Transiciones de interfaz** | `SceneTransitionController.cs` | Permite cross-fade visual y carga asíncrona de niveles/menú. |
 | **HUD & Score** | `ScoreCounter.cs` | Sube puntos dinámicamente con la distancia en tiempo real, tipo Dino. |
 | **Game Over** | `GameOverController.cs` | Pantalla con resultado final, tiempo y reinicio/salida. |
@@ -83,7 +85,9 @@ Scripts/
 - [x] **Arquitectura Multi-Escena**: GameManager para persistir de menú principal a gameplay.
 - [x] **HUD y Tracking de Puntos**: Contador dinámico visible (`ScoreCounter`) atado al tiempo y velocidad de avance.
 - [x] **Game Over**: Pantalla robusta que frena el mundo, detiene puntaje y permite volver al menú o reintentar.
-- [ ] **Tokens (Moneditas)**: Conectar los pickups/tokens (`PlayerTokenCollision.cs`) al `GameManager.Instance.AddScore()` para sumar bonus a los puntos actuales al ser recogidos.
+- [x] **Tokens (Monedas)**: Sistema de Object Pooling (`CoinSpawner.cs`) y collider (`ScoreCoin.cs`) para spawn aleatorio y sumar bonus animado al HUD.
+- [x] **Enemigos y Dificultad**: Enemigos inicializados correctamente que actúan como obstáculos en movimiento a lo largo del nivel.
+- [ ] **Progresión y Niveles**: Implementar varios niveles con aumento de dificultad dinámico de acuerdo al score/tiempo, y posibles batallas contra jefes.
 
 ---
 
