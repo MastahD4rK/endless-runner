@@ -118,7 +118,7 @@ namespace Platformer.UI
             canvas.sortingOrder = 999;
 
             gameObject.AddComponent<CanvasScaler>();
-            gameObject.AddComponent<GraphicRaycaster>();
+            // No se añade GraphicRaycaster: el fade overlay no es interactivo
 
             // CanvasGroup en el root canvas para controlar alpha global
             _canvasGroup = gameObject.AddComponent<CanvasGroup>();

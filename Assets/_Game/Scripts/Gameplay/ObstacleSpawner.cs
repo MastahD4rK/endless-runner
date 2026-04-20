@@ -129,18 +129,25 @@ namespace Platformer.Gameplay
 
         void RecycleOffScreenObstacles()
         {
+            // Iteración inversa con swap-remove para evitar O(n) shifting de List.RemoveAt
             for (int i = activeObstacles.Count - 1; i >= 0; i--)
             {
-                if (activeObstacles[i] == null)
+                GameObject obj = activeObstacles[i];
+                if (obj == null)
                 {
-                    activeObstacles.RemoveAt(i);
+                    // Swap con el último y remover el final (O(1))
+                    int last = activeObstacles.Count - 1;
+                    activeObstacles[i] = activeObstacles[last];
+                    activeObstacles.RemoveAt(last);
                     continue;
                 }
 
-                if (activeObstacles[i].transform.position.x < despawnX)
+                if (obj.transform.position.x < despawnX)
                 {
-                    ReturnToPool(activeObstacles[i]);
-                    activeObstacles.RemoveAt(i);
+                    ReturnToPool(obj);
+                    int last = activeObstacles.Count - 1;
+                    activeObstacles[i] = activeObstacles[last];
+                    activeObstacles.RemoveAt(last);
                 }
             }
         }

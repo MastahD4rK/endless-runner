@@ -37,6 +37,7 @@ namespace Platformer.UI
         private int _lastMilestone = 0;
         private float _blinkTimer = 0f;
         private bool _isRunning = true;
+        private GameSpeedManager _speedManager;
 
         // ─────────────────────────────────────────────────────────────
         void Awake()
@@ -50,6 +51,7 @@ namespace Platformer.UI
             _displayedScore = 0;
             _lastMilestone = 0;
             _isRunning = true;
+            _speedManager = GameSpeedManager.Instance;
             UpdateText();
         }
 
@@ -57,8 +59,15 @@ namespace Platformer.UI
         {
             if (!_isRunning) return;
 
+            // Lazy init por si el singleton se creó después
+            if (_speedManager == null)
+            {
+                _speedManager = GameSpeedManager.Instance;
+                if (_speedManager == null) return;
+            }
+
             // Verificar si el juego sigue corriendo
-            if (GameSpeedManager.Instance != null && !GameSpeedManager.Instance.isPlaying)
+            if (!_speedManager.isPlaying)
             {
                 _isRunning = false;
                 // Enviar puntaje final al GameManager
@@ -69,8 +78,8 @@ namespace Platformer.UI
 
             // ── Acumular puntos ──────────────────────────────────
             float multiplier = 1f;
-            if (scaleWithSpeed && GameSpeedManager.Instance != null)
-                multiplier = GameSpeedManager.Instance.speedMultiplier;
+            if (scaleWithSpeed)
+                multiplier = _speedManager.speedMultiplier;
 
             _scoreAccumulator += pointsPerSecond * multiplier * Time.deltaTime;
 

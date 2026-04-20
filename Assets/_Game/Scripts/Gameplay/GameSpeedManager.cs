@@ -35,7 +35,10 @@ namespace Platformer.Gameplay
         {
             if (isPlaying && speedMultiplier < maxSpeedMultiplier)
             {
-                speedMultiplier += accelerationRate * Time.deltaTime;
+                speedMultiplier = Mathf.Min(
+                    speedMultiplier + accelerationRate * Time.deltaTime,
+                    maxSpeedMultiplier
+                );
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -66,8 +66,8 @@ namespace Platformer.Mechanics
         public void Teleport(Vector3 position)
         {
             body.position = position;
-            velocity *= 0;
-            body.linearVelocity *= 0;
+            velocity = Vector2.zero;
+            body.linearVelocity = Vector2.zero;
         }
 
         protected virtual void OnEnable()
@@ -161,7 +161,7 @@ namespace Platformer.Mechanics
                     else
                     {
                         //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
-                        velocity.x *= 0;
+                        velocity.x = 0f;
                         velocity.y = Mathf.Min(velocity.y, 0);
                     }
                     //remove shellDistance from actual move distance.
