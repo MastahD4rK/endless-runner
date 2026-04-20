@@ -138,8 +138,19 @@ namespace Platformer.Mechanics
             if (animator != null)
             {
                 animator.SetBool("grounded", IsGrounded);
-                // Force running animation because the player stays static but the world moves
+                // Velocidad horizontal fija (el mundo se mueve, no el jugador)
                 animator.SetFloat("velocityX", 1f);
+                // Velocidad vertical: positiva = subiendo, negativa = cayendo
+                animator.SetFloat("velocityY", velocity.y);
+
+                // TRUCO: El Animator de la plantilla original no tiene estado de "Caída".
+                // Pero el creador del Raptor.overrideController mapeó la animación de caída
+                // (raptor-caida) al estado de aterrizaje ("Player-Land").
+                // Forzamos ese estado mientras estamos cayendo en el aire:
+                if (!IsGrounded && velocity.y < 0)
+                {
+                    animator.Play("Player-Land", 0, 0f);
+                }
             }
 
             targetVelocity = move * maxSpeed;
