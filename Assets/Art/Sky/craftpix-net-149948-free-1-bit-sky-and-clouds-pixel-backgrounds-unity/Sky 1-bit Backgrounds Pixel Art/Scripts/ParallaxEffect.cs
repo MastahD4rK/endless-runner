@@ -1,0 +1,54 @@
+using UnityEngine;
+
+namespace Sky1bitBackgroundsPixelArt
+{
+    public class ParallaxEffect : MonoBehaviour
+    {
+        private Transform mainCamera;
+        private Transform player;
+
+        public float parallaxIntensityX;
+        public float parallaxIntensityY;
+        public float independantSpeed;
+
+        private float cameraSize;
+        private float spriteWidth;
+        private Vector2 initialPos;
+        private float translationOffset = 0;
+
+        private void Start()
+        {
+            mainCamera = Camera.main.transform;
+            cameraSize = Camera.main.orthographicSize;
+            // Removed player dependency
+            spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x / 3;
+
+            transform.position = new Vector2(mainCamera.position.x, transform.position.y);
+            initialPos = transform.position;
+        }
+
+        private void LateUpdate()
+        {
+            float speedX = independantSpeed;
+            if (Platformer.Gameplay.GameSpeedManager.Instance != null && Platformer.Gameplay.GameSpeedManager.Instance.isPlaying)
+            {
+                speedX = -Platformer.Gameplay.GameSpeedManager.Instance.CurrentSpeed;
+            }
+
+            translationOffset += speedX * Time.deltaTime * parallaxIntensityX;
+
+            float parallaxOffsetX = (mainCamera.position.x * (1 - (parallaxIntensityX / 2))) + translationOffset;
+            float parallaxOffsetY = ((mainCamera.position.y / cameraSize) / 0.7f) * (1 - parallaxIntensityY);
+
+            transform.position = new Vector2(initialPos.x + parallaxOffsetX, initialPos.y + parallaxOffsetY);
+
+            float cameraOffsetX = mainCamera.position.x - transform.position.x;
+
+            if (cameraOffsetX > spriteWidth / 2)
+                initialPos.x += spriteWidth;
+            else if (cameraOffsetX < -spriteWidth / 2)
+                initialPos.x -= spriteWidth;
+        }
+    }
+}
+
