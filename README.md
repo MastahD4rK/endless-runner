@@ -4,6 +4,11 @@ Juego 2D de tipo Endless Runner desarrollado en Unity 6. Convertido desde el tem
 
 ---
 
+## Desarrolladores
+
+- Cristóbal Gómez  | usuarios: cristobalGomez189
+- Cristhian Quiroz | usuarios: mastah_d4rk
+
 ## 🕹️ Controles
 
 | Acción | Teclado | Gamepad |
