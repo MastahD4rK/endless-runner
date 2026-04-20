@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Platformer.Core;
@@ -114,6 +115,8 @@ namespace Platformer.UI
             RestoreEngineState();
             if (GameManager.Instance != null)
                 GameManager.Instance.ReloadCurrentLevel();
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void OnMainMenuButton()
@@ -122,6 +125,8 @@ namespace Platformer.UI
             RestoreEngineState();
             if (GameManager.Instance != null)
                 GameManager.Instance.GoToMainMenu();
+            else
+                SceneManager.LoadScene("MainMenu");
         }
 
         private void RestoreEngineState()
