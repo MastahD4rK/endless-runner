@@ -192,11 +192,15 @@ namespace Platformer.Mechanics
         }
 
         /// <summary>
-        /// Colisión con el jugador = muerte instantánea.
+        /// Trigger con el jugador = muerte instantánea.
+        /// Usamos Trigger porque ambos (jugador y slime) usan MovePosition,
+        /// y las colisiones físicas no se detectan bien entre ellos.
+        /// 
+        /// IMPORTANTE: En el Inspector del Slime, marca "Is Trigger" en el Collider2D.
         /// </summary>
-        void OnCollisionEnter2D(Collision2D collision)
+        void OnTriggerEnter2D(Collider2D other)
         {
-            var player = collision.gameObject.GetComponent<PlayerController>();
+            var player = other.GetComponent<PlayerController>();
             if (player != null)
             {
                 Schedule<PlayerDeath>();
