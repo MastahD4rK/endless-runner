@@ -14,9 +14,11 @@ namespace Platformer.UI
     {
         public static ScoreCounter Instance { get; private set; }
 
-        [Header("Referencia UI")]
         [Tooltip("Texto TMP donde se muestra el puntaje (ej: 00000)")]
         public TextMeshProUGUI scoreText;
+
+        [Tooltip("Texto TMP flotante para mostrar los bonus (ej: +50). Se anima automáticamente.")]
+        public TextMeshProUGUI bonusText;
 
         [Header("Configuración del Contador")]
         [Tooltip("Puntos que se suman por segundo base")]
@@ -39,6 +41,11 @@ namespace Platformer.UI
         private bool _isRunning = true;
         private GameSpeedManager _speedManager;
 
+        // ── Estado del Bonus Popup ───────────────────────────────────
+        private float _bonusTimer = 0f;
+        private float _bonusDuration = 1f;
+        private Vector3 _bonusOriginalPos;
+
         // ─────────────────────────────────────────────────────────────
         void Awake()
         {
@@ -52,6 +59,19 @@ namespace Platformer.UI
             _lastMilestone = 0;
             _isRunning = true;
             _speedManager = GameSpeedManager.Instance;
+            
+            // Auto-generar el texto flotante si no fue asignado en el Inspector
+            if (bonusText == null && scoreText != null)
+            {
+                CreateBonusTextAutomatically();
+            }
+
+            if (bonusText != null)
+            {
+                _bonusOriginalPos = bonusText.rectTransform.anchoredPosition;
+                SetBonusAlpha(0f);
+            }
+
             UpdateText();
         }
 
@@ -110,6 +130,20 @@ namespace Platformer.UI
             {
                 scoreText.alpha = 1f;
             }
+
+            // ── Efecto del Bonus Text (+50) ──────────────────────────
+            if (_bonusTimer > 0f && bonusText != null)
+            {
+                _bonusTimer -= Time.deltaTime;
+                float t = 1f - (_bonusTimer / _bonusDuration); // 0 a 1
+
+                // Animación: flota hacia arriba 50 pixeles
+                bonusText.rectTransform.anchoredPosition = _bonusOriginalPos + new Vector3(0f, Mathf.Lerp(0, 50f, t), 0f);
+                
+                // Fade out en la segunda mitad de la animación
+                float alpha = t > 0.5f ? Mathf.Lerp(1f, 0f, (t - 0.5f) * 2f) : 1f;
+                SetBonusAlpha(alpha);
+            }
         }
 
         void OnDestroy()
@@ -122,6 +156,57 @@ namespace Platformer.UI
         {
             if (scoreText != null)
                 scoreText.text = _displayedScore.ToString("D5"); // Formato 00000
+        }
+
+        private void SetBonusAlpha(float alpha)
+        {
+            if (bonusText != null)
+            {
+                Color c = bonusText.color;
+                c.a = alpha;
+                bonusText.color = c;
+            }
+        }
+
+        private void CreateBonusTextAutomatically()
+        {
+            // Duplicar el texto de score existente
+            GameObject bonusObj = Instantiate(scoreText.gameObject, scoreText.transform.parent);
+            bonusObj.name = "BonusText_Auto";
+            bonusText = bonusObj.GetComponent<TextMeshProUGUI>();
+            
+            // Ajustar el diseño del texto duplicado
+            bonusText.text = "+50";
+            bonusText.color = new Color(1f, 0.8f, 0f, 1f); // Dorado
+            bonusText.fontSize = scoreText.fontSize * 0.7f; // Un poco más pequeño
+            bonusText.alignment = TextAlignmentOptions.TopRight;
+            
+            // Moverlo ligeramente abajo y a la derecha del texto principal
+            bonusText.rectTransform.anchoredPosition = scoreText.rectTransform.anchoredPosition + new Vector2(0, -30f);
+            
+            // Limpiar si tiene algún otro script copiado accidentalmente
+            // (no debría, ya que clonamos el objeto del texto que normalmente solo tiene el TMP)
+        }
+
+        /// <summary>Suma puntos extra al puntaje actual y muestra el popup visual.</summary>
+        public void AddBonusScore(int amount)
+        {
+            if (!_isRunning) return;
+
+            _scoreAccumulator += amount;
+            
+            // Forzar actualización visual inmediata
+            _displayedScore = Mathf.FloorToInt(_scoreAccumulator);
+            UpdateText();
+
+            // Activar efecto de UI popup
+            if (bonusText != null)
+            {
+                bonusText.text = $"+{amount}";
+                bonusText.rectTransform.anchoredPosition = _bonusOriginalPos;
+                SetBonusAlpha(1f);
+                _bonusTimer = _bonusDuration;
+            }
         }
 
         /// <summary>Devuelve el puntaje actual de esta ronda.</summary>
