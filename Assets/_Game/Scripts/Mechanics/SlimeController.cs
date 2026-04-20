@@ -7,45 +7,44 @@ using static Platformer.Core.Simulation;
 namespace Platformer.Mechanics
 {
     /// <summary>
-    /// Controlador independiente para enemigos tipo Slime en el Endless Runner.
+    /// Controlador para enemigos tipo Slime en el Endless Runner.
     /// 
-    /// Usa un Rigidbody2D con gravityScale = 0 para movimiento horizontal estable.
-    /// Solo activa la gravedad cuando salta, y la desactiva al aterrizar.
+    /// El slime camina por el suelo hacia el jugador (moviéndose con el mundo).
+    /// Cuando está MUY cerca del jugador, tiene una probabilidad de hacer
+    /// un salto pequeño y rápido para dificultar que el jugador lo evada.
     /// 
-    /// IMPORTANTE: El prefab del Slime necesita:
-    /// - Rigidbody2D (Dynamic, Freeze Rotation Z)
-    /// - Collider2D (BoxCollider2D o similar)
-    /// - Animator + SpriteRenderer (para animaciones)
-    /// - NO necesita AnimationController, KinematicObject ni WorldMover
+    /// Física: gravityScale = 0 siempre. Se maneja la velocidad Y manualmente.
+    /// El aterrizaje se basa en volver a la posición Y original (groundY),
+    /// lo que GARANTIZA que el slime baje después de saltar.
+    /// 
+    /// Prefab necesita: Rigidbody2D (Dynamic, Gravity Scale 0, Freeze Rotation Z),
+    /// Collider2D, Animator, SpriteRenderer.
+    /// NO debe tener: AnimationController, KinematicObject, WorldMover.
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class SlimeController : MonoBehaviour
     {
         [Header("Movimiento")]
-        [Tooltip("Velocidad propia del slime en unidades/segundo")]
+        [Tooltip("Velocidad adicional del slime (además de la velocidad del mundo)")]
         public float moveSpeed = 2f;
 
         [Header("Salto")]
-        [Tooltip("¿Este slime puede saltar? Se asigna desde el EnemySpawner.")]
+        [Tooltip("¿Este slime puede saltar?")]
         public bool canJump = false;
 
-        [Tooltip("Fuerza del salto (velocidad vertical inicial)")]
-        public float jumpForce = 10f;
+        [Tooltip("Altura del salto en unidades. 1.5 = salto pequeño, 3 = salto alto.")]
+        public float jumpHeight = 1.5f;
 
-        [Tooltip("Gravedad durante el salto (se desactiva al aterrizar)")]
-        public float jumpGravityScale = 3f;
+        [Tooltip("Duración del salto en segundos. Más bajo = hop más rápido.")]
+        public float jumpDuration = 0.5f;
 
         [Header("Zona de Amenaza")]
-        [Tooltip("Distancia X al jugador donde el slime decide si salta")]
-        public float threatDistance = 8f;
+        [Tooltip("Distancia X al jugador donde decide si salta. 2-3 = muy cerca.")]
+        public float threatDistance = 2.5f;
 
-        [Tooltip("Probabilidad de saltar en la zona de amenaza (0-1)")]
+        [Tooltip("Probabilidad de saltar (0-1). 0.3 = 30%.")]
         [Range(0f, 1f)]
-        public float jumpProbabilityInThreatZone = 0.5f;
-
-        [Header("Detección de Suelo")]
-        [Tooltip("Distancia del raycast para detectar el suelo")]
-        public float groundCheckDistance = 0.3f;
+        public float jumpProbability = 0.3f;
 
         // ── Componentes ──────────────────────────────────────────────
         private Rigidbody2D rb;
@@ -55,14 +54,27 @@ namespace Platformer.Mechanics
         private GameSpeedManager _speedManager;
 
         // ── Estado ───────────────────────────────────────────────────
-        private bool isGrounded;
         private bool isJumping = false;
         private bool hasDecidedJump = false;
         private bool willJump = false;
         private Transform playerTransform;
 
+        // ── Física del salto ─────────────────────────────────────────
+        // groundY = la posición Y donde el slime fue colocado (nivel del suelo).
+        // El salto es un arco parabólico: sube hasta groundY + jumpHeight,
+        // luego baja hasta groundY. Se usa jumpTimer/jumpDuration como t [0..1].
+        private float groundY;
+        private float jumpTimer;
+
         void Awake()
         {
+            // Eliminar componentes conflictivos de inmediato
+            var animCtrl = GetComponent<AnimationController>();
+            if (animCtrl != null) DestroyImmediate(animCtrl);
+
+            var kinematic = GetComponent<KinematicObject>();
+            if (kinematic != null) DestroyImmediate(kinematic);
+
             rb = GetComponent<Rigidbody2D>();
             _collider = GetComponent<Collider2D>();
             animator = GetComponent<Animator>();
@@ -74,6 +86,7 @@ namespace Platformer.Mechanics
             hasDecidedJump = false;
             willJump = false;
             isJumping = false;
+            jumpTimer = 0f;
             playerTransform = null;
             _speedManager = GameSpeedManager.Instance;
 
@@ -81,9 +94,12 @@ namespace Platformer.Mechanics
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.freezeRotation = true;
-                rb.gravityScale = jumpGravityScale; // Start with gravity so they fall onto the ground
+                rb.gravityScale = 0f; // SIEMPRE 0 — controlamos Y manualmente
                 rb.linearVelocity = Vector2.zero;
             }
+
+            // Guardar la posición Y actual como "suelo"
+            groundY = transform.position.y;
         }
 
         void Update()
@@ -91,7 +107,7 @@ namespace Platformer.Mechanics
             if (_speedManager == null)
                 _speedManager = GameSpeedManager.Instance;
 
-            // ── Buscar al jugador ───────────────────────────────────
+            // Buscar al jugador
             if (playerTransform == null)
             {
                 PlatformerModel model = Simulation.GetModel<PlatformerModel>();
@@ -99,19 +115,44 @@ namespace Platformer.Mechanics
                     playerTransform = model.player.transform;
             }
 
-            // ── Detección de suelo ──────────────────────────────────
-            isGrounded = CheckGrounded();
-
-            // Si toca el suelo y está cayendo o quieto, apagamos gravedad (atrapa tanto el spawn inicial como el final de un salto)
-            if (isGrounded && rb.gravityScale > 0f && rb.linearVelocity.y <= 0.01f)
+            // Animaciones
+            if (animator != null)
             {
-                isJumping = false;
-                rb.gravityScale = 0f;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+                animator.SetBool("grounded", !isJumping);
+                animator.SetFloat("velocityX", 1f);
             }
 
-            // ── Sistema de salto por zona de amenaza ─────────────────
-            if (canJump && playerTransform != null && isGrounded && !isJumping)
+            if (spriteRenderer != null)
+                spriteRenderer.flipX = true; // Siempre mirando a la izquierda
+        }
+
+        void FixedUpdate()
+        {
+            // ── Salto: arco parabólico por timer ─────────────────────
+            float yOffset = 0f;
+
+            if (isJumping)
+            {
+                jumpTimer += Time.fixedDeltaTime;
+                float t = jumpTimer / jumpDuration; // 0 a 1+
+
+                if (t >= 1f)
+                {
+                    // Aterrizó — se acabó el salto
+                    isJumping = false;
+                    jumpTimer = 0f;
+                    yOffset = 0f;
+                }
+                else
+                {
+                    // Parábola: 4h * t * (1 - t)
+                    // En t=0: y=0, en t=0.5: y=jumpHeight, en t=1: y=0
+                    yOffset = 4f * jumpHeight * t * (1f - t);
+                }
+            }
+
+            // ── Zona de amenaza: decidir si salta ────────────────────
+            if (canJump && playerTransform != null && !isJumping)
             {
                 float distanceToPlayer = transform.position.x - playerTransform.position.x;
 
@@ -120,65 +161,46 @@ namespace Platformer.Mechanics
                     if (!hasDecidedJump)
                     {
                         hasDecidedJump = true;
-                        willJump = Random.value < jumpProbabilityInThreatZone;
+                        willJump = Random.value < jumpProbability;
                     }
 
                     if (willJump)
                     {
-                        // ¡SALTAR! Activar gravedad y aplicar fuerza vertical
                         isJumping = true;
-                        rb.gravityScale = jumpGravityScale;
-                        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                        jumpTimer = 0f;
                         willJump = false;
                     }
                 }
             }
 
-            // ── Actualizar animaciones ───────────────────────────────
-            if (animator != null)
-            {
-                animator.SetBool("grounded", isGrounded && !isJumping);
-                animator.SetFloat("velocityX", Mathf.Abs(rb.linearVelocity.x) / 7f);
-            }
-
-            if (spriteRenderer != null && rb.linearVelocity.x < -0.01f)
-                spriteRenderer.flipX = true;
-        }
-
-        void FixedUpdate()
-        {
             // ── Movimiento horizontal ────────────────────────────────
             float worldSpeed = 0f;
             if (_speedManager != null && _speedManager.isPlaying)
                 worldSpeed = _speedManager.CurrentSpeed;
 
-            float totalHorizontalSpeed = -(worldSpeed + moveSpeed);
+            float dx = -(worldSpeed + moveSpeed) * Time.fixedDeltaTime;
 
-            // Preservar velocidad Y (importante durante saltos)
-            rb.linearVelocity = new Vector2(totalHorizontalSpeed, rb.linearVelocity.y);
-        }
-
-        /// <summary>
-        /// Detecta si el slime está en el suelo usando un raycast corto.
-        /// </summary>
-        private bool CheckGrounded()
-        {
-            if (_collider == null) return false;
-
-            Vector2 origin = new Vector2(
-                _collider.bounds.center.x,
-                _collider.bounds.min.y
+            // ── Mover con MovePosition (evita jitter) ────────────────
+            // Usamos rb.MovePosition para que el Rigidbody2D maneje
+            // todo el movimiento de forma suave, sin conflictos.
+            Vector2 newPos = new Vector2(
+                rb.position.x + dx,
+                groundY + yOffset
             );
-            RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance);
-            return hit.collider != null && hit.collider.gameObject != gameObject;
+            rb.linearVelocity = Vector2.zero; // Sin velocidad propia
+            rb.MovePosition(newPos);
         }
 
         /// <summary>
-        /// Colisión con el jugador = muerte instantánea.
+        /// Trigger con el jugador = muerte instantánea.
+        /// Usamos Trigger porque ambos (jugador y slime) usan MovePosition,
+        /// y las colisiones físicas no se detectan bien entre ellos.
+        /// 
+        /// IMPORTANTE: En el Inspector del Slime, marca "Is Trigger" en el Collider2D.
         /// </summary>
-        void OnCollisionEnter2D(Collision2D collision)
+        void OnTriggerEnter2D(Collider2D other)
         {
-            var player = collision.gameObject.GetComponent<PlayerController>();
+            var player = other.GetComponent<PlayerController>();
             if (player != null)
             {
                 Schedule<PlayerDeath>();
@@ -186,7 +208,7 @@ namespace Platformer.Mechanics
         }
 
         /// <summary>
-        /// Resetea el estado del slime para reciclaje.
+        /// Resetea el estado del slime para reciclaje (llamado por EnemySpawner).
         /// </summary>
         public void ResetSlime(bool shouldJump)
         {
@@ -194,16 +216,26 @@ namespace Platformer.Mechanics
             hasDecidedJump = false;
             willJump = false;
             isJumping = false;
+            jumpTimer = 0f;
 
             if (_collider != null)
                 _collider.enabled = true;
 
             if (rb != null)
             {
-                rb.gravityScale = jumpGravityScale; // Que caigan al spawnear!
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                rb.freezeRotation = true;
+                rb.gravityScale = 0f;
                 rb.linearVelocity = Vector2.zero;
-                rb.WakeUp(); // Forzar a despertar para evitar que el motor de físicas los ponga inactivos
             }
+        }
+
+        /// <summary>
+        /// Establece la posición Y del suelo (llamado por EnemySpawner al spawnear).
+        /// </summary>
+        public void SetGroundY(float y)
+        {
+            groundY = y;
         }
     }
 }

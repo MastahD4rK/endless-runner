@@ -27,10 +27,13 @@ namespace Platformer.Gameplay
         public float spawnY = -1f;
 
         [Tooltip("Tiempo mínimo entre la aparición de enemigos (segundos)")]
-        public float minSpawnInterval = 3f;
+        public float minSpawnInterval = 4f;
 
         [Tooltip("Tiempo máximo entre la aparición de enemigos (segundos)")]
-        public float maxSpawnInterval = 7f;
+        public float maxSpawnInterval = 8f;
+
+        [Tooltip("Distancia mínima X entre slimes activos para evitar que se encimen")]
+        public float minSeparationDistance = 5f;
 
         [Tooltip("Posición X donde se reciclan los enemigos (fuera de pantalla izquierda)")]
         public float despawnX = -15f;
@@ -107,7 +110,11 @@ namespace Platformer.Gameplay
             // ── ¿Es hora de generar un enemigo? ─────────────────
             if (Time.time >= nextSpawnTime)
             {
-                SpawnEnemy();
+                // Verificar que no haya otro slime demasiado cerca del punto de spawn
+                if (!IsEnemyTooCloseToSpawn())
+                {
+                    SpawnEnemy();
+                }
 
                 // Dificultad progresiva
                 float difficultyFactor = (timeSinceStart / difficultyIncreaseInterval) * intervalReduction;
@@ -122,6 +129,21 @@ namespace Platformer.Gameplay
         }
 
         // ─────────────────────────────────────────────────────────────
+        /// <summary>
+        /// Verifica si algún enemigo activo está demasiado cerca del punto de spawn.
+        /// </summary>
+        bool IsEnemyTooCloseToSpawn()
+        {
+            for (int i = 0; i < activeEnemies.Count; i++)
+            {
+                if (activeEnemies[i] == null) continue;
+                float dist = Mathf.Abs(activeEnemies[i].transform.position.x - spawnX);
+                if (dist < minSeparationDistance)
+                    return true;
+            }
+            return false;
+        }
+
         void SpawnEnemy()
         {
             int prefabIndex = Random.Range(0, enemyPrefabs.Length);
@@ -137,12 +159,12 @@ namespace Platformer.Gameplay
             SlimeController slime = enemy.GetComponent<SlimeController>();
             if (slime != null)
             {
+                slime.SetGroundY(spawnY);
                 slime.ResetSlime(shouldJump);
             }
 
             enemy.SetActive(true);
             activeEnemies.Add(enemy);
-            Debug.Log($"[EnemySpawner] Slime spawneado en ({spawnX}, {spawnY}). canJump={shouldJump}. Activos: {activeEnemies.Count}");
         }
 
         void RecycleOffScreenEnemies()
@@ -198,20 +220,20 @@ namespace Platformer.Gameplay
         /// </summary>
         void EnsureComponents(GameObject obj)
         {
-            // Eliminar WorldMover si existe — el SlimeController ya maneja el movimiento del mundo
-            var worldMover = obj.GetComponent<WorldMover>();
-            if (worldMover != null)
-            {
-                Destroy(worldMover);
-            }
-
-            // Eliminar AnimationController si existe — fuerza Kinematic y rompe el salto
+            // Eliminar AnimationController (hereda KinematicObject, fuerza Kinematic)
             var animCtrl = obj.GetComponent<AnimationController>();
             if (animCtrl != null)
-            {
-                Debug.LogWarning($"[EnemySpawner] Se eliminó AnimationController de '{obj.name}'. Usa solo SlimeController.");
-                Destroy(animCtrl);
-            }
+                DestroyImmediate(animCtrl);
+
+            // Eliminar KinematicObject suelto
+            var kinematic = obj.GetComponent<KinematicObject>();
+            if (kinematic != null)
+                DestroyImmediate(kinematic);
+
+            // Eliminar WorldMover — SlimeController maneja el movimiento
+            var worldMover = obj.GetComponent<WorldMover>();
+            if (worldMover != null)
+                DestroyImmediate(worldMover);
         }
 
         #endregion
