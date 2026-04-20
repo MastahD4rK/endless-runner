@@ -87,12 +87,40 @@ namespace Platformer.UI
                 survivalTimeText.text = $"TIEMPO: {minutes:00}:{seconds:00}";
             }
 
-            // Pausar el mundo pero NO usar Time.timeScale = 0 todavía
-            // para que la animación de muerte termine antes de que todo se frene
+            // Pausar el mundo
             if (Gameplay.GameSpeedManager.Instance != null)
                 Gameplay.GameSpeedManager.Instance.StopWorld();
 
+            // ── FIX: Activar el Canvas padre ─────────────────────────
+            // El MetaGameController desactiva el UI Canvas al inicio del juego.
+            // Necesitamos reactivarlo para que el panel sea visible (activeInHierarchy = true).
+            Transform parent = gameOverPanel.transform.parent;
+            while (parent != null)
+            {
+                if (!parent.gameObject.activeSelf)
+                {
+                    parent.gameObject.SetActive(true);
+                }
+                parent = parent.parent;
+            }
+
+            // Activar el panel de Game Over
             gameOverPanel.SetActive(true);
+
+            // Desactivar otros paneles hermanos (PausePanel, etc.) para evitar conflictos
+            Transform panelParent = gameOverPanel.transform.parent;
+            if (panelParent != null)
+            {
+                foreach (Transform sibling in panelParent)
+                {
+                    if (sibling.gameObject != gameOverPanel && sibling.gameObject.activeSelf)
+                    {
+                        sibling.gameObject.SetActive(false);
+                    }
+                }
+            }
+
+            Debug.Log("[GameOverController] Panel de Game Over mostrado correctamente.");
         }
 
         #endregion

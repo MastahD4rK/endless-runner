@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineConfiner
       objectReference: {fileID: 0}
+    - target: {fileID: 5102505034379151493, guid: 6f545478bd0fb7a478ed6f674a5210f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -940,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &182585255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1333,7 +1338,7 @@ PrefabInstance:
     - target: {fileID: 4009130065698333722, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4009130065698333722, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
         type: 3}
@@ -1364,12 +1369,12 @@ PrefabInstance:
         type: 3}
       propertyPath: 'panels.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 182585254}
     - target: {fileID: 4009130065698333724, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
         type: 3}
       propertyPath: 'panels.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1381910007}
     - target: {fileID: 4009130065698333724, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
         type: 3}
       propertyPath: 'panels.Array.data[2]'
@@ -2347,6 +2352,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: -2.1479552, y: 0}
   endPosition: {x: 2.086929, y: 0}
+--- !u!1 &686409332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686409334}
+  - component: {fileID: 686409333}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &686409333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686409332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f535a3112b2644a8cbf796d0fa3566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Gameplay.EnemySpawner
+  enemyPrefabs:
+  - {fileID: 1661912868639658944, guid: 20e89472b949145478c93d4bd8db97c2, type: 3}
+  spawnX: 15
+  spawnY: -0.5
+  minSpawnInterval: 3
+  maxSpawnInterval: 7
+  despawnX: -15
+  jumpChance: 0.35
+  difficultyIncreaseInterval: 30
+  intervalReduction: 0.15
+  absoluteMinInterval: 1.5
+  poolSizePerPrefab: 3
+--- !u!4 &686409334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686409332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15085, y: 0.55905, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716858219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,6 +2844,10 @@ PrefabInstance:
     - target: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
       propertyPath: m_RootOrder
@@ -4522,7 +4587,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ede3cefa7aea464e8edfe82047b2d6f, type: 3}
   m_Name: 
@@ -5785,6 +5850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piso_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 3429208252203911330, guid: 99e9cb2d79e2c9c448f63f058518a333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5811,3 +5881,4 @@ SceneRoots:
   - {fileID: 121141255}
   - {fileID: 1660563271}
   - {fileID: 1651790932}
+  - {fileID: 686409334}
