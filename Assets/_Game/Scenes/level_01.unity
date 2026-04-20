@@ -486,7 +486,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 1, b: 0.07041359, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4305,7 +4305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Platformer.UI.ScoreCounter
   scoreText: {fileID: 104921976}
-  bonusText: {fileID: 0}
+  bonusText: {fileID: 121141253}
   pointsPerSecond: 10
   scaleWithSpeed: 1
   blinkDuration: 0.5
@@ -4341,12 +4341,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1754240608}
   - component: {fileID: 1754240607}
-  - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
   - component: {fileID: 1754240612}
   - component: {fileID: 1754240613}
   - component: {fileID: 1754240614}
+  - component: {fileID: 1754240615}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4387,20 +4387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1754240609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eabb3e8a9f87443da0ea2a1a2101fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frameRate: 12
-  tokens: []
 --- !u!114 &1754240610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4564,6 +4550,29 @@ MonoBehaviour:
   buttonColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
   buttonTextColor: {r: 1, g: 1, b: 1, a: 1}
   titleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1754240615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5ed2e0ff3e9a04bad6cb358619ab8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Mechanics.CoinSpawner
+  coinPrefab: {fileID: 4389662223576981119, guid: 02a7eb52a33a2de4fafd64660a1fe663,
+    type: 3}
+  spawnX: 15
+  minY: 0
+  maxY: 3.5
+  minSpawnInterval: 0.5
+  maxSpawnInterval: 2
+  despawnX: -15
+  maxCoinsInRow: 3
+  spacingX: 1.5
+  poolSize: 10
 --- !u!1 &1769699347
 GameObject:
   m_ObjectHideFlags: 0
