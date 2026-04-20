@@ -81,7 +81,7 @@ namespace Platformer.Mechanics
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.freezeRotation = true;
-                rb.gravityScale = 0f; // Sin gravedad: se mueve en línea recta
+                rb.gravityScale = jumpGravityScale; // Start with gravity so they fall onto the ground
                 rb.linearVelocity = Vector2.zero;
             }
         }
@@ -102,8 +102,8 @@ namespace Platformer.Mechanics
             // ── Detección de suelo ──────────────────────────────────
             isGrounded = CheckGrounded();
 
-            // Si estaba saltando y aterrizó, desactivar gravedad
-            if (isJumping && isGrounded)
+            // Si toca el suelo y está cayendo o quieto, apagamos gravedad (atrapa tanto el spawn inicial como el final de un salto)
+            if (isGrounded && rb.gravityScale > 0f && rb.linearVelocity.y <= 0.01f)
             {
                 isJumping = false;
                 rb.gravityScale = 0f;
@@ -200,8 +200,9 @@ namespace Platformer.Mechanics
 
             if (rb != null)
             {
-                rb.gravityScale = 0f;
+                rb.gravityScale = jumpGravityScale; // Que caigan al spawnear!
                 rb.linearVelocity = Vector2.zero;
+                rb.WakeUp(); // Forzar a despertar para evitar que el motor de físicas los ponga inactivos
             }
         }
     }
