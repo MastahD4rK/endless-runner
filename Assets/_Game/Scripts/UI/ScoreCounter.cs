@@ -33,6 +33,14 @@ namespace Platformer.UI
         [Tooltip("Velocidad del parpadeo")]
         public float blinkSpeed = 15f;
 
+        // ── Eventos ─────────────────────────────────────────────────
+        /// <summary>
+        /// Se invoca cada vez que el puntaje mostrado cambia.
+        /// Paso el score actual como parámetro.
+        /// Usado por MapManager para saber cuándo cambiar de mapa.
+        /// </summary>
+        public System.Action<int> OnScoreChanged;
+
         // ── Estado interno ──────────────────────────────────────────
         private float _scoreAccumulator = 0f;
         private int _displayedScore = 0;
@@ -108,6 +116,9 @@ namespace Platformer.UI
             {
                 _displayedScore = newScore;
                 UpdateText();
+
+                // Notificar a los suscriptores (MapManager, etc.)
+                OnScoreChanged?.Invoke(_displayedScore);
 
                 // Verificar milestone cada 100 puntos
                 int currentMilestone = _displayedScore / 100;
