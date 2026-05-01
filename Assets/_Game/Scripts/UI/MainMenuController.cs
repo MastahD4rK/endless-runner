@@ -1,36 +1,45 @@
+using System.Collections;
 using Platformer.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Platformer.UI
 {
     /// <summary>
-    /// Controla el menú principal con dos paneles:
-    ///   - Panel_Main: botones de Jugar, Opciones y Salir
-    ///   - Panel_Options: sliders de volumen
-    ///
-    /// Asignar este script a un GameObject en la escena MainMenu.
-    /// Conectar los paneles en el Inspector.
+    /// Controlador auto-contenido para el menú principal.
+    /// Se construye su propia UI por código (no requiere setup manual en el Editor).
+    /// Genera dos paneles: Principal (Jugar, Opciones, Salir) y Opciones (delegado a OptionsController).
     /// </summary>
     public class MainMenuController : MonoBehaviour
     {
-        // ── Paneles ───────────────────────────────────────────────────
-        [Header("Paneles del Menú")]
-        public GameObject panelMain;
-        public GameObject panelOptions;
+        // ── Configuración visual ─────────────────────────────────────
+        [Header("Colores del Menú")]
+        public Color overlayColor = new Color(0f, 0f, 0f, 0.75f);
+        public Color buttonColor = new Color(0.2f, 0.2f, 0.25f, 1f);
+        public Color buttonTextColor = Color.white;
+        public Color titleColor = Color.white;
 
-        // ── Animación del título ──────────────────────────────────────
-        [Header("Título Animado (opcional)")]
-        [Tooltip("RectTransform del logo o título para animar al inicio")]
-        public RectTransform titleTransform;
+        [Header("Animación del Título")]
         public float titleAnimDuration = 0.8f;
+
+        // ── Referencias internas ─────────────────────────────────────
+        private GameObject _menuCanvas;
+        private GameObject _panelMain;
+        private GameObject _panelOptions;
+        private RectTransform _titleRT;
 
         // ─────────────────────────────────────────────────────────────
         #region Unity Lifecycle
 
+        void Awake()
+        {
+            BuildMainMenuUI();
+        }
+
         void Start()
         {
-            ShowPanel(panelMain);
+            ShowPanel(_panelMain);
             AnimateTitle();
         }
 
@@ -41,22 +50,18 @@ namespace Platformer.UI
 
         private void ShowPanel(GameObject target)
         {
-            panelMain.SetActive(panelMain == target);
-            panelOptions.SetActive(panelOptions == target);
+            if (_panelMain != null) _panelMain.SetActive(_panelMain == target);
+            if (_panelOptions != null) _panelOptions.SetActive(_panelOptions == target);
         }
 
-        // Botones para el panel principal
-        public void ShowMainPanel()     => ShowPanel(panelMain);
-        public void ShowOptionsPanel()  => ShowPanel(panelOptions);
+        public void ShowMainPanel()     => ShowPanel(_panelMain);
+        public void ShowOptionsPanel()  => ShowPanel(_panelOptions);
 
         #endregion
 
         // ─────────────────────────────────────────────────────────────
-        #region Acciones de Botones Principales
+        #region Acciones de Botones
 
-        /// <summary>
-        /// Botón "JUGAR": carga directamente el primer nivel.
-        /// </summary>
         public void OnPlayButton()
         {
             if (GameManager.Instance == null)
@@ -64,14 +69,11 @@ namespace Platformer.UI
                 Debug.LogError("[MainMenuController] No se encontró el GameManager en la escena.");
                 return;
             }
-
             GameManager.Instance.LoadLevel(0);
         }
 
-        /// <summary>Botón "OPCIONES".</summary>
         public void OnOptionsButton() => ShowOptionsPanel();
 
-        /// <summary>Botón "SALIR" — funciona tanto en Editor como en build.</summary>
         public void OnQuitButton()
         {
 #if UNITY_EDITOR
@@ -88,30 +90,212 @@ namespace Platformer.UI
 
         private void AnimateTitle()
         {
-            if (titleTransform == null) return;
-            // Animación simple de descenso desde arriba
+            if (_titleRT == null) return;
             StartCoroutine(AnimateTitleRoutine());
         }
 
-        private System.Collections.IEnumerator AnimateTitleRoutine()
+        private IEnumerator AnimateTitleRoutine()
         {
-            Vector2 startPos = titleTransform.anchoredPosition + Vector2.up * 80f;
-            Vector2 endPos   = titleTransform.anchoredPosition;
+            Vector2 startPos = _titleRT.anchoredPosition + Vector2.up * 80f;
+            Vector2 endPos   = _titleRT.anchoredPosition;
             float elapsed = 0f;
 
-            titleTransform.anchoredPosition = startPos;
+            _titleRT.anchoredPosition = startPos;
 
             while (elapsed < titleAnimDuration)
             {
                 elapsed += Time.unscaledDeltaTime;
                 float t = elapsed / titleAnimDuration;
-                // Ease-out cubic
                 t = 1f - Mathf.Pow(1f - t, 3f);
-                titleTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
+                _titleRT.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
                 yield return null;
             }
 
-            titleTransform.anchoredPosition = endPos;
+            _titleRT.anchoredPosition = endPos;
+        }
+
+        #endregion
+
+        // ─────────────────────────────────────────────────────────────
+        #region Construcción automática de la UI
+
+        private void BuildMainMenuUI()
+        {
+            _menuCanvas = new GameObject("MainMenuCanvas");
+            _menuCanvas.transform.SetParent(this.transform);
+
+            Canvas canvas = _menuCanvas.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 800;
+
+            CanvasScaler scaler = _menuCanvas.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
+            scaler.matchWidthOrHeight = 0.5f;
+
+            _menuCanvas.AddComponent<GraphicRaycaster>();
+
+            BuildMainPanel();
+            BuildOptionsPanel();
+        }
+
+        private void BuildMainPanel()
+        {
+            _panelMain = CreatePanel(_menuCanvas.transform, "PanelMain", overlayColor);
+
+            GameObject container = CreatePanel(_panelMain.transform, "Container", Color.clear);
+            RectTransform containerRT = container.GetComponent<RectTransform>();
+            containerRT.anchorMin = new Vector2(0.3f, 0.2f);
+            containerRT.anchorMax = new Vector2(0.7f, 0.8f);
+            containerRT.offsetMin = Vector2.zero;
+            containerRT.offsetMax = Vector2.zero;
+
+            Image containerBG = container.GetComponent<Image>();
+            containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+
+            VerticalLayoutGroup layout = container.AddComponent<VerticalLayoutGroup>();
+            layout.padding = new RectOffset(40, 40, 40, 40);
+            layout.spacing = 20f;
+            layout.childAlignment = TextAnchor.MiddleCenter;
+            layout.childControlWidth = true;
+            layout.childControlHeight = false;
+            layout.childForceExpandWidth = true;
+            layout.childForceExpandHeight = false;
+
+            // Wrapper para el título (el LayoutGroup controla el wrapper, no el texto)
+            // Esto permite animar el título sin conflicto con el LayoutGroup
+            GameObject titleWrapper = new GameObject("TitleWrapper");
+            titleWrapper.transform.SetParent(container.transform, false);
+            RectTransform wrapperRT = titleWrapper.AddComponent<RectTransform>();
+            wrapperRT.sizeDelta = new Vector2(0, 80f);
+
+            TextMeshProUGUI titleTMP = CreateText(titleWrapper.transform, "TitleText",
+                "ENDLESS RUNNER", 48, titleColor, FontStyles.Bold, 80f);
+            // Estirar el título para que llene el wrapper
+            RectTransform titleRT = titleTMP.rectTransform;
+            titleRT.anchorMin = Vector2.zero;
+            titleRT.anchorMax = Vector2.one;
+            titleRT.offsetMin = Vector2.zero;
+            titleRT.offsetMax = Vector2.zero;
+            titleRT.sizeDelta = Vector2.zero;
+            _titleRT = titleRT;
+
+            CreateSeparator(container.transform);
+            CreateButton(container.transform, "BtnPlay", "JUGAR", OnPlayButton);
+            CreateButton(container.transform, "BtnOptions", "OPCIONES", OnOptionsButton);
+            CreateButton(container.transform, "BtnQuit", "SALIR", OnQuitButton);
+        }
+
+        private void BuildOptionsPanel()
+        {
+            _panelOptions = CreatePanel(_menuCanvas.transform, "PanelOptions", overlayColor);
+
+            GameObject container = CreatePanel(_panelOptions.transform, "Container", Color.clear);
+            RectTransform containerRT = container.GetComponent<RectTransform>();
+            containerRT.anchorMin = new Vector2(0.3f, 0.2f);
+            containerRT.anchorMax = new Vector2(0.7f, 0.8f);
+            containerRT.offsetMin = Vector2.zero;
+            containerRT.offsetMax = Vector2.zero;
+
+            Image containerBG = container.GetComponent<Image>();
+            containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+
+            OptionsController optionsCtrl = GetComponent<OptionsController>();
+            if (optionsCtrl == null)
+                optionsCtrl = gameObject.AddComponent<OptionsController>();
+
+            optionsCtrl.BuildOptionsUI(container.transform, buttonColor, buttonTextColor,
+                titleColor, () => ShowMainPanel());
+
+            _panelOptions.SetActive(false);
+        }
+
+        // ── Helpers idénticos a PauseController ─────────────────────
+
+        private GameObject CreatePanel(Transform parent, string name, Color color)
+        {
+            GameObject panel = new GameObject(name);
+            panel.transform.SetParent(parent, false);
+
+            RectTransform rt = panel.AddComponent<RectTransform>();
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
+
+            Image img = panel.AddComponent<Image>();
+            img.color = color;
+
+            return panel;
+        }
+
+        private TextMeshProUGUI CreateText(Transform parent, string name, string content,
+            float fontSize, Color color, FontStyles style, float height)
+        {
+            GameObject textObj = new GameObject(name);
+            textObj.transform.SetParent(parent, false);
+
+            RectTransform rt = textObj.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(0, height);
+
+            TextMeshProUGUI tmp = textObj.AddComponent<TextMeshProUGUI>();
+            tmp.text = content;
+            tmp.fontSize = fontSize;
+            tmp.color = color;
+            tmp.fontStyle = style;
+            tmp.alignment = TextAlignmentOptions.Center;
+            tmp.enableAutoSizing = false;
+            tmp.raycastTarget = false;
+
+            if (TMP_Settings.defaultFontAsset != null)
+                tmp.font = TMP_Settings.defaultFontAsset;
+
+            return tmp;
+        }
+
+        private void CreateButton(Transform parent, string name, string label, UnityEngine.Events.UnityAction onClick)
+        {
+            GameObject btnObj = new GameObject(name);
+            btnObj.transform.SetParent(parent, false);
+
+            RectTransform rt = btnObj.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(0, 60f);
+
+            Image btnImage = btnObj.AddComponent<Image>();
+            btnImage.color = buttonColor;
+
+            Button btn = btnObj.AddComponent<Button>();
+            btn.targetGraphic = btnImage;
+
+            ColorBlock colors = btn.colors;
+            colors.normalColor = buttonColor;
+            colors.highlightedColor = new Color(buttonColor.r + 0.15f, buttonColor.g + 0.15f, buttonColor.b + 0.2f, 1f);
+            colors.pressedColor = new Color(buttonColor.r + 0.25f, buttonColor.g + 0.25f, buttonColor.b + 0.35f, 1f);
+            colors.selectedColor = colors.highlightedColor;
+            btn.colors = colors;
+
+            btn.onClick.AddListener(onClick);
+
+            TextMeshProUGUI labelTMP = CreateText(btnObj.transform, "Label", label, 24, buttonTextColor, FontStyles.Normal, 60f);
+            // Estirar el texto para que llene el botón padre (no es hijo directo del LayoutGroup)
+            RectTransform labelRT = labelTMP.rectTransform;
+            labelRT.anchorMin = Vector2.zero;
+            labelRT.anchorMax = Vector2.one;
+            labelRT.offsetMin = Vector2.zero;
+            labelRT.offsetMax = Vector2.zero;
+            labelRT.sizeDelta = Vector2.zero;
+        }
+
+        private void CreateSeparator(Transform parent)
+        {
+            GameObject sep = new GameObject("Separator");
+            sep.transform.SetParent(parent, false);
+
+            RectTransform rt = sep.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(0, 2f);
+
+            Image img = sep.AddComponent<Image>();
+            img.color = new Color(1f, 1f, 1f, 0.2f);
         }
 
         #endregion
