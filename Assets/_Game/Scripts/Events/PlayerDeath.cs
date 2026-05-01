@@ -29,11 +29,14 @@ namespace Platformer.Gameplay
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);
 
-                // Null-safe: el Animator Override de la brujita podría no tener estos parámetros
+                // Ir directamente al estado de muerte sin pasar por Hurt.
+                // El Raptor.overrideController mapea AMBOS clips (PlayerHurt y PlayerDeath)
+                // a la misma animación raptor-dead, así que pasar por Hurt primero causaba
+                // que la animación de caída se reprodujera dos veces seguidas.
                 if (player.animator != null)
                 {
-                    player.animator.SetTrigger("hurt");
                     player.animator.SetBool("dead", true);
+                    player.animator.Play("Player-Death");
                 }
 
                 Simulation.Schedule<PlayerSpawn>(2);

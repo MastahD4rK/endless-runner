@@ -31,7 +31,11 @@ namespace Platformer.Core
 
         // ── Progreso Guardado ─────────────────────────────────────────
         private const string UNLOCKED_KEY = "UnlockedLevelsCount";
+        private const string HIGHSCORE_KEY = "HighScore";
         private int _unlockedCount = 1; // mínimo el primer nivel siempre desbloqueado
+
+        /// <summary>Mejor puntaje registrado entre todas las sesiones.</summary>
+        public int HighScore { get; private set; } = 0;
 
         // ─────────────────────────────────────────────────────────────
         #region Unity Lifecycle
@@ -130,6 +134,21 @@ namespace Platformer.Core
         /// <summary>Reinicia el puntaje de sesión a 0.</summary>
         public void ResetSessionScore() => TotalScore = 0;
 
+        /// <summary>
+        /// Intenta establecer un nuevo high score. Retorna true si fue superado.
+        /// </summary>
+        public bool TrySetHighScore(int score)
+        {
+            if (score > HighScore)
+            {
+                HighScore = score;
+                SaveProgress();
+                Debug.Log($"[GameManager] ¡Nuevo High Score! {HighScore}");
+                return true;
+            }
+            return false;
+        }
+
         #endregion
 
         // ─────────────────────────────────────────────────────────────
@@ -174,13 +193,15 @@ namespace Platformer.Core
         private void SaveProgress()
         {
             PlayerPrefs.SetInt(UNLOCKED_KEY, _unlockedCount);
+            PlayerPrefs.SetInt(HIGHSCORE_KEY, HighScore);
             PlayerPrefs.Save();
         }
 
         private void LoadProgress()
         {
             _unlockedCount = PlayerPrefs.GetInt(UNLOCKED_KEY, 1);
-            Debug.Log($"[GameManager] Progreso cargado — Niveles desbloqueados: {_unlockedCount}");
+            HighScore = PlayerPrefs.GetInt(HIGHSCORE_KEY, 0);
+            Debug.Log($"[GameManager] Progreso cargado — Niveles desbloqueados: {_unlockedCount}, High Score: {HighScore}");
         }
 
         #endregion

@@ -27,13 +27,18 @@ namespace Platformer.UI
         private GameObject _menuCanvas;
         private GameObject _panelMain;
         private GameObject _panelOptions;
+        private GameObject _panelShop;
         private RectTransform _titleRT;
+        private TextMeshProUGUI _coinDisplayText;
 
         // ─────────────────────────────────────────────────────────────
         #region Unity Lifecycle
 
         void Awake()
         {
+            // Inicializar el contador de FPS
+            var fps = FPSCounter.Instance;
+            
             BuildMainMenuUI();
         }
 
@@ -52,10 +57,22 @@ namespace Platformer.UI
         {
             if (_panelMain != null) _panelMain.SetActive(_panelMain == target);
             if (_panelOptions != null) _panelOptions.SetActive(_panelOptions == target);
+            if (_panelShop != null) _panelShop.SetActive(_panelShop == target);
+
+            // Actualizar monedas al volver al panel principal
+            if (target == _panelMain)
+                UpdateCoinDisplay();
         }
 
         public void ShowMainPanel()     => ShowPanel(_panelMain);
         public void ShowOptionsPanel()  => ShowPanel(_panelOptions);
+        public void ShowShopPanel()
+        {
+            // Actualizar el display de monedas de la tienda al entrar
+            var shopCtrl = GetComponent<ShopController>();
+            if (shopCtrl != null) shopCtrl.UpdateCoinsDisplay();
+            ShowPanel(_panelShop);
+        }
 
         #endregion
 
@@ -73,6 +90,7 @@ namespace Platformer.UI
         }
 
         public void OnOptionsButton() => ShowOptionsPanel();
+        public void OnShopButton() => ShowShopPanel();
 
         public void OnQuitButton()
         {
@@ -137,6 +155,7 @@ namespace Platformer.UI
 
             BuildMainPanel();
             BuildOptionsPanel();
+            BuildShopPanel();
         }
 
         private void BuildMainPanel()
@@ -180,8 +199,14 @@ namespace Platformer.UI
             titleRT.sizeDelta = Vector2.zero;
             _titleRT = titleRT;
 
+            // ── Display de monedas debajo del título ───────────────────
+            _coinDisplayText = CreateText(container.transform, "CoinText", "MONEDAS: 0",
+                24, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Bold, 30f);
+            UpdateCoinDisplay();
+
             CreateSeparator(container.transform);
             CreateButton(container.transform, "BtnPlay", "JUGAR", OnPlayButton);
+            CreateButton(container.transform, "BtnShop", "TIENDA", OnShopButton);
             CreateButton(container.transform, "BtnOptions", "OPCIONES", OnOptionsButton);
             CreateButton(container.transform, "BtnQuit", "SALIR", OnQuitButton);
         }
@@ -208,6 +233,39 @@ namespace Platformer.UI
                 titleColor, () => ShowMainPanel());
 
             _panelOptions.SetActive(false);
+        }
+
+        private void BuildShopPanel()
+        {
+            _panelShop = CreatePanel(_menuCanvas.transform, "PanelShop", overlayColor);
+
+            GameObject container = CreatePanel(_panelShop.transform, "Container", Color.clear);
+            RectTransform containerRT = container.GetComponent<RectTransform>();
+            containerRT.anchorMin = new Vector2(0.3f, 0.15f);
+            containerRT.anchorMax = new Vector2(0.7f, 0.85f);
+            containerRT.offsetMin = Vector2.zero;
+            containerRT.offsetMax = Vector2.zero;
+
+            Image containerBG = container.GetComponent<Image>();
+            containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+
+            ShopController shopCtrl = GetComponent<ShopController>();
+            if (shopCtrl == null)
+                shopCtrl = gameObject.AddComponent<ShopController>();
+
+            shopCtrl.BuildShopUI(container.transform, buttonColor, buttonTextColor,
+                titleColor, () => ShowMainPanel());
+
+            _panelShop.SetActive(false);
+        }
+
+        /// <summary>Actualiza el texto de monedas en el menú principal.</summary>
+        private void UpdateCoinDisplay()
+        {
+            if (_coinDisplayText != null && Core.CurrencyManager.Instance != null)
+            {
+                _coinDisplayText.text = $"MONEDAS: {Core.CurrencyManager.Instance.TotalCoins}";
+            }
         }
 
         // ── Helpers idénticos a PauseController ─────────────────────

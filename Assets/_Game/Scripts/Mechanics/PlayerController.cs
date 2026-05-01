@@ -117,6 +117,16 @@ namespace Platformer.Mechanics
 
         protected override void ComputeVelocity()
         {
+            // Si el jugador está muerto, congelar toda la física y no tocar el Animator.
+            // Esto evita que el "truco de caída" (Play Player-Land) interfiera con la
+            // animación de muerte y cree un bucle visual de caída infinita.
+            if (health != null && !health.IsAlive)
+            {
+                velocity = Vector2.zero;
+                targetVelocity = Vector2.zero;
+                return;
+            }
+
             if (jump && IsGrounded)
             {
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;

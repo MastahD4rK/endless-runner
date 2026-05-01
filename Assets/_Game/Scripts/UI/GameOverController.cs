@@ -33,7 +33,11 @@ namespace Platformer.UI
         // ── Referencias internas ─────────────────────────────────────
         private GameObject _gameOverCanvas;
         private TextMeshProUGUI _finalScoreText;
+        private TextMeshProUGUI _highScoreText;
+        private TextMeshProUGUI _newRecordText;
         private TextMeshProUGUI _survivalTimeText;
+        private TextMeshProUGUI _coinsEarnedText;
+        private TextMeshProUGUI _totalCoinsText;
         private float _levelStartTime;
 
         // ─────────────────────────────────────────────────────────────
@@ -72,20 +76,55 @@ namespace Platformer.UI
                 return;
             }
 
+            // ── Puntaje final ────────────────────────────────────────
+            int score = 0;
+            if (ScoreCounter.Instance != null)
+                score = ScoreCounter.Instance.GetCurrentScore();
+            else if (GameManager.Instance != null)
+                score = GameManager.Instance.TotalScore;
+
             if (_finalScoreText != null)
-            {
-                int score = ScoreCounter.Instance != null
-                    ? ScoreCounter.Instance.GetCurrentScore()
-                    : (GameManager.Instance != null ? GameManager.Instance.TotalScore : 0);
                 _finalScoreText.text = $"PUNTAJE: {score}";
+
+            // ── High Score ───────────────────────────────────────────
+            bool isNewRecord = ScoreCounter.Instance != null && ScoreCounter.Instance.IsNewHighScore;
+            int highScore = GameManager.Instance != null ? GameManager.Instance.HighScore : 0;
+
+            if (_highScoreText != null)
+                _highScoreText.text = $"MEJOR: {highScore.ToString("D5")}";
+
+            if (_newRecordText != null)
+            {
+                _newRecordText.text = isNewRecord ? "NUEVO RECORD!" : "";
+                _newRecordText.gameObject.SetActive(isNewRecord);
             }
 
+            // ── Tiempo de supervivencia ──────────────────────────────
             if (_survivalTimeText != null)
             {
                 float survived = Time.time - _levelStartTime;
                 int minutes = Mathf.FloorToInt(survived / 60f);
                 int seconds = Mathf.FloorToInt(survived % 60f);
                 _survivalTimeText.text = $"TIEMPO: {minutes:00}:{seconds:00}";
+            }
+
+            // ── Monedas ──────────────────────────────────────────────
+            if (_coinsEarnedText != null)
+            {
+                // Las monedas de sesión ya fueron committed por ScoreCounter,
+                // pero podemos mostrar cuántas se ganaron
+                int coinsThisRun = Core.CurrencyManager.Instance != null
+                    ? Core.CurrencyManager.Instance.SessionCoins
+                    : 0;
+                // Nota: si ya se llamó CommitSessionCoins, SessionCoins = 0.
+                // Guardamos el dato en el texto antes del commit.
+                // Como ScoreCounter hace commit antes de que se muestre el Game Over,
+                // usamos el total actual para calcular.
+            }
+
+            if (_totalCoinsText != null && Core.CurrencyManager.Instance != null)
+            {
+                _totalCoinsText.text = $"MONEDAS: {Core.CurrencyManager.Instance.TotalCoins}";
             }
 
             if (Gameplay.GameSpeedManager.Instance != null)
@@ -142,8 +181,8 @@ namespace Platformer.UI
 
             GameObject container = CreatePanel(gameOverPanel.transform, "Container", Color.clear);
             RectTransform containerRT = container.GetComponent<RectTransform>();
-            containerRT.anchorMin = new Vector2(0.3f, 0.2f);
-            containerRT.anchorMax = new Vector2(0.7f, 0.8f);
+            containerRT.anchorMin = new Vector2(0.28f, 0.12f);
+            containerRT.anchorMax = new Vector2(0.72f, 0.88f);
             containerRT.offsetMin = Vector2.zero;
             containerRT.offsetMax = Vector2.zero;
 
@@ -151,18 +190,25 @@ namespace Platformer.UI
             containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
 
             VerticalLayoutGroup layout = container.AddComponent<VerticalLayoutGroup>();
-            layout.padding = new RectOffset(40, 40, 40, 40);
-            layout.spacing = 20f;
+            layout.padding = new RectOffset(40, 40, 30, 30);
+            layout.spacing = 15f;
             layout.childAlignment = TextAnchor.MiddleCenter;
             layout.childControlWidth = true;
             layout.childControlHeight = false;
             layout.childForceExpandWidth = true;
             layout.childForceExpandHeight = false;
 
-            CreateText(container.transform, "TitleText", "GAME OVER", 48, titleColor, FontStyles.Bold, 80f);
+            CreateText(container.transform, "TitleText", "GAME OVER", 48, titleColor, FontStyles.Bold, 60f);
+            _newRecordText = CreateText(container.transform, "NewRecordText", "NUEVO RECORD!", 
+                28, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Bold, 35f);
+            _newRecordText.gameObject.SetActive(false); // Se muestra solo si hay nuevo record
             CreateSeparator(container.transform);
-            _finalScoreText = CreateText(container.transform, "ScoreText", "PUNTAJE: 00000", 28, Color.white, FontStyles.Normal, 50f);
-            _survivalTimeText = CreateText(container.transform, "TimeText", "TIEMPO: 00:00", 28, Color.white, FontStyles.Normal, 50f);
+            _finalScoreText = CreateText(container.transform, "ScoreText", "PUNTAJE: 00000", 28, Color.white, FontStyles.Normal, 40f);
+            _highScoreText = CreateText(container.transform, "HighScoreText", "MEJOR: 00000", 
+                22, new Color(0.6f, 0.6f, 0.6f, 1f), FontStyles.Normal, 30f);
+            _survivalTimeText = CreateText(container.transform, "TimeText", "TIEMPO: 00:00", 28, Color.white, FontStyles.Normal, 40f);
+            _totalCoinsText = CreateText(container.transform, "TotalCoinsText", "MONEDAS: 0", 
+                24, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Normal, 35f);
             CreateSeparator(container.transform);
             CreateButton(container.transform, "BtnRetry", "REINTENTAR", OnRetryButton);
             CreateButton(container.transform, "BtnMainMenu", "MENU PRINCIPAL", OnMainMenuButton);

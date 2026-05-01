@@ -14,6 +14,7 @@ namespace Platformer.UI
         // Claves de PlayerPrefs
         private const string MUSIC_VOL_KEY  = "VolumenMusica";
         private const string SFX_VOL_KEY    = "VolumenSFX";
+        private const string SHOW_FPS_KEY   = "ShowFPS";
         private const float  DEFAULT_VOLUME = 0.8f;
 
         // ── Referencias internas ─────────────────────────────────────
@@ -51,6 +52,24 @@ namespace Platformer.UI
             float sfxVol = PlayerPrefs.GetFloat(SFX_VOL_KEY, DEFAULT_VOLUME);
             _sfxSlider = CreateSlider(container, "SliderSFX", sfxVol, buttonColor);
             _sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
+
+            CreateSeparator(container);
+
+            bool showFPS = PlayerPrefs.GetInt(SHOW_FPS_KEY, 0) == 1;
+            CreateButton(container, "BtnFPS", $"MOSTRAR FPS: {(showFPS ? "SI" : "NO")}", buttonColor, buttonTextColor, () =>
+            {
+                showFPS = !showFPS;
+                PlayerPrefs.SetInt(SHOW_FPS_KEY, showFPS ? 1 : 0);
+                PlayerPrefs.Save();
+                FPSCounter.Instance.CheckPreference();
+                
+                Transform btn = container.Find("BtnFPS");
+                if (btn != null)
+                {
+                    TextMeshProUGUI txt = btn.Find("Label")?.GetComponent<TextMeshProUGUI>();
+                    if (txt != null) txt.text = $"MOSTRAR FPS: {(showFPS ? "SI" : "NO")}";
+                }
+            });
 
             CreateSeparator(container);
 

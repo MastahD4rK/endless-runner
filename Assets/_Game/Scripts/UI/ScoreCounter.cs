@@ -54,6 +54,14 @@ namespace Platformer.UI
         private float _bonusDuration = 1f;
         private Vector3 _bonusOriginalPos;
 
+        // ── HUD adicional (generados automáticamente) ────────────────
+        private TextMeshProUGUI _highScoreText;
+        private TextMeshProUGUI _coinCountText;
+        private bool _isNewHighScore = false;
+
+        /// <summary>Indica si la partida actual superó el high score.</summary>
+        public bool IsNewHighScore => _isNewHighScore;
+
         // ─────────────────────────────────────────────────────────────
         void Awake()
         {
@@ -66,6 +74,7 @@ namespace Platformer.UI
             _displayedScore = 0;
             _lastMilestone = 0;
             _isRunning = true;
+            _isNewHighScore = false;
             _speedManager = GameSpeedManager.Instance;
             
             // Auto-generar el texto flotante si no fue asignado en el Inspector
@@ -80,7 +89,15 @@ namespace Platformer.UI
                 SetBonusAlpha(0f);
             }
 
+            // Auto-generar texto de High Score
+            if (scoreText != null)
+            {
+                CreateHighScoreText();
+                CreateCoinCountText();
+            }
+
             UpdateText();
+            UpdateCoinText();
         }
 
         void Update()
@@ -100,7 +117,13 @@ namespace Platformer.UI
                 _isRunning = false;
                 // Enviar puntaje final al GameManager
                 if (GameManager.Instance != null)
+                {
                     GameManager.Instance.AddScore(_displayedScore);
+                    _isNewHighScore = GameManager.Instance.TrySetHighScore(_displayedScore);
+                }
+                // Consolidar monedas de sesión
+                if (CurrencyManager.Instance != null)
+                    CurrencyManager.Instance.CommitSessionCoins();
                 return;
             }
 
@@ -155,6 +178,9 @@ namespace Platformer.UI
                 float alpha = t > 0.5f ? Mathf.Lerp(1f, 0f, (t - 0.5f) * 2f) : 1f;
                 SetBonusAlpha(alpha);
             }
+
+            // ── Actualizar contador de monedas ───────────────────────
+            UpdateCoinText();
         }
 
         void OnDestroy()
@@ -197,6 +223,55 @@ namespace Platformer.UI
             
             // Limpiar si tiene algún otro script copiado accidentalmente
             // (no debría, ya que clonamos el objeto del texto que normalmente solo tiene el TMP)
+        }
+
+        /// <summary>
+        /// Crea el texto de High Score a la izquierda del score actual.
+        /// Formato estilo Chrome Dino: "HI 00000"
+        /// </summary>
+        private void CreateHighScoreText()
+        {
+            GameObject hiObj = Instantiate(scoreText.gameObject, scoreText.transform.parent);
+            hiObj.name = "HighScoreText_Auto";
+            _highScoreText = hiObj.GetComponent<TextMeshProUGUI>();
+
+            int hi = GameManager.Instance != null ? GameManager.Instance.HighScore : 0;
+            _highScoreText.text = $"HI {hi.ToString("D5")}";
+            _highScoreText.color = new Color(0.6f, 0.6f, 0.6f, 1f); // Gris sutil
+            _highScoreText.fontSize = scoreText.fontSize * 0.85f;
+            _highScoreText.alignment = TextAlignmentOptions.TopRight;
+
+            // Posicionar a la izquierda del score principal (offset negativo en X)
+            _highScoreText.rectTransform.anchoredPosition = 
+                scoreText.rectTransform.anchoredPosition + new Vector2(-160f, 0f);
+        }
+
+        /// <summary>
+        /// Crea el texto de monedas recogidas debajo del score.
+        /// </summary>
+        private void CreateCoinCountText()
+        {
+            GameObject coinObj = Instantiate(scoreText.gameObject, scoreText.transform.parent);
+            coinObj.name = "CoinCountText_Auto";
+            _coinCountText = coinObj.GetComponent<TextMeshProUGUI>();
+
+            _coinCountText.text = "x0";
+            _coinCountText.color = new Color(1f, 0.85f, 0.2f, 1f); // Dorado
+            _coinCountText.fontSize = scoreText.fontSize * 0.7f;
+            _coinCountText.alignment = TextAlignmentOptions.TopRight;
+
+            // Posicionar debajo del score principal
+            _coinCountText.rectTransform.anchoredPosition = 
+                scoreText.rectTransform.anchoredPosition + new Vector2(0f, -25f);
+        }
+
+        /// <summary>Actualiza el texto de monedas recogidas esta sesión.</summary>
+        private void UpdateCoinText()
+        {
+            if (_coinCountText != null && CurrencyManager.Instance != null)
+            {
+                _coinCountText.text = $"x{CurrencyManager.Instance.SessionCoins}";
+            }
         }
 
         /// <summary>Suma puntos extra al puntaje actual y muestra el popup visual.</summary>

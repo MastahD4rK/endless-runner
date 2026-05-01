@@ -45,10 +45,16 @@ namespace Platformer.Mechanics
                 AudioSource.PlayClipAtPoint(collectAudio, transform.position);
             }
 
-            // Sumar puntos
+            // Sumar puntos al score visual
             if (ScoreCounter.Instance != null)
             {
                 ScoreCounter.Instance.AddBonusScore(scoreValue);
+            }
+
+            // Sumar moneda como divisa persistente
+            if (Platformer.Core.CurrencyManager.Instance != null)
+            {
+                Platformer.Core.CurrencyManager.Instance.AddSessionCoins(1);
             }
 
             // Deshabilitar la moneda (el Object Pool la limpiará de pantalla después)
