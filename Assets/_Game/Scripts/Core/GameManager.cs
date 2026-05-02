@@ -47,6 +47,7 @@ namespace Platformer.Core
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 LoadProgress();
+                OptionsController.ApplyStartupPreferences();
             }
             else
             {

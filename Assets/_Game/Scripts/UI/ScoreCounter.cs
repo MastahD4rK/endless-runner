@@ -62,6 +62,8 @@ namespace Platformer.UI
         /// <summary>Indica si la partida actual superó el high score.</summary>
         public bool IsNewHighScore => _isNewHighScore;
 
+        private int _lastCoinCount = -1;
+
         // ─────────────────────────────────────────────────────────────
         void Awake()
         {
@@ -270,7 +272,12 @@ namespace Platformer.UI
         {
             if (_coinCountText != null && CurrencyManager.Instance != null)
             {
-                _coinCountText.text = $"x{CurrencyManager.Instance.SessionCoins}";
+                int currentCoins = CurrencyManager.Instance.SessionCoins;
+                if (currentCoins != _lastCoinCount)
+                {
+                    _lastCoinCount = currentCoins;
+                    _coinCountText.text = $"x{currentCoins}";
+                }
             }
         }
 

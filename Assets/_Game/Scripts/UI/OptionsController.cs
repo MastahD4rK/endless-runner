@@ -15,6 +15,7 @@ namespace Platformer.UI
         private const string MUSIC_VOL_KEY  = "VolumenMusica";
         private const string SFX_VOL_KEY    = "VolumenSFX";
         private const string SHOW_FPS_KEY   = "ShowFPS";
+        private const string FULLSCREEN_KEY = "Fullscreen";
         private const float  DEFAULT_VOLUME = 0.8f;
 
         // ── Referencias internas ─────────────────────────────────────
@@ -73,6 +74,24 @@ namespace Platformer.UI
 
             CreateSeparator(container);
 
+            bool isFullscreen = PlayerPrefs.GetInt(FULLSCREEN_KEY, 1) == 1;
+            CreateButton(container, "BtnFullscreen", $"PANTALLA COMPLETA: {(isFullscreen ? "SI" : "NO")}", buttonColor, buttonTextColor, () =>
+            {
+                isFullscreen = !isFullscreen;
+                PlayerPrefs.SetInt(FULLSCREEN_KEY, isFullscreen ? 1 : 0);
+                PlayerPrefs.Save();
+                Screen.fullScreen = isFullscreen;
+                
+                Transform btn = container.Find("BtnFullscreen");
+                if (btn != null)
+                {
+                    TextMeshProUGUI txt = btn.Find("Label")?.GetComponent<TextMeshProUGUI>();
+                    if (txt != null) txt.text = $"PANTALLA COMPLETA: {(isFullscreen ? "SI" : "NO")}";
+                }
+            });
+
+            CreateSeparator(container);
+
             CreateButton(container, "BtnBack", "VOLVER", buttonColor, buttonTextColor, () =>
             {
                 onBackAction?.Invoke();
@@ -126,6 +145,17 @@ namespace Platformer.UI
 
         public static float GetSFXVolume()
             => PlayerPrefs.GetFloat(SFX_VOL_KEY, DEFAULT_VOLUME);
+
+        /// <summary>
+        /// Aplica las configuraciones guardadas al iniciar el juego.
+        /// Llamado por el GameManager.
+        /// </summary>
+        public static void ApplyStartupPreferences()
+        {
+            AudioListener.volume = GetMusicVolume();
+            // Fullscreen por defecto es true (1)
+            Screen.fullScreen = PlayerPrefs.GetInt(FULLSCREEN_KEY, 1) == 1;
+        }
 
         #endregion
 

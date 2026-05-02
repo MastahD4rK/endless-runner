@@ -67,18 +67,19 @@ Scripts/
 
 | Sistema | Script(s) | Descripción |
 |---------|-----------|-------------|
-| **Core del Juego** | `GameManager.cs` | Singleton persistente. Gestiona escenas, niveles y puntaje de sesión. Además persiste el High Score usando `PlayerPrefs`. |
+| **Core del Juego** | `GameManager.cs` | Singleton persistente. Gestiona escenas, niveles y puntaje de sesión. Aplica preferencias del jugador al arrancar. |
 | **Velocidad del mundo** | `GameSpeedManager.cs` | Acelera progresivamente y afecta puntaje/movimiento. |
-| **Mover objetos** | `WorldMover.cs` | Desplaza plataformas/obstáculos con FixedUpdate hacia el jugador. |
+| **Mover objetos** | `WorldMover.cs` | Se registra al Manager central para ser movido eficientemente en O(1). |
+| **Optimizador de Físicas**| `WorldMoverManager.cs` | **[NUEVO]** Singleton encargado de ejecutar un único ciclo `FixedUpdate` ultra rápido para desplazar docenas de objetos sincronizados, evitando cuellos de botella de CPU. |
 | **Generación de niveles** | `LevelGenerator.cs` | Object Pooling de bloques/plataformas generadas a la derecha. |
 | **Obstáculos** | `ObstacleSpawner.cs` | Object Pooling + dificultad progresiva de elementos letales. |
-| **Monedas (Coins)** | `CoinSpawner.cs` / `ScoreCoin.cs` | Spawner dinámico y lógica para sumar bonus al score y moneda a la sesión actual. |
+| **Monedas (Coins)** | `CoinSpawner.cs` / `ScoreCoin.cs` | Spawner dinámico optimizado (con swap-remove) para sumar bonus al score. |
 | **Economía Persistente** | `CurrencyManager.cs` | Singleton auto-instanciable que guarda permanentemente las monedas totales en `PlayerPrefs`. |
-| **Enemigos (Slimes)** | `EnemySpawner.cs` / `SlimeController.cs`| Spawner de slimes con físicas personalizadas como obstáculos móviles. |
+| **Enemigos (Slimes)** | `EnemySpawner.cs` / `SlimeController.cs`| Spawner optimizado que cachea componentes (`PooledEnemy`) y usa swap-remove O(1) en sus colas. |
 | **Transiciones** | `SceneTransitionController.cs` | Permite cross-fade visual y carga asíncrona de niveles/menú. |
-| **HUD & Score** | `ScoreCounter.cs` | Sube puntos dinámicamente. Muestra en pantalla: Score Actual, High Score (estilo Dino) y Monedas de sesión en tiempo real. |
+| **HUD & Score** | `ScoreCounter.cs` | Ultra-optimizado (0 GC allocs). Muestra Score, High Score y Monedas. |
 | **Game Over** | `GameOverController.cs` | Pantalla construida por código con: puntaje, récord, indicador "NUEVO RECORD", monedas recolectadas y botones de acción. |
-| **Menús** | `MainMenuController.cs` / `ShopController.cs` / `OptionsController.cs` | Interfaces 100% generadas por código. El menú principal incluye acceso a Opciones (control de FPS, audio) y Tienda (preview). |
+| **Menús** | `MainMenuController.cs` / `OptionsController.cs` | Interfaces 100% generadas por código. Opciones incluye control de volumen, FPS Counter y modo **Pantalla Completa**. |
 | **Contador FPS** | `FPSCounter.cs` | Script auto-instanciable activable desde Opciones que muestra rendimiento real de FPS y se ajusta con códigos de color. |
 
 ---
@@ -87,8 +88,8 @@ Scripts/
 
 - [x] **Arquitectura Multi-Escena**: GameManager para persistir de menú principal a gameplay.
 - [x] **HUD, High Score y Monedas**: Contador dinámico, persistencia en PlayerPrefs y panel Game Over ultra completo.
-- [x] **Enemigos y Obstáculos**: Físicas correctas, pooling y dificultad básica.
-- [x] **Tienda (Base) y UI por Código**: Menús de opciones, tienda vacía con display de monedas y FPS Counter funcionando nativamente por UI generada en runtime.
+- [x] **Performance & Estabilidad**: Eliminados los GC Allocs por frame de la UI, implementado *swap-remove* universal en spawners y movimiento centralizado por `WorldMoverManager`.
+- [x] **Opciones & QoL**: Menú de opciones generado por UI, toggle de FPS Counter y modo Pantalla Completa.
 - [ ] **Borrar Progreso (Reset)**: Agregar botón seguro en opciones para borrar monedas y high score en `PlayerPrefs`.
 - [ ] **Items en la Tienda**: Utilizar los assets disponibles (ej: Wizard.prefab) como cosméticos desbloqueables con las monedas recolectadas.
 - [ ] **Progresión Avanzada y Biomas**: Implementar transición entre escenarios o aumentar la dificultad drásticamente con patrones de spawn más agresivos.

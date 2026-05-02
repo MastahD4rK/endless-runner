@@ -57,10 +57,16 @@ namespace Platformer.Gameplay
         [Tooltip("Cuántas instancias pre-crear por cada prefab de enemigo")]
         public int poolSizePerPrefab = 3;
 
+        public struct PooledEnemy
+        {
+            public GameObject obj;
+            public SlimeController slime;
+        }
+
         // ── Pool y estado ────────────────────────────────────────────
-        private Dictionary<int, Queue<GameObject>> pools = new Dictionary<int, Queue<GameObject>>();
+        private Dictionary<int, Queue<PooledEnemy>> pools = new Dictionary<int, Queue<PooledEnemy>>();
         private Dictionary<GameObject, int> enemyTypeMap = new Dictionary<GameObject, int>();
-        private List<GameObject> activeEnemies = new List<GameObject>();
+        private List<PooledEnemy> activeEnemies = new List<PooledEnemy>();
 
         private float nextSpawnTime;
         private float timeSinceStart;
@@ -81,13 +87,13 @@ namespace Platformer.Gameplay
             // Inicializar los pools
             for (int i = 0; i < enemyPrefabs.Length; i++)
             {
-                pools[i] = new Queue<GameObject>();
+                pools[i] = new Queue<PooledEnemy>();
                 for (int j = 0; j < poolSizePerPrefab; j++)
                 {
                     GameObject obj = Instantiate(enemyPrefabs[i], Vector3.zero, Quaternion.identity, this.transform);
                     EnsureComponents(obj);
                     obj.SetActive(false);
-                    pools[i].Enqueue(obj);
+                    pools[i].Enqueue(new PooledEnemy { obj = obj, slime = obj.GetComponent<SlimeController>() });
                 }
             }
 
@@ -136,8 +142,8 @@ namespace Platformer.Gameplay
         {
             for (int i = 0; i < activeEnemies.Count; i++)
             {
-                if (activeEnemies[i] == null) continue;
-                float dist = Mathf.Abs(activeEnemies[i].transform.position.x - spawnX);
+                if (activeEnemies[i].obj == null) continue;
+                float dist = Mathf.Abs(activeEnemies[i].obj.transform.position.x - spawnX);
                 if (dist < minSeparationDistance)
                     return true;
             }
@@ -147,23 +153,22 @@ namespace Platformer.Gameplay
         void SpawnEnemy()
         {
             int prefabIndex = Random.Range(0, enemyPrefabs.Length);
-            GameObject enemy = GetFromPool(prefabIndex);
+            PooledEnemy enemy = GetFromPool(prefabIndex);
 
             // Posicionar fuera de pantalla a la derecha
-            enemy.transform.position = new Vector3(spawnX, spawnY, 0f);
+            enemy.obj.transform.position = new Vector3(spawnX, spawnY, 0f);
 
             // Decidir aleatoriamente si este slime salta o no
             bool shouldJump = Random.value < jumpChance;
 
-            // Configurar el slime antes de activarlo
-            SlimeController slime = enemy.GetComponent<SlimeController>();
-            if (slime != null)
+            // Configurar el slime antes de activarlo (usando componente cacheado)
+            if (enemy.slime != null)
             {
-                slime.SetGroundY(spawnY);
-                slime.ResetSlime(shouldJump);
+                enemy.slime.SetGroundY(spawnY);
+                enemy.slime.ResetSlime(shouldJump);
             }
 
-            enemy.SetActive(true);
+            enemy.obj.SetActive(true);
             activeEnemies.Add(enemy);
         }
 
@@ -171,16 +176,21 @@ namespace Platformer.Gameplay
         {
             for (int i = activeEnemies.Count - 1; i >= 0; i--)
             {
-                if (activeEnemies[i] == null)
+                PooledEnemy enemy = activeEnemies[i];
+                if (enemy.obj == null)
                 {
-                    activeEnemies.RemoveAt(i);
+                    int last = activeEnemies.Count - 1;
+                    activeEnemies[i] = activeEnemies[last];
+                    activeEnemies.RemoveAt(last);
                     continue;
                 }
 
-                if (activeEnemies[i].transform.position.x < despawnX)
+                if (enemy.obj.transform.position.x < despawnX)
                 {
-                    ReturnToPool(activeEnemies[i]);
-                    activeEnemies.RemoveAt(i);
+                    ReturnToPool(enemy);
+                    int last = activeEnemies.Count - 1;
+                    activeEnemies[i] = activeEnemies[last];
+                    activeEnemies.RemoveAt(last);
                 }
             }
         }
@@ -188,28 +198,31 @@ namespace Platformer.Gameplay
         // ─────────────────────────────────────────────────────────────
         #region Object Pool
 
-        GameObject GetFromPool(int prefabIndex)
+        PooledEnemy GetFromPool(int prefabIndex)
         {
             if (pools[prefabIndex].Count > 0)
             {
-                GameObject obj = pools[prefabIndex].Dequeue();
-                enemyTypeMap[obj] = prefabIndex;
-                return obj;
+                PooledEnemy enemy = pools[prefabIndex].Dequeue();
+                enemyTypeMap[enemy.obj] = prefabIndex;
+                return enemy;
             }
 
             // Fallback: crear uno nuevo si el pool está vacío
             GameObject newObj = Instantiate(enemyPrefabs[prefabIndex], Vector3.zero, Quaternion.identity, this.transform);
             EnsureComponents(newObj);
             enemyTypeMap[newObj] = prefabIndex;
-            return newObj;
+            return new PooledEnemy { obj = newObj, slime = newObj.GetComponent<SlimeController>() };
         }
 
-        void ReturnToPool(GameObject obj)
+        void ReturnToPool(PooledEnemy enemy)
         {
-            obj.SetActive(false);
-            if (enemyTypeMap.TryGetValue(obj, out int prefabIndex))
+            if (enemy.obj != null)
             {
-                pools[prefabIndex].Enqueue(obj);
+                enemy.obj.SetActive(false);
+                if (enemyTypeMap.TryGetValue(enemy.obj, out int prefabIndex))
+                {
+                    pools[prefabIndex].Enqueue(enemy);
+                }
             }
         }
 

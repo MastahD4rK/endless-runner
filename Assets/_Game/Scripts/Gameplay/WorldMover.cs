@@ -9,25 +9,19 @@ namespace Platformer.Gameplay
     /// </summary>
     public class WorldMover : MonoBehaviour
     {
-        private GameSpeedManager _speedManager;
-
-        void Start()
+        void OnEnable()
         {
-            // Caché de la referencia al singleton para evitar acceder al Instance cada frame
-            _speedManager = GameSpeedManager.Instance;
+            if (WorldMoverManager.Instance != null)
+            {
+                WorldMoverManager.Instance.Register(this);
+            }
         }
 
-        void FixedUpdate()
+        void OnDisable()
         {
-            if (_speedManager == null)
+            if (WorldMoverManager.HasInstance)
             {
-                _speedManager = GameSpeedManager.Instance;
-                if (_speedManager == null) return;
-            }
-
-            if (_speedManager.isPlaying)
-            {
-                transform.position += Vector3.left * _speedManager.CurrentSpeed * Time.fixedDeltaTime;
+                WorldMoverManager.Instance.Unregister(this);
             }
         }
     }
