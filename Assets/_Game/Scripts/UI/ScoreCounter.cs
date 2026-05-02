@@ -78,7 +78,14 @@ namespace Platformer.UI
             _isRunning = true;
             _isNewHighScore = false;
             _speedManager = GameSpeedManager.Instance;
-            
+            // Configurar el texto principal para evitar que haga saltos de línea y unificar su tamaño
+            if (scoreText != null)
+            {
+                scoreText.fontSize = scoreText.fontSize * 0.85f; // Unificar todos al tamaño del High Score
+                scoreText.enableWordWrapping = false;
+                scoreText.overflowMode = TextOverflowModes.Overflow;
+            }
+
             // Auto-generar el texto flotante si no fue asignado en el Inspector
             if (bonusText == null && scoreText != null)
             {
@@ -87,6 +94,8 @@ namespace Platformer.UI
 
             if (bonusText != null)
             {
+                bonusText.enableWordWrapping = false;
+                bonusText.overflowMode = TextOverflowModes.Overflow;
                 _bonusOriginalPos = bonusText.rectTransform.anchoredPosition;
                 SetBonusAlpha(0f);
             }
@@ -194,7 +203,7 @@ namespace Platformer.UI
         private void UpdateText()
         {
             if (scoreText != null)
-                scoreText.text = _displayedScore.ToString("D5"); // Formato 00000
+                scoreText.text = $"PTS\n{_displayedScore.ToString("D5")}"; // Dos líneas explícitas
         }
 
         private void SetBonusAlpha(float alpha)
@@ -238,12 +247,14 @@ namespace Platformer.UI
             _highScoreText = hiObj.GetComponent<TextMeshProUGUI>();
 
             int hi = GameManager.Instance != null ? GameManager.Instance.HighScore : 0;
-            _highScoreText.text = $"HI {hi.ToString("D5")}";
-            _highScoreText.color = new Color(0.6f, 0.6f, 0.6f, 1f); // Gris sutil
-            _highScoreText.fontSize = scoreText.fontSize * 0.85f;
+            _highScoreText.text = $"HI\n{hi.ToString("D5")}"; // Dos líneas explícitas
+            _highScoreText.color = new Color(1f, 1f, 1f, 0.75f); // Blanco semi-transparente para mayor legibilidad
+            _highScoreText.fontSize = scoreText.fontSize; // Mismo tamaño unificado
             _highScoreText.alignment = TextAlignmentOptions.TopRight;
+            _highScoreText.enableWordWrapping = false;
+            _highScoreText.overflowMode = TextOverflowModes.Overflow;
 
-            // Posicionar a la izquierda del score principal (offset negativo en X)
+            // Posicionar a la izquierda del score principal
             _highScoreText.rectTransform.anchoredPosition = 
                 scoreText.rectTransform.anchoredPosition + new Vector2(-160f, 0f);
         }
@@ -259,12 +270,14 @@ namespace Platformer.UI
 
             _coinCountText.text = "x0";
             _coinCountText.color = new Color(1f, 0.85f, 0.2f, 1f); // Dorado
-            _coinCountText.fontSize = scoreText.fontSize * 0.7f;
+            _coinCountText.fontSize = scoreText.fontSize; // Mismo tamaño unificado
             _coinCountText.alignment = TextAlignmentOptions.TopRight;
+            _coinCountText.enableWordWrapping = false;
+            _coinCountText.overflowMode = TextOverflowModes.Overflow;
 
-            // Posicionar debajo del score principal
+            // Posicionar a la izquierda de todos (al lado del High Score)
             _coinCountText.rectTransform.anchoredPosition = 
-                scoreText.rectTransform.anchoredPosition + new Vector2(0f, -25f);
+                scoreText.rectTransform.anchoredPosition + new Vector2(-300f, -25f);
         }
 
         /// <summary>Actualiza el texto de monedas recogidas esta sesión.</summary>

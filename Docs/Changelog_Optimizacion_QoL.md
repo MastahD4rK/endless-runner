@@ -39,6 +39,17 @@ En esta sesión nos centramos en resolver cuellos de botella de CPU y memoria, s
 - Su estado se persiste utilizando `PlayerPrefs` bajo la clave `Fullscreen`.
 - **Integración:** Se modificó el `GameManager.Awake()` para invocar un nuevo método estático llamado `OptionsController.ApplyStartupPreferences()`. Esto permite que el juego aplique inmediatamente el ajuste de Pantalla Completa (y el volumen guardado) ni bien inicia el juego sin necesidad de abrir el panel de opciones.
 
+### Diseño de HUD (Score y Monedas)
+- Se reestructuró la jerarquía visual del contador de puntaje (`ScoreCounter.cs`).
+- Se unificó el tamaño de fuente de todos los textos para que compartan la misma proporción.
+- Se implementaron saltos de línea explícitos (`\n`) y se deshabilitó el `WordWrapping` dinámico de Unity para evitar desajustes visuales sin importar el tamaño del contendor.
+- Se estableció una disposición horizontal limpia de izquierda a derecha: `Contador de monedas -> High Score -> Puntaje Actual`.
+- Se mejoró la visibilidad del "High Score" usando un blanco semi-transparente (75% alfa) en lugar de gris, permitiendo una perfecta lectura contra los fondos celestes del cielo.
+
+### Menú de Opciones Responsivo
+- Se solucionó un problema en `OptionsController.cs` donde los botones de las opciones desbordaban el contenedor visual principal y se salían de los márgenes.
+- **Implementación:** Se integró el componente nativo `ContentSizeFitter` por código (con `FitMode.PreferredSize`) sobre el layout vertical. Ahora el fondo de la ventana de opciones crece o se encoge dinámicamente y de forma 100% responsiva según la cantidad de opciones activas.
+
 ---
 
 ### Mantenimiento de Repositorio

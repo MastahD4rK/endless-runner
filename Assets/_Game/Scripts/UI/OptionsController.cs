@@ -41,6 +41,9 @@ namespace Platformer.UI
             layout.childForceExpandWidth = true;
             layout.childForceExpandHeight = false;
 
+            ContentSizeFitter fitter = container.gameObject.AddComponent<ContentSizeFitter>();
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
             CreateText(container, "TitleText", "OPCIONES", 48, titleColor, FontStyles.Bold, 80f);
             CreateSeparator(container);
 
