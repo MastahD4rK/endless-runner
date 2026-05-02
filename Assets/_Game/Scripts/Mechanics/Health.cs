@@ -20,7 +20,7 @@ namespace Platformer.Mechanics
         /// </summary>
         public bool IsAlive => currentHP > 0;
 
-        int currentHP;
+        public int currentHP;
 
         /// <summary>
         /// Increment the HP of the entity.
@@ -54,6 +54,14 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
+            // Add Shield skill bonus
+            int shieldBonus = 0;
+            if (Platformer.Core.SkillManager.Instance != null)
+            {
+                shieldBonus = Platformer.Core.SkillManager.Instance.GetSkillLevel(Platformer.Core.SkillType.Shield);
+            }
+            
+            maxHP += shieldBonus;
             currentHP = maxHP;
         }
     }

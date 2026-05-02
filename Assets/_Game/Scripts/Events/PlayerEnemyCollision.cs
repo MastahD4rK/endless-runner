@@ -46,7 +46,21 @@ namespace Platformer.Gameplay
             }
             else
             {
-                Schedule<PlayerDeath>();
+                if (player.health.currentHP > 1)
+                {
+                    // Usa el escudo (pierde 1 HP, destruye al enemigo y rebota un poco para no caer enseguida)
+                    player.health.Decrement();
+                    Schedule<EnemyDeath>().enemy = enemy;
+                    player.Bounce(4);
+                    
+                    // Opcional: Sonido o efecto visual de romper escudo
+                    if (player.audioSource && player.ouchAudio)
+                        player.audioSource.PlayOneShot(player.ouchAudio);
+                }
+                else
+                {
+                    Schedule<PlayerDeath>();
+                }
             }
         }
     }

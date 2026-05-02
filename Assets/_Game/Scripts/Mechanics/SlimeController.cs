@@ -203,7 +203,21 @@ namespace Platformer.Mechanics
             var player = other.GetComponent<PlayerController>();
             if (player != null)
             {
-                Schedule<PlayerDeath>();
+                if (player.health.currentHP > 1)
+                {
+                    // Usa el escudo
+                    player.health.Decrement();
+                    
+                    if (player.audioSource && player.ouchAudio)
+                        player.audioSource.PlayOneShot(player.ouchAudio);
+                        
+                    // Destruir el slime para no seguir colisionando
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    Schedule<PlayerDeath>();
+                }
             }
         }
 

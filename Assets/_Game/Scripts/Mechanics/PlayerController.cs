@@ -36,6 +36,7 @@ namespace Platformer.Mechanics
         public bool controlEnabled = true;
 
         bool jump;
+        bool _doubleJumpUsed;
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
@@ -70,6 +71,8 @@ namespace Platformer.Mechanics
                 move.x = 0;
                 
                 if (jumpState == JumpState.Grounded && m_JumpAction.WasPressedThisFrame())
+                    jumpState = JumpState.PrepareToJump;
+                else if (jumpState == JumpState.InFlight && m_JumpAction.WasPressedThisFrame() && SkillManager.Instance.GetSkillLevel(SkillType.DoubleJump) > 0 && !_doubleJumpUsed)
                     jumpState = JumpState.PrepareToJump;
                 else if (m_JumpAction.WasReleasedThisFrame())
                 {
@@ -127,10 +130,29 @@ namespace Platformer.Mechanics
                 return;
             }
 
+            if (IsGrounded)
+            {
+                _doubleJumpUsed = false;
+            }
+
             if (jump && IsGrounded)
             {
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;
                 jump = false;
+            }
+            else if (jump && !IsGrounded && SkillManager.Instance.GetSkillLevel(SkillType.DoubleJump) > 0 && !_doubleJumpUsed)
+            {
+                // Execute double jump
+                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
+                jump = false;
+                _doubleJumpUsed = true; // Mark as used
+                
+                // Play jump audio again
+                if (audioSource != null && jumpAudio != null)
+                    audioSource.PlayOneShot(jumpAudio);
+                
+                // Note: The animator uses 'velocityY' and 'grounded' for transitions, 
+                // so we don't need an explicit 'jump' trigger here.
             }
             else if (stopJump)
             {

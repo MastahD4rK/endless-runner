@@ -45,16 +45,22 @@ namespace Platformer.Mechanics
                 AudioSource.PlayClipAtPoint(collectAudio, transform.position);
             }
 
+            int multiplier = 1;
+            if (Platformer.Core.SkillManager.Instance != null)
+            {
+                multiplier += Platformer.Core.SkillManager.Instance.GetSkillLevel(Platformer.Core.SkillType.Multiplier);
+            }
+
             // Sumar puntos al score visual
             if (ScoreCounter.Instance != null)
             {
-                ScoreCounter.Instance.AddBonusScore(scoreValue);
+                ScoreCounter.Instance.AddBonusScore(scoreValue * multiplier);
             }
 
             // Sumar moneda como divisa persistente
             if (Platformer.Core.CurrencyManager.Instance != null)
             {
-                Platformer.Core.CurrencyManager.Instance.AddSessionCoins(1);
+                Platformer.Core.CurrencyManager.Instance.AddSessionCoins(1 * multiplier);
             }
 
             // Deshabilitar la moneda (el Object Pool la limpiará de pantalla después)

@@ -28,6 +28,7 @@ namespace Platformer.UI
         private GameObject _panelMain;
         private GameObject _panelOptions;
         private GameObject _panelShop;
+        private GameObject _panelSkills;
         private RectTransform _titleRT;
         private TextMeshProUGUI _coinDisplayText;
 
@@ -58,6 +59,7 @@ namespace Platformer.UI
             if (_panelMain != null) _panelMain.SetActive(_panelMain == target);
             if (_panelOptions != null) _panelOptions.SetActive(_panelOptions == target);
             if (_panelShop != null) _panelShop.SetActive(_panelShop == target);
+            if (_panelSkills != null) _panelSkills.SetActive(_panelSkills == target);
 
             // Actualizar monedas al volver al panel principal
             if (target == _panelMain)
@@ -72,6 +74,13 @@ namespace Platformer.UI
             var shopCtrl = GetComponent<ShopController>();
             if (shopCtrl != null) shopCtrl.UpdateCoinsDisplay();
             ShowPanel(_panelShop);
+        }
+        
+        public void ShowSkillsPanel()
+        {
+            var skillsCtrl = GetComponent<SkillTreeController>();
+            if (skillsCtrl != null) skillsCtrl.UpdateAllCards();
+            ShowPanel(_panelSkills);
         }
 
         #endregion
@@ -91,6 +100,7 @@ namespace Platformer.UI
 
         public void OnOptionsButton() => ShowOptionsPanel();
         public void OnShopButton() => ShowShopPanel();
+        public void OnSkillsButton() => ShowSkillsPanel();
 
         public void OnQuitButton()
         {
@@ -156,6 +166,7 @@ namespace Platformer.UI
             BuildMainPanel();
             BuildOptionsPanel();
             BuildShopPanel();
+            BuildSkillsPanel();
         }
 
         private void BuildMainPanel()
@@ -207,6 +218,7 @@ namespace Platformer.UI
             CreateSeparator(container.transform);
             CreateButton(container.transform, "BtnPlay", "JUGAR", OnPlayButton);
             CreateButton(container.transform, "BtnShop", "TIENDA", OnShopButton);
+            CreateButton(container.transform, "BtnSkills", "HABILIDADES", OnSkillsButton);
             CreateButton(container.transform, "BtnOptions", "OPCIONES", OnOptionsButton);
             CreateButton(container.transform, "BtnQuit", "SALIR", OnQuitButton);
         }
@@ -257,6 +269,30 @@ namespace Platformer.UI
                 titleColor, () => ShowMainPanel());
 
             _panelShop.SetActive(false);
+        }
+
+        private void BuildSkillsPanel()
+        {
+            _panelSkills = CreatePanel(_menuCanvas.transform, "PanelSkills", overlayColor);
+
+            GameObject container = CreatePanel(_panelSkills.transform, "Container", Color.clear);
+            RectTransform containerRT = container.GetComponent<RectTransform>();
+            containerRT.anchorMin = new Vector2(0.2f, 0.1f);
+            containerRT.anchorMax = new Vector2(0.8f, 0.9f);
+            containerRT.offsetMin = Vector2.zero;
+            containerRT.offsetMax = Vector2.zero;
+
+            Image containerBG = container.GetComponent<Image>();
+            containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+
+            SkillTreeController skillsCtrl = GetComponent<SkillTreeController>();
+            if (skillsCtrl == null)
+                skillsCtrl = gameObject.AddComponent<SkillTreeController>();
+
+            skillsCtrl.BuildSkillTreeUI(container.transform, buttonColor, buttonTextColor,
+                titleColor, () => ShowMainPanel());
+
+            _panelSkills.SetActive(false);
         }
 
         /// <summary>Actualiza el texto de monedas en el menú principal.</summary>

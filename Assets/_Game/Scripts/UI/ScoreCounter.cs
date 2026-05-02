@@ -143,6 +143,12 @@ namespace Platformer.UI
             if (scaleWithSpeed)
                 multiplier = _speedManager.speedMultiplier;
 
+            // Add Skill Multiplier
+            if (SkillManager.Instance != null)
+            {
+                multiplier += SkillManager.Instance.GetSkillLevel(SkillType.Multiplier);
+            }
+
             _scoreAccumulator += pointsPerSecond * multiplier * Time.deltaTime;
 
             int newScore = Mathf.FloorToInt(_scoreAccumulator);
