@@ -2237,7 +2237,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7793631, y: 1.4532588, z: -9}
+  m_LocalPosition: {x: 0, y: 1.5, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3109,9 +3109,8 @@ MonoBehaviour:
   initialBackground: {fileID: 1600002294}
   backgroundParent: {fileID: 1082779267}
   scorePerMapChange: 1000
-  fadeAnticipation: 200
-  minParallaxFactor: 0.05
-  maxParallaxFactor: 0.15
+  fadeDuration: 2
+  backgroundYOffset: -1.5
 --- !u!4 &1400268150
 Transform:
   m_ObjectHideFlags: 0
@@ -3573,11 +3572,11 @@ GameObject:
   - component: {fileID: 1754240608}
   - component: {fileID: 1754240607}
   - component: {fileID: 1754240610}
-  - component: {fileID: 1754240611}
   - component: {fileID: 1754240612}
   - component: {fileID: 1754240613}
   - component: {fileID: 1754240614}
   - component: {fileID: 1754240615}
+  - component: {fileID: 1754240616}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3633,7 +3632,81 @@ MonoBehaviour:
   mainMenu: {fileID: 2110646551}
   gamePlayCanvasii: []
   gameController: {fileID: 1754240607}
---- !u!82 &1754240611
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88330f8026df914e9f303e7a1578975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Gameplay.GameSpeedManager
+  baseSpeed: 4
+  maxSpeedMultiplier: 3
+  accelerationRate: 0.05
+  isPlaying: 1
+--- !u!114 &1754240613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ede3cefa7aea464e8edfe82047b2d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Gameplay.LevelGenerator
+  platformPrefabs:
+  - {fileID: 3429208252203911330, guid: 99e9cb2d79e2c9c448f63f058518a333, type: 3}
+  blockWidth: 10
+  initialBlocks: 6
+  despawnX: -15
+  startPosition: {x: -5, y: 0.5, z: 0}
+  poolSizePerPrefab: 3
+--- !u!114 &1754240614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f586ca33304d89849928a7dc2ed84ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.UI.PauseController
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.75}
+  buttonColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
+  buttonTextColor: {r: 1, g: 1, b: 1, a: 1}
+  titleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1754240615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5ed2e0ff3e9a04bad6cb358619ab8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Mechanics.CoinSpawner
+  coinPrefab: {fileID: 4389662223576981119, guid: 02a7eb52a33a2de4fafd64660a1fe663,
+    type: 3}
+  spawnX: 15
+  minY: 0
+  maxY: 3.5
+  minSpawnInterval: 0.5
+  maxSpawnInterval: 2
+  despawnX: -15
+  maxCoinsInRow: 3
+  spacingX: 1.5
+  poolSize: 10
+--- !u!82 &1754240616
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3646,13 +3719,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.07
+  m_Volume: 0.207
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 63
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3730,80 +3803,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1754240612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88330f8026df914e9f303e7a1578975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Gameplay.GameSpeedManager
-  baseSpeed: 4
-  maxSpeedMultiplier: 3
-  accelerationRate: 0.05
-  isPlaying: 1
---- !u!114 &1754240613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ede3cefa7aea464e8edfe82047b2d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Gameplay.LevelGenerator
-  platformPrefabs:
-  - {fileID: 3429208252203911330, guid: 99e9cb2d79e2c9c448f63f058518a333, type: 3}
-  blockWidth: 10
-  initialBlocks: 6
-  despawnX: -15
-  startPosition: {x: -5, y: 0.5, z: 0}
-  poolSizePerPrefab: 3
---- !u!114 &1754240614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f586ca33304d89849928a7dc2ed84ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Platformer.UI.PauseController
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.75}
-  buttonColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
-  buttonTextColor: {r: 1, g: 1, b: 1, a: 1}
-  titleColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &1754240615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5ed2e0ff3e9a04bad6cb358619ab8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Mechanics.CoinSpawner
-  coinPrefab: {fileID: 4389662223576981119, guid: 02a7eb52a33a2de4fafd64660a1fe663,
-    type: 3}
-  spawnX: 15
-  minY: 0
-  maxY: 3.5
-  minSpawnInterval: 0.5
-  maxSpawnInterval: 2
-  despawnX: -15
-  maxCoinsInRow: 3
-  spacingX: 1.5
-  poolSize: 10
 --- !u!1 &1769699347
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,11 @@ namespace Platformer.Core
         [Tooltip("Nombre exacto de la escena del menú principal")]
         public string mainMenuSceneName = "MainMenu";
 
+        [Header("Música")]
+        [Tooltip("Volumen de la música de fondo (0-1)")]
+        [Range(0f, 1f)]
+        public float musicVolume = 0.07f;
+
         // ── Estado de la Sesión ───────────────────────────────────────
         /// <summary>Índice del nivel actualmente cargado o en juego.</summary>
         public int CurrentLevelIndex { get; private set; } = 0;
@@ -37,6 +42,9 @@ namespace Platformer.Core
         /// <summary>Mejor puntaje registrado entre todas las sesiones.</summary>
         public int HighScore { get; private set; } = 0;
 
+        // ── Música ───────────────────────────────────────────────────
+        private AudioSource _musicSource;
+
         // ─────────────────────────────────────────────────────────────
         #region Unity Lifecycle
 
@@ -48,11 +56,51 @@ namespace Platformer.Core
                 DontDestroyOnLoad(gameObject);
                 LoadProgress();
                 OptionsController.ApplyStartupPreferences();
+                StartMusic();
             }
             else
             {
                 Destroy(gameObject);
             }
+        }
+
+        #endregion
+
+        // ─────────────────────────────────────────────────────────────
+        #region Música
+
+        /// <summary>
+        /// Carga Music.wav desde Resources y la reproduce en loop.
+        /// Todo se crea por código — no depende de ningún setup en el Inspector.
+        /// </summary>
+        private void StartMusic()
+        {
+            AudioClip clip = Resources.Load<AudioClip>("Music");
+            if (clip == null)
+            {
+                Debug.LogError("[GameManager] No se encontró 'Music' en Resources. Asegúrate de que Assets/_Game/Resources/Music.wav existe.");
+                return;
+            }
+
+            _musicSource = gameObject.AddComponent<AudioSource>();
+            _musicSource.clip = clip;
+            _musicSource.loop = true;
+            _musicSource.playOnAwake = false;
+            _musicSource.volume = musicVolume;
+            _musicSource.spatialBlend = 0f;
+            _musicSource.ignoreListenerPause = true;
+            _musicSource.priority = 0;
+            _musicSource.Play();
+
+            Debug.Log($"[GameManager] ♪ Música iniciada: {clip.name}, vol: {musicVolume}");
+        }
+
+        /// <summary>Cambia el volumen de la música.</summary>
+        public void SetMusicVolume(float vol)
+        {
+            musicVolume = Mathf.Clamp01(vol);
+            if (_musicSource != null)
+                _musicSource.volume = musicVolume;
         }
 
         #endregion

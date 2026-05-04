@@ -151,6 +151,7 @@ MonoBehaviour:
   levels:
   - {fileID: 11400000, guid: a4f5567ed4a7de24dbe9560d41aa28ce, type: 2}
   mainMenuSceneName: MainMenu
+  musicVolume: 0.07
 --- !u!4 &193816449
 Transform:
   m_ObjectHideFlags: 0
