@@ -175,10 +175,15 @@ namespace Platformer.UI
 
             GameObject container = CreatePanel(_panelMain.transform, "Container", Color.clear);
             RectTransform containerRT = container.GetComponent<RectTransform>();
-            containerRT.anchorMin = new Vector2(0.3f, 0.2f);
-            containerRT.anchorMax = new Vector2(0.7f, 0.8f);
+            containerRT.anchorMin = new Vector2(0.3f, 0.5f);
+            containerRT.anchorMax = new Vector2(0.7f, 0.5f);
+            containerRT.pivot = new Vector2(0.5f, 0.5f);
             containerRT.offsetMin = Vector2.zero;
             containerRT.offsetMax = Vector2.zero;
+
+            ContentSizeFitter fitter = container.AddComponent<ContentSizeFitter>();
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
 
             Image containerBG = container.GetComponent<Image>();
             containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
@@ -200,7 +205,7 @@ namespace Platformer.UI
             wrapperRT.sizeDelta = new Vector2(0, 80f);
 
             TextMeshProUGUI titleTMP = CreateText(titleWrapper.transform, "TitleText",
-                "ENDLESS RUNNER", 48, titleColor, FontStyles.Bold, 80f);
+                "OUTRUN EXTINCTION", 42, titleColor, FontStyles.Bold, 80f);
             // Estirar el título para que llene el wrapper
             RectTransform titleRT = titleTMP.rectTransform;
             titleRT.anchorMin = Vector2.zero;
@@ -209,6 +214,8 @@ namespace Platformer.UI
             titleRT.offsetMax = Vector2.zero;
             titleRT.sizeDelta = Vector2.zero;
             _titleRT = titleRT;
+
+            CreateText(container.transform, "SubtitleText", "ENDLESS RUNNER", 24, new Color(0.8f, 0.8f, 0.8f, 1f), FontStyles.Bold, 30f);
 
             // ── Display de monedas debajo del título ───────────────────
             _coinDisplayText = CreateText(container.transform, "CoinText", "MONEDAS: 0",

@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 11628179}
   - component: {fileID: 11628178}
-  - component: {fileID: 11628177}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -138,18 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11628177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11628176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9473387ae50744bf946308793bd64e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &11628178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1913,7 +1900,6 @@ GameObject:
   m_Component:
   - component: {fileID: 419576588}
   - component: {fileID: 419576587}
-  - component: {fileID: 419576586}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -1921,18 +1907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &419576586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419576585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9473387ae50744bf946308793bd64e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &419576587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2035,7 +2009,6 @@ GameObject:
   m_Component:
   - component: {fileID: 480004327}
   - component: {fileID: 480004329}
-  - component: {fileID: 480004328}
   m_Layer: 0
   m_Name: Victory
   m_TagString: Untagged
@@ -2058,18 +2031,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 311588741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480004328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480004326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b7b8893929d4d9094f6655d580fae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &480004329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2940,7 +2901,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1090666648}
   - component: {fileID: 1090666647}
-  - component: {fileID: 1090666646}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -2948,18 +2908,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1090666646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090666645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9473387ae50744bf946308793bd64e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1090666647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4637,7 +4585,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2067073111}
   - component: {fileID: 2067073110}
-  - component: {fileID: 2067073109}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -4645,18 +4592,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2067073109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067073108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9473387ae50744bf946308793bd64e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2067073110
 BoxCollider2D:
   m_ObjectHideFlags: 0
