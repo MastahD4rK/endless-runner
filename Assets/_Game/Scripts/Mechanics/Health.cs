@@ -1,4 +1,3 @@
-using System;
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
@@ -21,14 +20,6 @@ namespace Platformer.Mechanics
         public bool IsAlive => currentHP > 0;
 
         public int currentHP;
-
-        /// <summary>
-        /// Increment the HP of the entity.
-        /// </summary>
-        public void Increment()
-        {
-            currentHP = Mathf.Clamp(currentHP + 1, 0, maxHP);
-        }
 
         /// <summary>
         /// Decrement the HP of the entity. Will trigger a HealthIsZero event when

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
@@ -16,7 +14,6 @@ namespace Platformer.Mechanics
     public class PlayerController : KinematicObject
     {
         public AudioClip jumpAudio;
-        public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
         /// <summary>
