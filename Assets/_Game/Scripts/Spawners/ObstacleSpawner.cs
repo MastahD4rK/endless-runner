@@ -89,7 +89,7 @@ namespace Platformer.Gameplay
                 if (_speedManager == null) return;
             }
 
-            if (!_speedManager.isPlaying) return;
+            if (!_speedManager.isPlaying || _speedManager.isBossPhase) return;
 
             timeSinceStart += Time.deltaTime;
 

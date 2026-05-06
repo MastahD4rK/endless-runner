@@ -72,7 +72,7 @@ namespace Platformer.Mechanics
                 if (_speedManager == null) return;
             }
 
-            if (!_speedManager.isPlaying) return;
+            if (!_speedManager.isPlaying || _speedManager.isBossPhase) return;
 
             // Revisar si es hora de spawnear
             if (Time.time >= _nextSpawnTime)

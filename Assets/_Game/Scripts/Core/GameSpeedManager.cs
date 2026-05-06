@@ -16,6 +16,7 @@ namespace Platformer.Gameplay
 
         public float speedMultiplier { get; private set; } = 1f;
         public bool isPlaying = true;
+        public bool isBossPhase = false;
 
         public float CurrentSpeed => baseSpeed * speedMultiplier;
 
@@ -46,6 +47,7 @@ namespace Platformer.Gameplay
         {
             speedMultiplier = 1f;
             isPlaying = true;
+            isBossPhase = false;
         }
 
         public void StopWorld()

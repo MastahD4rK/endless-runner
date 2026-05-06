@@ -1,6 +1,8 @@
 using Platformer.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 namespace Platformer.Core
 {
@@ -41,8 +43,12 @@ namespace Platformer.Core
         public Transform backgroundParent;
 
         [Header("Puntuación")]
-        [Tooltip("Cada cuántos puntos se cambia de mapa")]
+        [Tooltip("Cada cuántos puntos se cambia de mapa (y aparece el jefe)")]
         public int scorePerMapChange = 1000;
+
+        [Header("Jefe")]
+        [Tooltip("Prefab del Jefe. Si está vacío, se generará un cubo rojo temporal.")]
+        public GameObject bossPrefab;
 
         [Header("Transición")]
         [Tooltip("Duración del crossfade en segundos (tiempo real, no depende de la velocidad del juego)")]
@@ -68,6 +74,7 @@ namespace Platformer.Core
         private bool _isFading = false;
         private float _fadeStartTime;           // Tiempo real en que empezó el fade
         private bool _subscribedToScore = false;
+        private bool _isBossActive = false;
 
         // ── Posición/escala de referencia (copiada del background inicial) ──
         private Vector3 _bgPosition;
@@ -237,10 +244,139 @@ namespace Platformer.Core
         /// </summary>
         void HandleScoreChanged(int currentScore)
         {
-            if (!_isFading && currentScore >= _nextChangeScore)
+            if (!_isFading && !_isBossActive && currentScore >= _nextChangeScore)
             {
-                StartCrossfade();
+                SpawnBoss();
             }
+        }
+
+        /// <summary>
+        /// Genera al jefe antes de cambiar de mapa.
+        /// </summary>
+        void SpawnBoss()
+        {
+            _isBossActive = true;
+            
+            // Pausar puntuación del ScoreCounter (opcional, pero recomendado)
+            if (ScoreCounter.Instance != null)
+            {
+                ScoreCounter.Instance.enabled = false; // Deja de sumar puntos temporalmente
+            }
+
+            StartCoroutine(WarningRoutine());
+        }
+
+        private IEnumerator WarningRoutine()
+        {
+            Debug.Log("[MapManager] Iniciando advertencia de Jefe...");
+            
+            // Crear Canvas de Advertencia
+            GameObject canvasObj = new GameObject("BossWarningCanvas");
+            var canvas = canvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 999;
+            
+            GameObject textObj = new GameObject("WarningText");
+            textObj.transform.SetParent(canvasObj.transform, false);
+            var rect = textObj.AddComponent<RectTransform>();
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.sizeDelta = Vector2.zero;
+            
+            var text = textObj.AddComponent<TextMeshProUGUI>();
+            text.text = "! WARNING !\nBOSS APPROACHING";
+            text.fontSize = 80;
+            text.alignment = TextAlignmentOptions.Center;
+            text.color = Color.red;
+            // Opcional: fuente tipo pixel si la tuvieras, por ahora usará la default
+
+            // Parpadeo
+            for (int i = 0; i < 4; i++)
+            {
+                text.enabled = true;
+                yield return new WaitForSeconds(0.4f);
+                text.enabled = false;
+                yield return new WaitForSeconds(0.2f);
+            }
+            
+            Destroy(canvasObj);
+            
+            // Instanciar Jefe
+            InstantiateBoss();
+        }
+
+        void InstantiateBoss()
+        {
+            Debug.Log("[MapManager] Advertencia terminada. Aparece el Jefe.");
+
+            if (bossPrefab != null)
+            {
+                // Posicionar a la derecha (X = 10)
+                Instantiate(bossPrefab, new Vector3(10f, 0f, 0f), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("[MapManager] No hay prefab de Jefe. Creando placeholder rojo...");
+                GameObject placeholder = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                placeholder.name = "BossPlaceholder";
+                
+                // Asegurar que tiene Rigidbody2D Kinematic y BoxCollider2D (IsTrigger)
+                DestroyImmediate(placeholder.GetComponent<BoxCollider>()); // quitar el 3D INMEDIATAMENTE
+                var col = placeholder.AddComponent<BoxCollider2D>();
+                col.isTrigger = true;
+                
+                var rb = placeholder.AddComponent<Rigidbody2D>();
+                rb.isKinematic = true;
+                
+                placeholder.transform.position = new Vector3(8f, 0f, 0f);
+                placeholder.transform.localScale = new Vector3(2f, 2f, 1f);
+                
+                var renderer = placeholder.GetComponent<Renderer>();
+                if (renderer != null) renderer.material.color = Color.red;
+
+                // Añadir el script del Boss
+                var bossController = placeholder.AddComponent<Platformer.Gameplay.BossController>();
+
+                // Generar un prefab temporal de proyectil para que el jefe pueda atacar
+                GameObject dummyProj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                dummyProj.name = "DummyProjectilePrefab";
+                
+                // Asegurar collider 2D
+                DestroyImmediate(dummyProj.GetComponent<SphereCollider>());
+                var projCol = dummyProj.AddComponent<CircleCollider2D>();
+                projCol.isTrigger = true;
+                
+                // Añadir el script de proyectil
+                dummyProj.AddComponent<Platformer.Gameplay.BossProjectile>();
+                
+                var projRenderer = dummyProj.GetComponent<Renderer>();
+                if (projRenderer != null) projRenderer.material.color = Color.yellow;
+                
+                dummyProj.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+                
+                // Desactivarlo para que sirva como "prefab" en la escena
+                dummyProj.SetActive(false); 
+                
+                // Asignarlo al jefe
+                bossController.projectilePrefab = dummyProj;
+            }
+        }
+
+        /// <summary>
+        /// Llamado por el BossController cuando el jefe muere.
+        /// </summary>
+        public void OnBossDefeated()
+        {
+            _isBossActive = false;
+            
+            // Reanudar puntuación
+            if (ScoreCounter.Instance != null)
+            {
+                ScoreCounter.Instance.enabled = true;
+            }
+
+            Debug.Log("[MapManager] Jefe derrotado. Iniciando cambio de mapa.");
+            StartCrossfade();
         }
 
         /// <summary>
