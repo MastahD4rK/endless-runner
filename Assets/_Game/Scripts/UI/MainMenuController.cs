@@ -16,9 +16,9 @@ namespace Platformer.UI
         // ── Configuración visual ─────────────────────────────────────
         [Header("Colores del Menú")]
         public Color overlayColor = new Color(0f, 0f, 0f, 0.75f);
-        public Color buttonColor = new Color(0.2f, 0.2f, 0.25f, 1f);
+        public Color buttonColor = new Color(0.15f, 0.1f, 0.25f, 1f);
         public Color buttonTextColor = Color.white;
-        public Color titleColor = Color.white;
+        public Color titleColor = new Color(1f, 0.1f, 0.6f, 1f);
 
         [Header("Animación del Título")]
         public float titleAnimDuration = 0.8f;
@@ -37,6 +37,12 @@ namespace Platformer.UI
 
         void Awake()
         {
+            // Forzar nuevos colores neon por si el Inspector tiene guardados los viejos
+            overlayColor = new Color(0f, 0f, 0f, 0.75f);
+            buttonColor = new Color(0.15f, 0.1f, 0.25f, 1f);
+            buttonTextColor = Color.white;
+            titleColor = new Color(1f, 0.1f, 0.6f, 1f);
+
             // Inicializar el contador de FPS
             var fps = FPSCounter.Instance;
             
@@ -142,6 +148,17 @@ namespace Platformer.UI
             _titleRT.anchoredPosition = endPos;
         }
 
+        private IEnumerator PulseRoutine(Transform target)
+        {
+            Vector3 baseScale = Vector3.one;
+            while (target != null)
+            {
+                float scale = 1f + Mathf.Sin(Time.unscaledTime * 5f) * 0.05f;
+                target.localScale = baseScale * scale;
+                yield return null;
+            }
+        }
+
         #endregion
 
         // ─────────────────────────────────────────────────────────────
@@ -173,61 +190,128 @@ namespace Platformer.UI
         {
             _panelMain = CreatePanel(_menuCanvas.transform, "PanelMain", overlayColor);
 
-            GameObject container = CreatePanel(_panelMain.transform, "Container", Color.clear);
-            RectTransform containerRT = container.GetComponent<RectTransform>();
-            containerRT.anchorMin = new Vector2(0.3f, 0.5f);
-            containerRT.anchorMax = new Vector2(0.7f, 0.5f);
-            containerRT.pivot = new Vector2(0.5f, 0.5f);
-            containerRT.offsetMin = Vector2.zero;
-            containerRT.offsetMax = Vector2.zero;
+            // ── Zona del Título (Arriba Centro) ──────────────────────────
+            GameObject titleContainer = CreatePanel(_panelMain.transform, "TitleContainer", Color.clear);
+            RectTransform titleContainerRT = titleContainer.GetComponent<RectTransform>();
+            titleContainerRT.anchorMin = new Vector2(0f, 0.65f);
+            titleContainerRT.anchorMax = new Vector2(1f, 1f);
+            titleContainerRT.offsetMin = Vector2.zero;
+            titleContainerRT.offsetMax = Vector2.zero;
 
-            ContentSizeFitter fitter = container.AddComponent<ContentSizeFitter>();
-            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-            fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+            VerticalLayoutGroup titleLayout = titleContainer.AddComponent<VerticalLayoutGroup>();
+            titleLayout.childAlignment = TextAnchor.LowerCenter; // Alinear abajo para que no flote demasiado alto
+            titleLayout.spacing = 10f;
+            titleLayout.childControlHeight = false;
+            titleLayout.childControlWidth = true;
 
-            Image containerBG = container.GetComponent<Image>();
-            containerBG.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+            // Título
+            GameObject titleObj = new GameObject("TitleText");
+            titleObj.transform.SetParent(titleContainer.transform, false);
+            RectTransform titleObjRT = titleObj.AddComponent<RectTransform>();
+            titleObjRT.sizeDelta = new Vector2(0, 80f); // Altura fija
+            TextMeshProUGUI titleTMP = titleObj.AddComponent<TextMeshProUGUI>();
+            titleTMP.text = "OUTRUN EXTINCTION";
+            titleTMP.fontSize = 65;
+            titleTMP.color = titleColor;
+            titleTMP.fontStyle = FontStyles.Bold;
+            titleTMP.alignment = TextAlignmentOptions.Center;
+            if (TMP_Settings.defaultFontAsset != null) titleTMP.font = TMP_Settings.defaultFontAsset;
+            
+            Shadow shadow = titleObj.AddComponent<Shadow>();
+            shadow.effectColor = new Color(0, 0, 0, 0.8f);
+            shadow.effectDistance = new Vector2(4, -4);
+            
+            // Animación del contenedor completo
+            _titleRT = titleContainerRT;
 
-            VerticalLayoutGroup layout = container.AddComponent<VerticalLayoutGroup>();
-            layout.padding = new RectOffset(40, 40, 40, 40);
-            layout.spacing = 20f;
-            layout.childAlignment = TextAnchor.MiddleCenter;
-            layout.childControlWidth = true;
-            layout.childControlHeight = false;
-            layout.childForceExpandWidth = true;
-            layout.childForceExpandHeight = false;
+            // Subtítulo
+            GameObject subObj = new GameObject("SubtitleText");
+            subObj.transform.SetParent(titleContainer.transform, false);
+            RectTransform subObjRT = subObj.AddComponent<RectTransform>();
+            subObjRT.sizeDelta = new Vector2(0, 40f); // Altura fija
+            TextMeshProUGUI subTMP = subObj.AddComponent<TextMeshProUGUI>();
+            subTMP.text = "ENDLESS RUNNER";
+            subTMP.fontSize = 28;
+            subTMP.color = new Color(0f, 1f, 0.8f, 1f);
+            subTMP.fontStyle = FontStyles.Bold;
+            subTMP.alignment = TextAlignmentOptions.Center;
+            subTMP.characterSpacing = 15f; 
+            if (TMP_Settings.defaultFontAsset != null) subTMP.font = TMP_Settings.defaultFontAsset;
 
-            // Wrapper para el título (el LayoutGroup controla el wrapper, no el texto)
-            // Esto permite animar el título sin conflicto con el LayoutGroup
-            GameObject titleWrapper = new GameObject("TitleWrapper");
-            titleWrapper.transform.SetParent(container.transform, false);
-            RectTransform wrapperRT = titleWrapper.AddComponent<RectTransform>();
-            wrapperRT.sizeDelta = new Vector2(0, 80f);
+            // ── Zona de Monedas (Arriba Derecha) ─────────────────────────
+            GameObject coinContainer = CreatePanel(_panelMain.transform, "CoinContainer", new Color(0.1f, 0.05f, 0.15f, 0.9f));
+            RectTransform coinRT = coinContainer.GetComponent<RectTransform>();
+            coinRT.anchorMin = new Vector2(1f, 1f);
+            coinRT.anchorMax = new Vector2(1f, 1f);
+            coinRT.pivot = new Vector2(1f, 1f);
+            coinRT.anchoredPosition = new Vector2(-40f, -40f);
+            coinRT.sizeDelta = new Vector2(300f, 60f); // Un poco más ancho
 
-            TextMeshProUGUI titleTMP = CreateText(titleWrapper.transform, "TitleText",
-                "OUTRUN EXTINCTION", 42, titleColor, FontStyles.Bold, 80f);
-            // Estirar el título para que llene el wrapper
-            RectTransform titleRT = titleTMP.rectTransform;
-            titleRT.anchorMin = Vector2.zero;
-            titleRT.anchorMax = Vector2.one;
-            titleRT.offsetMin = Vector2.zero;
-            titleRT.offsetMax = Vector2.zero;
-            titleRT.sizeDelta = Vector2.zero;
-            _titleRT = titleRT;
+            Outline coinOutline = coinContainer.AddComponent<Outline>();
+            coinOutline.effectColor = new Color(1f, 0.1f, 0.6f, 0.5f);
+            coinOutline.effectDistance = new Vector2(2, -2);
 
-            CreateText(container.transform, "SubtitleText", "ENDLESS RUNNER", 24, new Color(0.8f, 0.8f, 0.8f, 1f), FontStyles.Bold, 30f);
-
-            // ── Display de monedas debajo del título ───────────────────
-            _coinDisplayText = CreateText(container.transform, "CoinText", "MONEDAS: 0",
-                24, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Bold, 30f);
+            _coinDisplayText = CreateText(coinContainer.transform, "CoinText", "MONEDAS: 0",
+                24, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Bold, 60f);
+            RectTransform coinTextRT = _coinDisplayText.rectTransform;
+            coinTextRT.anchorMin = Vector2.zero;
+            coinTextRT.anchorMax = Vector2.one;
+            coinTextRT.offsetMin = Vector2.zero;
+            coinTextRT.offsetMax = Vector2.zero;
             UpdateCoinDisplay();
 
-            CreateSeparator(container.transform);
-            CreateButton(container.transform, "BtnPlay", "JUGAR", OnPlayButton);
-            CreateButton(container.transform, "BtnShop", "TIENDA", OnShopButton);
-            CreateButton(container.transform, "BtnSkills", "HABILIDADES", OnSkillsButton);
-            CreateButton(container.transform, "BtnOptions", "OPCIONES", OnOptionsButton);
-            CreateButton(container.transform, "BtnQuit", "SALIR", OnQuitButton);
+            // ── Zona de Botones (Centro Abajo) ───────────────────────────
+            GameObject btnContainer = CreatePanel(_panelMain.transform, "ButtonContainer", Color.clear);
+            RectTransform btnRT = btnContainer.GetComponent<RectTransform>();
+            btnRT.anchorMin = new Vector2(0.35f, 0.05f); // 30% del ancho de la pantalla
+            btnRT.anchorMax = new Vector2(0.65f, 0.55f);
+            btnRT.offsetMin = Vector2.zero;
+            btnRT.offsetMax = Vector2.zero;
+
+            VerticalLayoutGroup btnLayout = btnContainer.AddComponent<VerticalLayoutGroup>();
+            btnLayout.childAlignment = TextAnchor.UpperCenter;
+            btnLayout.spacing = 15f;
+            btnLayout.childControlWidth = true;
+            btnLayout.childControlHeight = false;
+
+            // Botón Principal JUGAR (Más grande y llamativo)
+            GameObject btnPlay = CreateButton(btnContainer.transform, "BtnPlay", "JUGAR", OnPlayButton);
+            RectTransform playRT = btnPlay.GetComponent<RectTransform>();
+            playRT.sizeDelta = new Vector2(0, 90f); 
+            TextMeshProUGUI playText = btnPlay.GetComponentInChildren<TextMeshProUGUI>();
+            playText.fontSize = 36; 
+            StartCoroutine(PulseRoutine(btnPlay.transform));
+
+            CreateSeparator(btnContainer.transform);
+
+            // Botones Secundarios
+            CreateButton(btnContainer.transform, "BtnShop", "TIENDA", OnShopButton);
+            CreateButton(btnContainer.transform, "BtnSkills", "HABILIDADES", OnSkillsButton);
+            CreateButton(btnContainer.transform, "BtnOptions", "OPCIONES", OnOptionsButton);
+            
+            // ── Botón de Salir (Esquina Superior Izquierda) ──────────────────
+            GameObject btnQuit = CreateButton(_panelMain.transform, "BtnQuit", "X", OnQuitButton);
+            RectTransform quitRT = btnQuit.GetComponent<RectTransform>();
+            quitRT.anchorMin = new Vector2(0f, 1f);
+            quitRT.anchorMax = new Vector2(0f, 1f);
+            quitRT.pivot = new Vector2(0f, 1f);
+            quitRT.anchoredPosition = new Vector2(40f, -40f);
+            quitRT.sizeDelta = new Vector2(60f, 60f); // Cuadrado
+
+            Button quitBtnComp = btnQuit.GetComponent<Button>();
+            ColorBlock qc = quitBtnComp.colors;
+            qc.normalColor = new Color(0.2f, 0.05f, 0.1f, 0.9f); // Fondo rojizo oscuro
+            qc.highlightedColor = new Color(1f, 0.1f, 0.2f, 1f); // Rojo brillante
+            quitBtnComp.colors = qc;
+
+            Outline quitOutline = btnQuit.AddComponent<Outline>();
+            quitOutline.effectColor = new Color(1f, 0.1f, 0.2f, 0.5f);
+            quitOutline.effectDistance = new Vector2(2, -2);
+
+            TextMeshProUGUI quitText = btnQuit.GetComponentInChildren<TextMeshProUGUI>();
+            quitText.fontSize = 40;
+            quitText.color = new Color(1f, 0.8f, 0.8f, 1f);
+            quitText.alignment = TextAlignmentOptions.Center;
         }
 
         private void BuildOptionsPanel()
@@ -354,7 +438,7 @@ namespace Platformer.UI
             return tmp;
         }
 
-        private void CreateButton(Transform parent, string name, string label, UnityEngine.Events.UnityAction onClick)
+        private GameObject CreateButton(Transform parent, string name, string label, UnityEngine.Events.UnityAction onClick)
         {
             GameObject btnObj = new GameObject(name);
             btnObj.transform.SetParent(parent, false);
@@ -370,8 +454,8 @@ namespace Platformer.UI
 
             ColorBlock colors = btn.colors;
             colors.normalColor = buttonColor;
-            colors.highlightedColor = new Color(buttonColor.r + 0.15f, buttonColor.g + 0.15f, buttonColor.b + 0.2f, 1f);
-            colors.pressedColor = new Color(buttonColor.r + 0.25f, buttonColor.g + 0.25f, buttonColor.b + 0.35f, 1f);
+            colors.highlightedColor = new Color(1f, 0.1f, 0.6f, 1f);
+            colors.pressedColor = new Color(0.8f, 0f, 0.4f, 1f);
             colors.selectedColor = colors.highlightedColor;
             btn.colors = colors;
 
@@ -385,6 +469,8 @@ namespace Platformer.UI
             labelRT.offsetMin = Vector2.zero;
             labelRT.offsetMax = Vector2.zero;
             labelRT.sizeDelta = Vector2.zero;
+
+            return btnObj;
         }
 
         private void CreateSeparator(Transform parent)

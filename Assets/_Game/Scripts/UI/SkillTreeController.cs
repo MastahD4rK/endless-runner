@@ -122,7 +122,7 @@ namespace Platformer.UI
             actionVL.childControlWidth = true;
             actionVL.childForceExpandWidth = true;
 
-            TextMeshProUGUI levelTxt = CreateText(actionContainer.transform, "Level", $"Nivel {data.currentLevel}/{data.maxLevel}", 18, Color.white, FontStyles.Bold, 25f, TextAlignmentOptions.Right);
+            TextMeshProUGUI levelTxt = CreateText(actionContainer.transform, "Level", $"Nivel {data.currentLevel} DE {data.maxLevel}", 18, Color.white, FontStyles.Bold, 25f, TextAlignmentOptions.Right);
             _levelTexts[data.type] = levelTxt;
 
             TextMeshProUGUI costTxt = CreateText(actionContainer.transform, "Cost", "Costo: -", 16, new Color(1f, 0.85f, 0.2f, 1f), FontStyles.Normal, 20f, TextAlignmentOptions.Right);
@@ -168,13 +168,13 @@ namespace Platformer.UI
 
                 if (_levelTexts.ContainsKey(type))
                 {
-                    _levelTexts[type].text = $"Nivel {data.currentLevel}/{data.maxLevel}";
+                    _levelTexts[type].text = $"Nivel {data.currentLevel} DE {data.maxLevel}";
                 }
 
                 bool isMax = data.currentLevel >= data.maxLevel;
                 if (_costTexts.ContainsKey(type))
                 {
-                    _costTexts[type].text = isMax ? "MÁXIMO" : $"Costo: {data.costPerLevel[data.currentLevel]}";
+                    _costTexts[type].text = isMax ? "MAXIMO" : $"Costo: {data.costPerLevel[data.currentLevel]}";
                 }
 
                 if (_upgradeButtons.ContainsKey(type))
