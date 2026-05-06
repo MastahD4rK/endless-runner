@@ -161,8 +161,9 @@ namespace Platformer.Core
                 float elapsed = Time.time - _fadeStartTime;
                 float progress = Mathf.Clamp01(elapsed / fadeDuration);
 
-                // Fade-in del nuevo background sobre el viejo
+                // Fade-in del nuevo background y fade-out del viejo simultáneamente
                 SetBackgroundAlpha(_nextRenderers, progress);
+                SetBackgroundAlpha(_currentRenderers, 1f - progress);
 
                 if (progress >= 1f)
                 {
